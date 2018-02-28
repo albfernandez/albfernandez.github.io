@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 12. Menus and toolbars</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="prev" href="chap-Component_Reference-Trees.html" title="Chapter 11. Trees"/><link rel="next" href="chap-Component_Reference-Output_and_messages.html" title="Chapter 13. Output and messages"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Trees.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Output_and_messages.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Menus_and_toolbars"/>Chapter 12. Menus and toolbars</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-dropDownMenu">12.1. &lt;rich:dropDownMenu&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-dropDownMenu-Basic_usage">12.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-dropDownMenu-Menu_content">12.1.2. Menu content</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-dropDownMenu-Appearance">12.1.3. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-dropDownMenu-Expanding_and_collapsing_the_menu">12.1.4. Expanding and collapsing the menu</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-dropDownMenu-Reference_data">12.1.5. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-dropDownMenu-Style_classes_and_skin_parameters">12.1.6. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-contextMenu">12.2. &lt;rich:contextMenu&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-contextMenu-Basic_usage">12.2.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-contextMenu-Appearance">12.2.2. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-contextMenu-Expanding_and_collapsing_the_menu">12.2.3. Expanding and collapsing the menu</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#_text_substitutions">12.2.4. Text substitutions</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-contextMenu-Reference_data">12.2.5. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-contextMenu-Style_classes_and_skin_parameters">12.2.6. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-Menu_sub-components">12.3. Menu sub-components</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-menuItem">12.3.1. &lt;rich:menuItem&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-menuGroup">12.3.2. &lt;rich:menuGroup&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-menuSeparator">12.3.3. &lt;rich:menuSeparator&gt;</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-panelMenu">12.4. &lt;rich:panelMenu&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Basic_usage">12.4.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Interactivity_options">12.4.2. Interactivity options</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Appearance">12.4.3. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Submission_modes">12.4.4. Submission modes</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-panelMenu_server-side_events">12.4.5. &lt;rich:panelMenu&gt; server-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-JavaScript_API">12.4.6. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Reference_data">12.4.7. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Style_classes_and_skin_parameters">12.4.8. Style classes and skin parameters</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-panelMenuGroup">12.4.9. &lt;rich:panelMenuGroup&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-panelMenuItem">12.4.10. &lt;rich:panelMenuItem&gt;</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-toolbar">12.5. &lt;rich:toolbar&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-toolbar-Basic_usage">12.5.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-toolbar-Appearance">12.5.2. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-toolbar-Grouping_items">12.5.3. Grouping items</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-toolbar-Reference_data">12.5.4. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-toolbar-Style_classes_and_skin_parameters">12.5.5. Style classes and skin parameters</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-toolbarGroup">12.5.6. &lt;rich:toolbarGroup&gt;</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter for details on menu and toolbar components.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-dropDownMenu"/>12.1. <a id="richdropDownMenu"/><code class="literal"><span class="sgmltag">&lt;rich:dropDownMenu&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:dropDownMenu&gt;</span></code> component is used for creating a drop-down, hierarchical menu. It can be used with the <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code> component to create menus in an application’s toolbar.</p>
+<div class="figure"><a id="figu-Component_Reference-dropDownMenu-dropDownMenu"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-dropDownMenu-dropDownMenu.png" alt="figu Component Reference dropDownMenu dropDownMenu"/></div>
+</div><p class="title"><b>Figure 12.1. <code class="literal"><span class="sgmltag">&lt;rich:dropDownMenu&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropDownMenu-Basic_usage"/>12.1.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:dropDownMenu&gt;</span></code> component only requires the <code class="literal"><span class="varname">label</span></code> attribute for basic usage. Use the <code class="literal"><span class="varname">label</span></code> attribute to define the text label that appears as the title of the menu. Clicking on the title drops the menu down.</p>
+<p>Alternatively, use the <code class="literal">label</code> facet to define the menu title. If the <code class="literal">label</code> facet is used, the <code class="literal"><span class="varname">label</span></code> attribute is not necessary.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropDownMenu-Menu_content"/>12.1.2. Menu content</h3></div></div></div>
+
+<p>To set the content of the drop-down menu and any sub-menus, use the <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code>, and <code class="literal"><span class="sgmltag">&lt;rich:menuSeparator&gt;</span></code> components. These components are detailed in <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-Menu_sub-components" title="12.3. Menu sub-components">Section 12.3, “Menu sub-components”</a>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropDownMenu-Appearance"/>12.1.3. Appearance</h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">jointPoint</span></code> and <code class="literal"><span class="varname">direction</span></code> attributes to determine the direction and location of the menu when it appears. The <code class="literal"><span class="varname">jointPoint</span></code> and <code class="literal"><span class="varname">direction</span></code> attributes both use the following settings:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">topLeft</code>, <code class="literal">topRight</code>, <code class="literal">bottomLeft</code>, <code class="literal">bottomRight</code></span></dt><dd>
+<p>When used with the <code class="literal"><span class="varname">jointPoint</span></code> attribute, the menu is attached to the top-left, top-right, bottom-left, or bottom-right of the control as appropriate.</p>
+<p>When used with the <code class="literal"><span class="varname">direction</span></code> attribute, the menu appears to the top-left, top-right, bottom-left, or bottom-right of the joint location as appropriate.</p>
+</dd><dt><span class="term"><code class="literal">auto</code></span></dt><dd>
+The direction or joint location is determined automatically.
+</dd><dt><span class="term"><code class="literal">autoLeft</code>, <code class="literal">autoRight</code>, <code class="literal">topAuto</code>, <code class="literal">bottomAuto</code></span></dt><dd>
+<p>When used with the <code class="literal"><span class="varname">jointPoint</span></code> attribute, the joint location is determined automatically, but defaults to either the left, right, top, or bottom of the control as appropriate.</p>
+<p>When used with the <code class="literal"><span class="varname">direction</span></code> attribute, the menu direction is determined automatically, but defaults to either the left, right, top, or bottom of the joint location as appropriate.</p>
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropDownMenu-Expanding_and_collapsing_the_menu"/>12.1.4. Expanding and collapsing the menu</h3></div></div></div>
+
+<p>By default, the menu drops down when the title is clicked. To drop down with a different event, use the <code class="literal"><span class="varname">showEvent</span></code> attribute to define the event instead.</p>
+<p>Menus can be navigated using the keyboard. Additionally, menus can be navigated programmatically using the JavaScript <acronym class="acronym">API</acronym>. The JavaScript API allows the following methods:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="methodname">show()</span></code></span></dt><dd>
+The <code class="literal"><span class="methodname">show()</span></code> method shows the menu.
+</dd><dt><span class="term"><code class="literal"><span class="methodname">hide()</span></code></span></dt><dd>
+The <code class="literal"><span class="methodname">hide()</span></code> method hides the menu.
+</dd><dt><span class="term"><code class="literal"><span class="methodname">activateItem(menuItemId)</span></code></span></dt><dd>
+The <code class="literal"><span class="methodname">activateItem(menuItemId)</span></code> activates the menu item with the <code class="literal"><span class="parameter">menuItemId</span></code> identifier.
+</dd></dl></div>
+
+<p>Use the <code class="literal"><span class="varname">mode</span></code> attribute to determine how the menu requests are submitted:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal">server</code>, the default setting, submits the form normally and completely refreshes the page.
+</li><li>
+<code class="literal">ajax</code> performs an Ajax form submission, and re-renders elements specified with the <code class="literal"><span class="varname">render</span></code> attribute.
+</li><li>
+<code class="literal">client</code> causes the <code class="literal"><span class="varname">action</span></code> and <code class="literal"><span class="varname">actionListener</span></code> items to be ignored, and the behavior is fully defined by the nested components or custom JavaScript instead of responses from submissions.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropDownMenu-Reference_data"/>12.1.5. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DropDownMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIDropDownMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.DropDownMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DropDownMenuRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropDownMenu-Style_classes_and_skin_parameters"/>12.1.6. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="dropDownMenu-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 12.1. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-lbl</span></code></span></dt><dd>
+This class defines styles for the label of the drop-down menu.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-dis</span></code></span></dt><dd>
+This class defines styles for the drop-down menu when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabDisabledTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-lbl-dis</span></code></span></dt><dd>
+This class defines styles for the label of the drop-down menu when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-pos</span></code></span></dt><dd>
+This class defines the positioning of the drop-down menu.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-lbl-unsel</span></code></span></dt><dd>
+This class defines styles for the label of the drop-down menu when it is unselected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-lst</span></code></span></dt><dd>
+This class defines styles for the drop-down list.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">additionalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-lst-bg</span></code></span></dt><dd>
+This class defines styles for the background of the drop-down list.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">additionalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-sublst</span></code></span></dt><dd>
+This class defines the positioning of the menu when used as a sub-menu.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-itm</span></code></span></dt><dd>
+This class defines styles for a menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-itm-sel</span></code></span></dt><dd>
+This class defines styles for a menu item when it is selected.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-itm-unsel</span></code></span></dt><dd>
+This class defines styles for a menu item when it is unselected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-itm-dis</span></code></span></dt><dd>
+This class defines styles for a menu item when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabDisabledTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-itm-lbl</span></code></span></dt><dd>
+This class defines styles for the label in a menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-itm-ic</span></code></span></dt><dd>
+This class defines styles for the icon in a menu item.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-emptyIcon</span></code></span></dt><dd>
+This class defines styles for an empty icon in a menu item.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-sep</span></code></span></dt><dd>
+This class defines styles for a menu separator.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-top-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ddm-nd</span></code></span></dt><dd>
+This class defines styles for a menu node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-contextMenu"/>12.2. <a id="richcontextMenu"/><code class="literal"><span class="sgmltag">&lt;rich:contextMenu&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:contextMenu&gt;</span></code> component is used for creating a hierarchical context menu that are activated on events like <code class="literal">onmouseover</code> , <code class="literal">onclick</code> etc. The component can be applied to any element on the page.</p>
+<div class="figure"><a id="figu-Component_Reference-contextMenu-contextMenu"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-contextMenu-contextMenu.png" alt="figu Component Reference contextMenu contextMenu"/></div>
+</div><p class="title"><b>Figure 12.2. <code class="literal"><span class="sgmltag">&lt;rich:contextMenu&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-contextMenu-Basic_usage"/>12.2.1. Basic usage</h3></div></div></div>
+
+<p>To set the content of the context menu and any sub-menus, use the <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code>, and <code class="literal"><span class="sgmltag">&lt;rich:menuSeparator&gt;</span></code> components. These components are detailed in <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-Menu_sub-components" title="12.3. Menu sub-components">Section 12.3, “Menu sub-components”</a>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-contextMenu-Appearance"/>12.2.2. Appearance</h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">direction</span></code> attribute to determine the direction of the menu when it appears. The <code class="literal"><span class="varname">direction</span></code> attribute uses the following settings:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">topLeft</code>, <code class="literal">topRight</code>, <code class="literal">bottomLeft</code>, <code class="literal">bottomRight</code></span></dt><dd>
+The menu appears to the top-left, top-right, bottom-left, or bottom-right of the activation point.
+</dd><dt><span class="term"><code class="literal">auto</code></span></dt><dd>
+The direction is determined automatically.
+</dd><dt><span class="term"><code class="literal">autoLeft</code>, <code class="literal">autoRight</code>, <code class="literal">topAuto</code>, <code class="literal">bottomAuto</code></span></dt><dd>
+The menu direction is determined automatically, but defaults to either the left, right, top, or bottom of the activation point as appropriate.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-contextMenu-Expanding_and_collapsing_the_menu"/>12.2.3. Expanding and collapsing the menu</h3></div></div></div>
+
+<p>By default, the menu is activated when the <code class="literal">contextmenu</code> event is observed (ie. a right-click). To activate on a different event, use the <code class="literal"><span class="varname">showEvent</span></code> attribute to define the event instead.</p>
+<p>Menus can be navigated using the keyboard. Additionally, menus can be navigated programmatically using the JavaScript <acronym class="acronym">API</acronym>. The JavaScript API allows the following methods:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="methodname">show()</span></code></span></dt><dd>
+The <code class="literal"><span class="methodname">show()</span></code> method shows the menu.
+</dd><dt><span class="term"><code class="literal"><span class="methodname">hide()</span></code></span></dt><dd>
+The <code class="literal"><span class="methodname">hide()</span></code> method hides the menu.
+</dd><dt><span class="term"><code class="literal"><span class="methodname">activateItem(menuItemId)</span></code></span></dt><dd>
+The <code class="literal"><span class="methodname">activateItem(menuItemId)</span></code> activates the menu item with the <code class="literal"><span class="parameter">menuItemId</span></code> identifier.
+</dd></dl></div>
+
+<p>Use the <code class="literal"><span class="varname">mode</span></code> attribute to determine how the menu requests are submitted:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal">server</code>, the default setting, submits the form normally and completely refreshes the page.
+</li><li>
+<code class="literal">ajax</code> performs an Ajax form submission, and re-renders elements specified with the <code class="literal"><span class="varname">render</span></code> attribute.
+</li><li>
+<code class="literal">client</code> causes the <code class="literal"><span class="varname">action</span></code> and <code class="literal"><span class="varname">actionListener</span></code> items to be ignored, and the behavior is fully defined by the nested components or custom JavaScript instead of responses from submissions.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="_text_substitutions"/>12.2.4. Text substitutions</h3></div></div></div>
+
+<p>To avoid creating many menus in iterable components that perform the same actions but only differ in content you can create one menu and reuse it with substituting its text content.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:contextMenu</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;menu&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">attached</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;false&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:menuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">action</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.edit}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">{Edit}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:menuItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:menuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">action</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.delete}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">{Delete}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:menuItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:contextMenu</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The text will be replaced by calling the <code class="literal"><span class="varname">show</span></code> event with corresponding parameters:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVASCRIPT">menu.show(event, { replace:
+    { Edit: "Change Photo #{photo.name}", Delete: "Remove Photo #{photo.name}"}
+});</pre>
+
+<p>It can be achieved by using <code class="literal"><span class="sgmltag">&lt;rich:componentControl&gt;</span></code> with parameters:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;click&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;menu&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">operation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;show&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">noEscape</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;event&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:hashParam</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;replace&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Edit&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Change&nbsp;Photo&nbsp;#{photo.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Delete&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Remove&nbsp;Photo&nbsp;#{photo.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:hashParam</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-contextMenu-Reference_data"/>12.2.5. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ContextMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIContextMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.ContextMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ContextMenuRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-contextMenu-Style_classes_and_skin_parameters"/>12.2.6. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="contextMenu-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 12.2. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-lbl</span></code></span></dt><dd>
+This class defines styles for the top level container of the context menu.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-dis</span></code></span></dt><dd>
+This class defines styles for the context menu when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabDisabledTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-lbl-dis</span></code></span></dt><dd>
+This class defines styles for the top level of the context menu when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-pos</span></code></span></dt><dd>
+This class defines the positioning of the context menu.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-lbl-unsel</span></code></span></dt><dd>
+This class defines styles for the top level of the context menu when it is unselected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-lst</span></code></span></dt><dd>
+This class defines styles for the context list.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">additionalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-lst-bg</span></code></span></dt><dd>
+This class defines styles for the background of the context list.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">additionalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-sublst</span></code></span></dt><dd>
+This class defines the positioning of the menu when used as a sub-menu.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-itm</span></code></span></dt><dd>
+This class defines styles for a menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-itm-sel</span></code></span></dt><dd>
+This class defines styles for a menu item when it is selected.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-itm-unsel</span></code></span></dt><dd>
+This class defines styles for a menu item when it is unselected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-itm-dis</span></code></span></dt><dd>
+This class defines styles for a menu item when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabDisabledTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-itm-lbl</span></code></span></dt><dd>
+This class defines styles for the label in a menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-itm-ic</span></code></span></dt><dd>
+This class defines styles for the icon in a menu item.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-emptyIcon</span></code></span></dt><dd>
+This class defines styles for an empty icon in a menu item.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-sep</span></code></span></dt><dd>
+This class defines styles for a menu separator.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-top-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ctx-nd</span></code></span></dt><dd>
+This class defines styles for a menu node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-Menu_sub-components"/>12.3. Menu sub-components</h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code>, and <code class="literal"><span class="sgmltag">&lt;rich:menuSeparator&gt;</span></code> components are used to construct menus for the <code class="literal"><span class="sgmltag">&lt;rich:dropDownMenu&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-dropDownMenu" title="12.1. &lt;rich:dropDownMenu&gt;">Section 12.1, “&lt;rich:dropDownMenu&gt;”</a> for more details on the <code class="literal"><span class="sgmltag">&lt;rich:dropDownMenu&gt;</span></code> component.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-menuItem"/>12.3.1. <a id="richmenuItem"/><code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code> component represents a single item in a menu control. The <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code> component can be also be used as a seperate component without a parent menu component, such as on a toolbar.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuItem-Basic_usage"/>12.3.1.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code> component requires the <code class="literal"><span class="varname">label</span></code> attribute for basic usage. The <code class="literal"><span class="varname">label</span></code> attribute is the text label for the menu item.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuItem-Appearance"/>12.3.1.2. Appearance</h4></div></div></div>
+
+<p>Icons can be added to menu items through the use of two icon attributes. The <code class="literal"><span class="varname">icon</span></code> attribute specifies the normal icon, while the <code class="literal"><span class="varname">iconDisabled</span></code> attribute specifies the icon for a disabled item.</p>
+<p>Alternatively, define facets with the names <code class="literal">icon</code> and <code class="literal">iconDisabled</code> to set the icons. If facets are defined, the <code class="literal"><span class="varname">icon</span></code> and <code class="literal"><span class="varname">iconDisabled</span></code> attributes are ignored. Using facets for icons allows more complex usage; example shows a checkbox being used in place of an icon.</p>
+<div class="example"><a id="exam-Component_Reference-menuItem-Icon_facets"/><p class="title"><b>Example 12.1. Icon facets</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:menuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Show&nbsp;comments&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;icon&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:selectBooleanCheckbox</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.property}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:menuItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuItem-Submission_modes"/>12.3.1.3. Submission modes</h4></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">submitMode</span></code> attribute to determine how the menu item requests are submitted:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal">server</code>, the default setting, submits the form normally and completely refreshes the page.
+</li><li>
+<code class="literal">ajax</code> performs an Ajax form submission, and re-renders elements specified with the <code class="literal"><span class="varname">render</span></code> attribute.
+</li><li>
+<code class="literal">client</code> causes the <code class="literal"><span class="varname">action</span></code> and <code class="literal"><span class="varname">actionListener</span></code> items to be ignored, and the behavior is fully defined by the nested components instead of responses from submissions.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuItem-JavaScript_API"/>12.3.1.4. JavaScript API</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">activate()</span></code></span></dt><dd>
+Activate the menu item as though it were selected.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuItem-Reference_data"/>12.3.1.5. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MenuItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIMenuItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.DropDownMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MenuItemRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-menuGroup"/>12.3.2. <a id="richmenuGroup"/><code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> component represents an expandable sub-menu in a menu control. The <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> component can contain a number of <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code> components, or further nested <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> components.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuGroup-Basic_usage"/>12.3.2.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> component requires the <code class="literal"><span class="varname">label</span></code> attribute for basic usage. The <code class="literal"><span class="varname">label</span></code> attribute is the text label for the menu item. Alternatively, use the <code class="literal">label</code> facet to define content for the label.</p>
+<p>Additionally, the <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> component must contain child <code class="literal"><span class="sgmltag">&lt;rich:menuItem&gt;</span></code> components or <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> components.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuGroup-Appearance"/>12.3.2.2. Appearance</h4></div></div></div>
+
+<p>Icons can be added to menu groups through the use of two icon attributes. The <code class="literal"><span class="varname">icon</span></code> attribute specifies the normal icon, while the <code class="literal"><span class="varname">iconDisabled</span></code> attribute specifies the icon for a disabled group.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> component can be positioned using the <code class="literal"><span class="varname">jointPoint</span></code> and <code class="literal"><span class="varname">direction</span></code> attributes, the same as the parent menu control. For details on the <code class="literal"><span class="varname">jointPoint</span></code> and <code class="literal"><span class="varname">direction</span></code> attributes, refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-dropDownMenu-Appearance" title="12.1.3. Appearance">Section 12.1.3, “Appearance”</a>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuGroup-JavaScript_API"/>12.3.2.3. JavaScript API</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuGroup&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">show()</span></code></span></dt><dd>
+Show the menu group.
+</dd><dt><span class="term"><code class="literal"><span class="function">hide()</span></code></span></dt><dd>
+Hide the menu group.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuGroup-Reference_data"/>12.3.2.4. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MenuGroup</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIMenuGroup</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.DropDownMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MenuGroupRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-menuSeparator"/>12.3.3. <a id="richmenuSeparator"/><code class="literal"><span class="sgmltag">&lt;rich:menuSeparator&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuSeparator&gt;</span></code> component represents a separating divider in a menu control.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuSeparator-Basic_usage"/>12.3.3.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:menuSeparator&gt;</span></code> component does not require any attributes for basic usage. Add it as a child to a menu component to separator menu items and menu groups.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-menuSeparator-Reference_data"/>12.3.3.2. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MenuSeparator</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIMenuSeparator</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.DropDownMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MenuSeparatorRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-panelMenu"/>12.4. <a id="richpanelMenu"/><code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component is used in conjunction with <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> to create an expanding, hierarchical menu. The <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component’s appearance can be highly customized, and the hierarchy can stretch to any number of sub-levels.</p>
+<div class="example"><a id="exam-Component_Reference-panelMenu-panelMenu"/><p class="title"><b>Example 12.2. panelMenu</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenu</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">mode</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ajax&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">topGroupExpandedRightIcon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;chevronUp&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">topGroupCollapsedRightIcon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;chevronDown&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">groupExpandedLeftIcon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;disc&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">groupCollapsedLeftIcon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;disc&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuGroup</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Group&nbsp;1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;1.1&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;1.2&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;1.3&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panelMenuGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuGroup</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Group&nbsp;2&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;2.1&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;2.2&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;2.3&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuGroup</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Group&nbsp;2.4&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;2.4.1&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;2.4.2&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;2.4.3&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panelMenuGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;2.5&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panelMenuGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelMenuItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Item&nbsp;3&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panelMenu</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<div class="figure"><a id="d4e16892"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/figu-Component_Reference-panelMenu-panelMenu.png" alt="A panel menu. The first menu group is collapsed. The second menu group is expanded; it contains menu items and a further menu group"/></div>
+</div><p class="title"><b>Figure 12.3. </b></p></div><br class="figure-break"/>
+
+</div></div><br class="example-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-Basic_usage"/>12.4.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component does not need any extra attributes declared for basic usage. However, it does require child <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> components. Refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-panelMenuGroup" title="12.4.9. &lt;rich:panelMenuGroup&gt;">Section 12.4.9, “&lt;rich:panelMenuGroup&gt;”</a> and <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-panelMenuItem" title="12.4.10. &lt;rich:panelMenuItem&gt;">Section 12.4.10, “&lt;rich:panelMenuItem&gt;”</a> for details on these child components.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-Interactivity_options"/>12.4.2. Interactivity options</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">activeItem</span></code> attribute is used to point to the name of the currently selected menu item.</p>
+<p>By default, the event to expand the menu is a mouse click. Set the <code class="literal"><span class="varname">expandEvent</span></code> attribute to specify a different event to expand menus. Multiple levels of sub-menus can be expanded in one action. Set <code class="literal"><span class="code">expandSingle="true"</span></code> to only expand one sub-menu at a time.</p>
+<p>Similarly, the default event to collapse the menu is a mouse click. Set the <code class="literal"><span class="varname">collapseEvent</span></code> attribute to specify a different event to collapse menus.</p>
+<p>As with other control components, set <code class="literal"><span class="code">disabled="true"</span></code> to disable the <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> comonent. Child menu components can be disabled in the same way.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-Appearance"/>12.4.3. Appearance</h3></div></div></div>
+
+<p>Icons for the panel menu can be chosen from a set of standard icons. Icons can be set for the top panel menu, child panel menus, and child item. There are three different menu states that the icon represents, as well as icons for both the left and right side of the item title.</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="varname">topGroupExpandedLeftIcon</span></code>, <code class="literal"><span class="varname">topGroupExpandedRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for the top level menu when it is expanded.
+</dd><dt><span class="term"><code class="literal"><span class="varname">topGroupCollapsedLeftIcon</span></code>, <code class="literal"><span class="varname">topGroupCollapsedRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for the top level menu when it is collapsed.
+</dd><dt><span class="term"><code class="literal"><span class="varname">topGroupDisabledLeftIcon</span></code>, <code class="literal"><span class="varname">topGroupDisabledRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for the top level menu when it is disabled.
+</dd><dt><span class="term"><code class="literal"><span class="varname">topItemLeftIcon</span></code>, <code class="literal"><span class="varname">topItemRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for a top level menu item.
+</dd><dt><span class="term"><code class="literal"><span class="varname">topItemDisabledLeftIcon</span></code>, <code class="literal"><span class="varname">topItemDisabledRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for a top level menu item when it is disabled.
+</dd><dt><span class="term"><code class="literal"><span class="varname">groupExpandedLeftIcon</span></code>, <code class="literal"><span class="varname">groupExpandedRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for sub-menus that are not the top-level menu when they are expanded.
+</dd><dt><span class="term"><code class="literal"><span class="varname">groupCollapsedLeftIcon</span></code>, <code class="literal"><span class="varname">groupCollapsedRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for sub-menus that are not the top-level menu when they are collapsed.
+</dd><dt><span class="term"><code class="literal"><span class="varname">groupDisabledLeftIcon</span></code>, <code class="literal"><span class="varname">groupDisabledRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for sub-menus that are not the top-level menu when they are disabled.
+</dd><dt><span class="term"><code class="literal"><span class="varname">itemLeftIcon</span></code>, <code class="literal"><span class="varname">itemRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for items in the menus.
+</dd><dt><span class="term"><code class="literal"><span class="varname">itemDisabledLeftIcon</span></code>, <code class="literal"><span class="varname">itemDisabledRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for items in the menus when they are disabled.
+</dd></dl></div>
+
+<p><a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#exam-Component_Reference-panelMenu-panelMenu" title="Example 12.2. panelMenu">Example 12.2, “panelMenu”</a> demonstrates the use of icon declaration at the panel menu level. The standard icons are shown in <a class="xref" href="chap-Component_Reference-Panels.html#figu-Component_Reference-panelMenu-Standard_icons" title="Figure 9.4. &lt;Standard icons&gt;">Figure 9.4, “&lt;Standard icons&gt;”</a>. Alternatively, point the icon attributes to the paths of image files. The image files are then used as icons.</p>
+<p>Any icons specified by child <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> components overwrite the relevant icons declared with the parent <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-Submission_modes"/>12.4.4. Submission modes</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">itemMode</span></code> attribute defines the submission mode for normal menu items that link to content, and the <code class="literal"><span class="varname">groupMode</span></code> attribute defines the submission mode for menu items that expand and collapse. The settings for these attributes apply to the entire menu unless a menu item defines its own individual <code class="literal"><span class="varname">itemMode</span></code> or <code class="literal"><span class="varname">groupMode</span></code>. The possible values for <code class="literal"><span class="varname">itemMode</span></code> and <code class="literal"><span class="varname">groupMode</span></code> are as follows:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal">server</code>, the default setting, which submits the form normally and completely refreshes the page.
+</li><li>
+<code class="literal">ajax</code>, which performs an Ajax form submission, and re-renders elements specified with the <code class="literal"><span class="varname">render</span></code> attribute.
+</li><li>
+<code class="literal">client</code>, which causes the <code class="literal"><span class="varname">action</span></code> and <code class="literal"><span class="varname">actionListener</span></code> items to be ignored, and the behavior is fully defined by the nested components instead of responses from submissions.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-panelMenu_server-side_events"/>12.4.5. <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> server-side events</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component fires the <code class="literal">ItemChangeEvent</code> event on the server side when the menu is changed. The event only fires in the <code class="literal">server</code> and <code class="literal">ajax</code> submission modes. The event provides the <code class="literal"><span class="varname">itemChangeListener</span></code> attribute to reference the event listener. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-itemChangeListener" title="9.6.6. &lt;rich:itemChangeListener&gt;">Section 9.6.6, “&lt;rich:itemChangeListener&gt;”</a> for details on the <code class="literal"><span class="sgmltag">&lt;rich:itemChangeListener&gt;</span></code> tag.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-JavaScript_API"/>12.4.6. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">expandAll()</span></code></span></dt><dd>
+Expand all the panel menu groups in the component.
+</dd><dt><span class="term"><code class="literal"><span class="function">collapseAll()</span></code></span></dt><dd>
+Collapse all the panel menu groups in the component.
+</dd><dt><span class="term"><code class="literal"><span class="function">selectItem(id)</span></code></span></dt><dd>
+Select the menu item with the <code class="literal"><span class="parameter">id</span></code> identifier (either component id or name).
+</dd><dt><span class="term"><code class="literal"><span class="function">expandGroup(id)</span></code></span></dt><dd>
+Expand a panel menu group with the <code class="literal"><span class="parameter">id</span></code> identifier (either component id or name).
+</dd><dt><span class="term"><code class="literal"><span class="function">collapseGroup(id)</span></code></span></dt><dd>
+Expand a panel menu group with the <code class="literal"><span class="parameter">id</span></code> identifier (either component id or name).
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-Reference_data"/>12.4.7. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPanelMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelMenu</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelMenuRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.PanelMenuTagHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panelMenu-Style_classes_and_skin_parameters"/>12.4.8. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="panelMenu-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 12.3. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm</span></code></span></dt><dd>
+This class defines styles for the panel menu itself.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr</span></code></span></dt><dd>
+This class defines styles for a panel menu group.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-top-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-exp</span></code>, <code class="literal">.rf-pm-colps</code></span></dt><dd>
+These classes define styles for the panel menu when it is expanded or collapsed.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-ico</span></code></span></dt><dd>
+This class defines styles for the panel menu icons.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-ico-exp</span></code>, <code class="literal">.rf-pm-ico-colps</code></span></dt><dd>
+These classes define styles for the panel menu icons when they are expanded or collapsed.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-hdr-exp</span></code>, <code class="literal">.rf-pm-hdr-colps</code></span></dt><dd>
+These classes define styles for the panel menu headers when they are expanded or collapsed.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-itm</span></code></span></dt><dd>
+This class defines styles for a panel menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-top-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-itm-gr</span></code></span></dt><dd>
+This class defines styles for a panel menu item as part of a panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal">.rf-pm-itm:hover</code></span></dt><dd>
+This class defines styles for a panel menu item when the mouse hovers over it.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">additionalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-itm-sel</span></code></span></dt><dd>
+This class defines styles for a panel menu item when it is selected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-itm-dis</span></code></span></dt><dd>
+This class defines styles for a panel menu item when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">tabDisabledTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-itm-ico</span></code></span></dt><dd>
+This class defines styles for the icon in a panel menu item.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-itm-exp-ico</span></code></span></dt><dd>
+This class defines styles for the icon in a panel menu item when it is expanded.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-itm-lbl</span></code></span></dt><dd>
+This class defines styles for the label in a panel menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr</span></code></span></dt><dd>
+This class defines styles for a panel menu group.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-top-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-gr</span></code></span></dt><dd>
+This class defines styles for a panel menu group as part of another panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-sel</span></code></span></dt><dd>
+This class defines styles for a panel menu group when it is selected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-hdr</span></code></span></dt><dd>
+This class defines styles for the header of a panel menu group.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal">.rf-pm-gr-hdr:hover</code></span></dt><dd>
+This class defines styles for the header of a panel menu group when the mouse hovers over it.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">additionalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-hdr-dis</span></code></span></dt><dd>
+This class defines styles for the header of a panel menu group when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">tabDisabledTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-ico</span></code></span></dt><dd>
+This class defines styles for the icon in a panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-exp-ico</span></code></span></dt><dd>
+This class defines styles for the icon in a panel menu group when it is expanded.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-lbl</span></code></span></dt><dd>
+This class defines styles for the label in a panel menu group.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-gr-cnt</span></code></span></dt><dd>
+This class defines styles for the content of a panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-itm</span></code></span></dt><dd>
+This class defines styles for the top panel menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-itm-gr</span></code></span></dt><dd>
+This class defines styles for the top panel menu item as part of a panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal">.rf-pm-top-itm:hover</code></span></dt><dd>
+This class defines styles for the top panel menu item when the mouse hovers over it.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">headerTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-itm-sel</span></code></span></dt><dd>
+This class defines styles for the top panel menu item when it is selected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-itm-dis</span></code></span></dt><dd>
+This class defines styles for the top panel menu item when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">tabDisabledTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-itm-ico</span></code></span></dt><dd>
+This class defines styles for the icon in the top panel menu item.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-itm-exp-ico</span></code></span></dt><dd>
+This class defines styles for the icon in the top panel menu item when it is expanded.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-itm-lbl</span></code></span></dt><dd>
+This class defines styles for the label in the top panel menu item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr</span></code></span></dt><dd>
+This class defines styles for the top panel menu group.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-gr</span></code></span></dt><dd>
+This class defines styles for the top panel menu group as part of another panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-sel</span></code></span></dt><dd>
+This class defines styles for the top panel menu group when it is selected.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-hdr</span></code></span></dt><dd>
+This class defines styles for the header of the top panel menu group.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">headerTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-hdr-dis</span></code></span></dt><dd>
+This class defines styles for the header of the top panel menu group when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">tabDisabledTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">additionalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-ico</span></code></span></dt><dd>
+This class defines styles for the icon in the top panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-exp-ico</span></code></span></dt><dd>
+This class defines styles for the icon in the top panel menu group when it is expanded.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-lbl</span></code></span></dt><dd>
+This class defines styles for the label in the top panel menu group.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pm-top-gr-cnt</span></code></span></dt><dd>
+This class defines styles for the content of the top panel menu group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-panelMenuGroup"/>12.4.9. <a id="richpanelMenuGroup"/><code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component defines a group of <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> components inside a <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code>.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuGroup-Basic_usage"/>12.4.9.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component needs the <code class="literal"><span class="varname">label</span></code> attribute declared, which specifies the text to show for the menu entry. Alternatively, the <code class="literal">label</code> facet can be used to specify the menu text.</p>
+<p>In addition, the <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component at least one <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> or <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> components as child elements.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuGroup-Appearance"/>12.4.9.2. Appearance</h4></div></div></div>
+
+<p>Icons for the menu group are inherited from the parent <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Appearance" title="12.4.3. Appearance">Section 12.4.3, “Appearance”</a> for details on icon attributes and facets. Alternatively, the menu group’s icons can be re-defined at the <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component level, and these settings will be used instead of the parent component’s settings.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuGroup-Submission_modes"/>12.4.9.3. Submission modes</h4></div></div></div>
+
+<p>If the <code class="literal"><span class="varname">mode</span></code> attribute is unspecified, the submission behavior for the group is inherited from the parent <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code>. Otherwise, the <code class="literal"><span class="varname">groupMode</span></code> setting of the panel menu is used instead of the parent’s behavior. Refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Submission_modes" title="12.4.4. Submission modes">Section 12.4.4, “Submission modes”</a> for submission mode settings.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuGroup-panelMenuGroup_server-side_events"/>12.4.9.4. <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> server-side events</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component fires the <code class="literal">ActionEvent</code> event on the server side when the menu group receives a user action. The event only fires in the <code class="literal">server</code> and <code class="literal">ajax</code> submission modes. The event provides the <code class="literal"><span class="varname">action</span></code> attribute to specify the user action method, and the <code class="literal"><span class="varname">actionListener</span></code> attribute to reference the event listener.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuGroup-JavaScript_API"/>12.4.9.5. JavaScript API</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">expand()</span></code></span></dt><dd>
+Expand this panel menu group.
+</dd><dt><span class="term"><code class="literal"><span class="function">collapse()</span></code></span></dt><dd>
+Collapse this panel menu group.
+</dd><dt><span class="term"><code class="literal"><span class="function">select()</span></code></span></dt><dd>
+Select this panel menu group.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuGroup-Reference_data"/>12.4.9.6. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelMenuGroup</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPanelMenuGroup</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelMenuGroup</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-panelMenuItem"/>12.4.10. <a id="richpanelMenuItem"/><code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> component represents a single item inside a <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component, which is in turn part of a <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> component.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuItem-Basic_usage"/>12.4.10.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> component needs the <code class="literal"><span class="varname">label</span></code> attribute declared, which specifies the text to show for the menu entry. Alternatively, the <code class="literal">label</code> facet can be used to specify the menu text.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuItem-Appearance"/>12.4.10.2. Appearance</h4></div></div></div>
+
+<p>Icons for the menu item are inherited from the parent <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> or <code class="literal"><span class="sgmltag">&lt;rich:panelMenuGroup&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-panelMenu-Appearance" title="12.4.3. Appearance">Section 12.4.3, “Appearance”</a> for details on icon attributes and facets. Alternatively, the menu item’s icons can be re-defined at the <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> component level, and these settings will be used instead of the parent component’s settings.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuItem-Submission_modes"/>12.4.10.3. Submission modes</h4></div></div></div>
+
+<p>If the <code class="literal"><span class="varname">mode</span></code> is unspecified, the submission behavior for the item is inherited from the parent <code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code>. Otherwise, the <code class="literal"><span class="varname">itemMode</span></code> setting from the panel menu is used instead of the parent’s behavior.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuItem-panelMenuItem_server-side_events"/>12.4.10.4. <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> server-side events</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> component fires the <code class="literal">ActionEvent</code> event on the server side when the menu item receives a user action. The event only fires in the <code class="literal">server</code> and <code class="literal">ajax</code> submission modes. The event provides the <code class="literal"><span class="varname">action</span></code> attribute to specify the user action performed, and the <code class="literal"><span class="varname">actionListener</span></code> attribute to reference the event listener.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuItem-JavaScript_API"/>12.4.10.5. JavaScript API</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panelMenuItem&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">select()</span></code></span></dt><dd>
+Select this menu item.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-panelMenuItem-Reference_data"/>12.4.10.6. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelMenuItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPanelMenuItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelMenuItem</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-toolbar"/>12.5. <a id="richtoolbar"/><code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code> component is a horizontal toolbar. Any JavaServer Faces ( <acronym class="acronym">JSF</acronym>) component can be added to the toolbar.</p>
+<div class="figure"><a id="figu-Component_Reference-toolbar-toolbar"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-toolbar-toolbar.png" alt="figu Component Reference toolbar toolbar"/></div>
+</div><p class="title"><b>Figure 12.4. <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-toolbar-Basic_usage"/>12.5.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code> component does not require any attributes to be defined for basic usage. Add child components to the <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code> component to have them appear on the toolbar when rendered.</p>
+<div class="example"><a id="exam-Component_Reference-toolbar-Basic_usage"/><p class="title"><b>Example 12.3. Basic usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toolbar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandLink</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;News&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandLink</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Reviews&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandLink</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Galleries&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:toolbar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-toolbar-Appearance"/>12.5.2. Appearance</h3></div></div></div>
+
+<p>Set the width and height of the toolbar using the common <code class="literal"><span class="varname">width</span></code> and <code class="literal"><span class="varname">height</span></code> attributes.</p>
+<p>Items on the toolbar can be separated by a graphical item separator. Use the <code class="literal"><span class="varname">itemSeparator</span></code> attribute to specify one of the standard separator styles:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal">none</code>, the default appearance, does not show any item separators.
+</li><li>
+<code class="literal">disc</code> shows a small circular disc to separate items: <span class="inlinemediaobject"><img src="images/figu-Component_Reference-toolbar-disc.png" alt="figu-Component_Reference-toolbar-disc"/></span>
+</li><li>
+<code class="literal">grid</code> shows a grid pattern to separate items: <span class="inlinemediaobject"><img src="images/figu-Component_Reference-toolbar-grid.png" alt="figu-Component_Reference-toolbar-grid"/></span>
+</li><li>
+<code class="literal">line</code> shows a vertical line to separate items: <span class="inlinemediaobject"><img src="images/figu-Component_Reference-toolbar-line.png" alt="figu-Component_Reference-toolbar-line"/></span>
+</li><li>
+<code class="literal">square</code> shows a small square to separate items: <span class="inlinemediaobject"><img src="images/figu-Component_Reference-toolbar-square.png" alt="figu-Component_Reference-toolbar-square"/></span>
+</li></ul></div>
+
+<p>Alternatively, use the <code class="literal"><span class="varname">itemSeparator</span></code> attribute to specify a URL to an image. The image is then used as an item separator. The appearance of the item separator can be additionally customized by using the <code class="literal">itemSeparator</code> facet.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-toolbar-Grouping_items"/>12.5.3. Grouping items</h3></div></div></div>
+
+<p>Group together multiple items on the toolbar by using the <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code> child component. Refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-toolbarGroup" title="12.5.6. &lt;rich:toolbarGroup&gt;">Section 12.5.6, “&lt;rich:toolbarGroup&gt;”</a> for full details on the <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code> component.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-toolbar-Reference_data"/>12.5.4. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Toolbar</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIToolbar</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Toolbar</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ToolbarRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-toolbar-Style_classes_and_skin_parameters"/>12.5.5. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="toolbar-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 12.4. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="6" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tb</span></code></span></dt><dd>
+This class defines styles for the toolbar itself.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerWeightFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-weight</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tb-itm</span></code></span></dt><dd>
+This class defines styles for an item in the toolbar.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tb-sep</span></code></span></dt><dd>
+This class defines styles for a separator in the toolbar.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tb-sep-grid</span></code>, <code class="literal">.rf-tb-sep-line</code>, <code class="literal">.rf-tb-sep-disc</code>, <code class="literal">.rf-tb-sep-square</code></span></dt><dd>
+These classes define styles for grid, line, disc, and square separators.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tb-cntr</span></code></span></dt><dd>
+This class defines styles for the container of the toolbar.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Menus_and_toolbars-toolbarGroup"/>12.5.6. <a id="richtoolbarGroup"/><code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code> component is a child component of the <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code> component. The <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code> component is used to group a number of items together on a toolbar.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-toolbarGroup-Basic_usage"/>12.5.6.1. Basic usage</h4></div></div></div>
+
+<p>Like the <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code> parent component, the <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code> component does not require any extra attributes for basic functionality. Add child components to the <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code> component to have them appear grouped on the parent toolbar when rendered.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-toolbarGroup-Appearance"/>12.5.6.2. Appearance</h4></div></div></div>
+
+<p>Similar to the <code class="literal"><span class="sgmltag">&lt;rich:toolbar&gt;</span></code> component, items within a <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code> can be separated by specifying the <code class="literal"><span class="varname">itemSeparator</span></code> attribute. Refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-toolbar-Appearance" title="12.5.2. Appearance">Section 12.5.2, “Appearance”</a> for details on using the <code class="literal"><span class="varname">itemSeparator</span></code> attribute.</p>
+<p>Groups of toolbar items can be located on either the left-hand side or the right-hand side of the parent toolbar. By default, they appear to the left. To locate the toolbar group to the right of the parent toolbar, set <code class="literal"><span class="code">location="right"</span></code>.</p>
+<div class="example"><a id="exam-Component_Reference-toolbarGroup-toolbarGroup"/><p class="title"><b>Example 12.4. <code class="literal"><span class="sgmltag">&lt;rich:toolbarGroup&gt;</span></code></b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toolBar</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">height</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;26&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemSeparator</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;grid&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toolBarGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/create_doc.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/create_folder.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/copy.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:toolBarGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toolBarGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/save.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/save_as.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/save_all.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:toolBarGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toolBarGroup</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">location</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;right&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/find.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/icons/filter.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:toolBarGroup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:toolBar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The example shows how to locate a toolbar group to the right-hand side of the parent toolbar. It also demonstrates how item separators on the parent toolbar work with toolbar groups.</p>
+<div class="figure"><a id="d4e18223"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/figu-Component_Reference-toolbarGroup-toolbarGroup.png" alt="A toolbar using icons. Two toolbar groups are located on the left-hand side of the toolbar and separated by a grid pattern. The third toolbar group is located to the right-hand side."/></div>
+</div><p class="title"><b>Figure 12.5. </b></p></div><br class="figure-break"/>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-toolbarGroup-Reference_data"/>12.5.6.3. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ToolbarGroup</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIToolbarGroup</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Toolbar</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ToolbarGroupRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Trees.html"><strong>Prev</strong>Chapter 11. Trees</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Output_and_messages.html"><strong>Next</strong>Chapter 13. Output and messages</a></li></ul></body></html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 5. Containers</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-Ajax_control_components.html" title="Part I. Ajax control components"/><link rel="prev" href="chap-Component_Reference-Resources.html" title="Chapter 4. Resources"/><link rel="next" href="chap-Component_Reference-Validation.html" title="Chapter 6. Validation"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Resources.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Validation.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Containers"/>Chapter 5. Containers</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Containers.html#sect-Component_Reference-Containers-outputPanel">5.1. &lt;a4j:outputPanel&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Containers.html#sect-Component_Reference-outputPanel-Aiding_complex_Ajax_rendering">5.1.1. Aiding complex Ajax rendering</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Containers.html#sect-Component_Reference-outputPanel-Panel_appearance">5.1.2. Panel appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Containers.html#sect-Component_Reference-outputPanel-Reference_data">5.1.3. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Containers.html#sect-Component_Reference-Containers-region">5.2. &lt;a4j:region&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Containers.html#sect-Component_Reference-region-Reference_data">5.2.1. Reference data</a></span></dt></dl></dd></dl></div>
+
+<p>This chapter details those components in the <code class="literal"><span class="classname">r</span></code> tag library which define an area used as a container or wrapper for other components.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Containers-outputPanel"/>5.1. <a id="a4joutputPanel"/><code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component is used to group together components in to update them as a whole, rather than having to specify the components individually.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-outputPanel-Aiding_complex_Ajax_rendering"/>5.1.1. Aiding complex Ajax rendering</h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component to wrap behaviors when using complex Ajax rendering. Parent components may not render correctly when attached behaviors trigger updates. Point the behaviors to the wrapping <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component instead of the parent components. The <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component is properly encoded to ensure the wrapped components are correctly rendered.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-outputPanel-Panel_appearance"/>5.1.2. Panel appearance</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">layout</span></code> attribute can be used to determine how the component is rendered in <acronym class="acronym">HTML</acronym>:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="code">layout="inline"</span></code> is the default behavior, which will render the component as a pair of <code class="literal"><span class="sgmltag">&lt;span&gt;</span></code> tags containing the child components.
+</li><li>
+<code class="literal"><span class="code">layout="block"</span></code> will render the component as a pair of <code class="literal"><span class="sgmltag">&lt;div&gt;</span></code> tags containing the child components, which will use any defined <code class="literal"><span class="sgmltag">&lt;div&gt;</span></code> element styles.
+</li></ul></div>
+
+<p>Setting <code class="literal"><span class="code">ajaxRendered="true"</span></code> will cause the <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> to be updated with each Ajax response for the page, even when not listed explicitly by the requesting component. This can in turn be overridden by specific attributes on any requesting components.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-outputPanel-Reference_data"/>5.1.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.OutputPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIOutputPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Panel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.OutputPanelRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Containers-region"/>5.2. <a id="a4jregion"/><code class="literal"><span class="sgmltag">&lt;a4j:region&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:region&gt;</span></code> component specifies a part of the JSF component tree to be processed on the server. The region causes all the <code class="literal"><span class="classname">r</span></code> Ajax controls to execute: decoding, validating, and updating the model. The region causes these components to execute even if not explicitly declared. As such, processing areas can more easily be marked using a declarative approach.</p>
+<p>Regions can be nested, in which case only the parent region of the component initiating the request will be processed.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-region-Reference_data"/>5.2.1. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Region</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIRegion</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.AjaxContainer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Resources.html"><strong>Prev</strong>Chapter 4. Resources</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Validation.html"><strong>Next</strong>Chapter 6. Validation</a></li></ul></body></html>

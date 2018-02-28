@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 11. Trees</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="prev" href="chap-Component_Reference-Tables_and_grids.html" title="Chapter 10. Tables and grids"/><link rel="next" href="chap-Component_Reference-Menus_and_toolbars.html" title="Chapter 12. Menus and toolbars"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Tables_and_grids.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Menus_and_toolbars.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Trees"/>Chapter 11. Trees</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-Trees-tree">11.1. &lt;rich:tree&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Basic_usage">11.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Appearance">11.1.2. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Expanding_and_collapsing_tree_nodes">11.1.3. Expanding and collapsing tree nodes</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Selecting_tree_nodes">11.1.4. Selecting tree nodes</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Identifying_nodes_with_the_rowKeyConverter_attribute">11.1.5. Identifying nodes with the rowKeyConverter attribute</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Event_handling">11.1.6. Event handling</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Reference_data">11.1.7. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Style_classes">11.1.8. Style classes</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-Actions-treeSelectionChangeListener">11.1.9. &lt;rich:treeSelectionChangeListener&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-Trees-treeNode">11.1.10. &lt;rich:treeNode&gt;</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-Trees-Tree_adaptors">11.2. Tree adaptors</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-Tree_adaptors-treeModelAdaptor">11.2.1. &lt;rich:treeModelAdaptor&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Trees.html#sect-Component_Reference-Tree_adaptors-treeModelRecursiveAdaptor">11.2.2. &lt;rich:treeModelRecursiveAdaptor&gt;</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter for details on components that use tree structures.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Trees-tree"/>11.1. <a id="richtree"/><code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component provides a hierarchical tree control. Each <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component typically consists of <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> child components. The appearance and behavior of the tree and its nodes can be fully customized.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Basic_usage"/>11.1.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component requires the <code class="literal"><span class="varname">value</span></code> attribute to point to the data model for populating the tree. The data model must be either an <code class="literal"><span class="interfacename">org.richfaces.model.TreeNode</span></code> interface, an <code class="literal"><span class="varname">org.richfaces.model.TreeDataModel</span></code> interface, or a <code class="literal"><span class="interfacename">javax.swing.tree.TreeNode</span></code> interface. The <code class="literal"><span class="varname">var</span></code> attribute declares the variable used for iterating through the data model, so that child <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> components can reference each iteration.</p>
+<p>Ideally, the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component needs one or more <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> components to work with the data model. However if no <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> components are provided the tree creates default nodes instead.</p>
+<div class="example"><a id="exam-Component_Reference-tree-Basic_usage"/><p class="title"><b>Example 11.1. Basic usage</b></p><div class="example-contents">
+
+<p>This example demonstrates basic usage of the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component using an <code class="literal"><span class="interfacename">org.richfaces.model.TreeNode</span></code> data model.</p>
+<p>First extend the <code class="literal"><span class="classname">org.richfaces.model.TreeNodeImpl</span></code> and add the data fields you require, with appropriate accessor methods, as in:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">model</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">TreeNodeImpl</span><!-- <br/> --><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">TreeNodeImpl</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">Object</span><span class="java_plain">&nbsp;data</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_separator">(</span><span class="java_type">boolean</span><span class="java_plain">&nbsp;leaf</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">Object</span><span class="java_plain">&nbsp;data</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">(</span><span class="java_plain">leaf</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">data&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;data</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">Object</span><span class="java_plain">&nbsp;getData</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;data</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;toString</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">toString</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_operator">+</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;&nbsp;&gt;&gt;&nbsp;&quot;</span><span class="java_plain">&nbsp;</span><span class="java_operator">+</span><span class="java_plain">&nbsp;data</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre>
+
+<p>Then, the data model is constructed as follows:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">private</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">DataHolderTreeNodeImpl</span><!-- <br/> --><span class="java_plain">&nbsp;stationRoot</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_plain">&nbsp;rootNodes</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_plain">&nbsp;getRootNodes</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">rootNodes&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_separator">[]</span><span class="java_plain">&nbsp;kickRadioFeed&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span><span class="java_literal">&quot;Hall&nbsp;&amp;&nbsp;Oates&nbsp;-&nbsp;Kiss&nbsp;On&nbsp;My&nbsp;List&quot;</span><span class="java_separator">,</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_literal">&quot;David&nbsp;Bowie&nbsp;-&nbsp;Let's&nbsp;Dance&quot;</span><span class="java_separator">,</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_literal">&quot;Lyn&nbsp;Collins&nbsp;-&nbsp;Think&nbsp;(About&nbsp;It)&quot;</span><span class="java_separator">,</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_literal">&quot;Kim&nbsp;Carnes&nbsp;-&nbsp;Bette&nbsp;Davis&nbsp;Eyes&quot;</span><span class="java_separator">,</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_literal">&quot;KC&nbsp;&amp;&nbsp;the&nbsp;Sunshine&nbsp;Band&nbsp;-&nbsp;Give&nbsp;It&nbsp;Up&quot;</span><span class="java_separator">};</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stationRoot&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_separator">(</span><span class="java_literal">false</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;KickRadio&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">for</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_type">int</span><span class="java_plain">&nbsp;i&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_literal">0</span><span class="java_separator">;</span><span class="java_plain">&nbsp;i</span><span class="java_operator">&lt;</span><span class="java_plain">kickRadioFeed</span><span class="java_separator">.</span><span class="java_plain">length</span><span class="java_separator">;</span><span class="java_plain">&nbsp;i</span><span class="java_operator">++</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_plain">&nbsp;child&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_separator">(</span><span class="java_literal">true</span><span class="java_separator">,</span><span class="java_plain">&nbsp;kickRadioFeed</span><span class="java_separator">[</span><span class="java_plain">i</span><span class="java_separator">]);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stationRoot</span><span class="java_separator">.</span><span class="java_plain">addChild</span><span class="java_separator">(</span><span class="java_plain">i</span><span class="java_separator">,</span><span class="java_plain">&nbsp;child</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rootNodes&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">DataHolderTreeNodeImpl</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rootNodes</span><span class="java_separator">.</span><span class="java_plain">addChild</span><span class="java_separator">(</span><span class="java_literal">0</span><span class="java_separator">,</span><span class="java_plain">&nbsp;stationRoot</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;rootNodes</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">}</span>
+</pre>
+
+<p>The tree then accesses the nodes of the model using the <code class="literal">station</code> variable:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{stations.stationNodes}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;station&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{station}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<div class="figure"><a id="d4e14975"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/exam-Component_Reference-tree-Basic_usage.png" alt="exam Component Reference tree Basic usage"/></div>
+</div><p class="title"><b>Figure 11.1. </b></p></div><br class="figure-break"/>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Appearance"/>11.1.2. Appearance</h3></div></div></div>
+
+<p>Different nodes in the tree can have different appearances, such as node icons, depending on the type of data the node contains. Use the <code class="literal"><span class="varname">nodeType</span></code> attribute to differentiate the types of nodes; the node is then rendered according to the <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> component with the corresponding <code class="literal"><span class="varname">type</span></code> attribute. <a class="xref" href="chap-Component_Reference-Trees.html#exam-Component_Reference-tree-nodeType_attribute" title="Example 11.2. nodeType attribute">Example 11.2, “nodeType attribute”</a> shows a <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component with three different child <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> components defined to represent three different node appearances. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-treeNode-Appearance" title="11.1.10.2. Appearance">Section 11.1.10.2, “Appearance”</a> for details on customizing the appearance of <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> components.</p>
+<div class="example"><a id="exam-Component_Reference-tree-nodeType_attribute"/><p class="title"><b>Example 11.2. <code class="literal"><span class="varname">nodeType</span></code> attribute</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodeType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{node.type}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;node&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{treeBean.rootNodes}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;country&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;company&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconExpanded</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/disc.gif&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">iconCollapsed</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/disc.gif&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cd&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/song.gif&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.artist}&nbsp;-&nbsp;#{node.name}&nbsp;-&nbsp;#{node.year}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<div class="figure"><a id="d4e15003"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/figu-Component_Reference-tree-tree.png" alt="figu Component Reference tree tree"/></div>
+</div><p class="title"><b>Figure 11.2. </b></p></div><br class="figure-break"/>
+
+</div></div><br class="example-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_default_nodes"/>11.1.2.1. Default nodes</h4></div></div></div>
+
+<p>If the <code class="literal"><span class="varname">nodeType</span></code> attribute returns null the nodes are rendered as "<span class="emphasis"><em>typeless</em></span>" (or default) nodes.
+Setting <span class="emphasis"><em>useDefaultNode="true"</em></span> the default nodes can be used to render nodes that do not match with the provided treeNodes.</p>
+<div class="example"><a id="d4e15016"/><p class="title"><b>Example 11.3. Default treeNode</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodeType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{node.type}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;node&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{treeBean.rootNodes}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">useDefaultNode</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;country&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>Only type="country" is set up, other nodes ("company" and "cd") will be created using the default treeNode.</p>
+<div class="figure"><a id="d4e15020"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/figu-Component_Reference-tree-defaultNode1.png" alt="figu Component Reference tree defaultNode1"/></div>
+</div><p class="title"><b>Figure 11.3. </b></p></div><br class="figure-break"/>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodeType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{node.type}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;node&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{treeBean.rootNodes}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">useDefaultNode</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;country&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;defaultNode&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconExpanded</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/disc.gif&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconCollapsed</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/disc.gif&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/song.gif&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The appearance of the default treeNode can be changed by using a facet named <code class="literal">defaultNode</code>.</p>
+<div class="figure"><a id="d4e15029"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/figu-Component_Reference-tree-defaultNode2.png" alt="figu Component Reference tree defaultNode2"/></div>
+</div><p class="title"><b>Figure 11.4. </b></p></div><br class="figure-break"/>
+
+</div></div><br class="example-break"/>
+
+<p>Icons for different nodes and node states can be defined for the whole tree using the following attributes:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="varname">iconLeaf</span></code></span></dt><dd>
+The <code class="literal"><span class="varname">iconLeaf</span></code> attribute points to the icon to use for any node that does not contain any child nodes.
+</dd><dt><span class="term"><code class="literal"><span class="varname">iconExpanded</span></code>  and <code class="literal"><span class="varname">iconCollapsed</span></code></span></dt><dd>
+The <code class="literal"><span class="varname">iconExpanded</span></code> and <code class="literal"><span class="varname">iconCollapsed</span></code> attributes point to the icons to use for expanded and collapsed nodes respectively. If these attributes are defined, the <code class="literal"><span class="varname">icon</span></code> attribute is not used.
+</dd></dl></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Expanding_and_collapsing_tree_nodes"/>11.1.3. Expanding and collapsing tree nodes</h3></div></div></div>
+
+<p>The mode for performing submissions when nodes are expanded or collapsed is determined by the <code class="literal"><span class="varname">toggleType</span></code> attribute, which can have one of the following three values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+This is the default setting. The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component performs an Ajax form submission, and only the content of the tree is rendered.
+</dd><dt><span class="term"><code class="literal">server</code></span></dt><dd>
+The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component performs a common submission, completely refreshing the page.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component updates on the client side through JavaScript, without any additional requests or updates. All nodes are rendered to the client during the initial page rendering.
+</dd></dl></div>
+
+<p>By default, tree nodes are expanded and collapsed through the <span class="guibutton"><strong>\+</strong></span> and <span class="guibutton"><strong>-</strong></span> controls. To expand or collapse a tree node using an action event such as a mouse click, specify the event with the <code class="literal"><span class="varname">toggleNodeEvent</span></code> attribute.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Selecting_tree_nodes"/>11.1.4. Selecting tree nodes</h3></div></div></div>
+
+<p>The mode for performing submissions when nodes are selected is determined by the <code class="literal"><span class="varname">selectionType</span></code> attribute, which can have one of the following three values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+This is the default setting. The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component performs an Ajax form submission, and only the content of the tree is rendered.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component updates on the client side using JavaScript, without any additional requests or updates.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Identifying_nodes_with_the_rowKeyConverter_attribute"/>11.1.5. Identifying nodes with the <code class="literal"><span class="varname">rowKeyConverter</span></code> attribute</h3></div></div></div>
+
+<p>If the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component uses a custom data model, the data model provides unique keys for tree nodes so they can be identified during a client request. The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component can use strings as key values. These strings may contain special characters that are not allowed by browsers, such as the left angle bracket (&lt;) and ampersand (&amp;). To allow these characters in the keys, a row key converter must be provided.</p>
+<p>To apply a converter to the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component, define it with the <code class="literal"><span class="varname">rowKeyConverter</span></code> attribute.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Event_handling"/>11.1.6. Event handling</h3></div></div></div>
+
+<p>In addition to the standard Ajax events and HMTL events, the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component uses the following client-side events:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">nodetoggle</span></code> event is triggered when a node is expanded or collapsed.
+</li><li>
+The <code class="literal"><span class="varname">beforenodetoggle</span></code> event is triggered before a node is expanded or collapsed.
+</li><li>
+The <code class="literal"><span class="varname">selectionchange</span></code> event is triggered when a node is selected.
+</li><li>
+The <code class="literal"><span class="varname">beforeselectionchange</span></code> event is triggered before a node is selected.
+</li></ul></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component uses the following server-side listeners:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">toggleListener</span></code> listener processes expand and collapse events.
+</li><li>
+The <code class="literal"><span class="varname">selectionChangeListener</span></code> listener processes the request when a node is selected.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Reference_data"/>11.1.7. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Tree</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UItree</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Tree</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TreeRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.TreeHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tree-Style_classes"/>11.1.8. Style classes</h3></div></div></div>
+
+<p>Styling for the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component is mostly applied to the tree nodes. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-treeNode-Style_classes_and_skin_parameters" title="11.1.10.5. Style classes and skin parameters">Section 11.1.10.5, “Style classes and skin parameters”</a> for details on styling tree nodes. In addition, the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component can make use of the style classes outlined in <a class="xref" href="chap-Component_Reference-Trees.html#tree-Style_classes" title="Style classes (selectors)">Style classes (selectors)</a>.</p>
+<div class="variablelist"><a id="tree-Style_classes"/><p class="title"><b>Style classes (selectors)</b></p><dl><dt><span class="term"><code class="literal">.rf-tr-nd</code></span></dt><dd>
+This class defines styles for the nodes in a tree.
+</dd><dt><span class="term"><code class="literal">.rf-tr-nd-last</code></span></dt><dd>
+This class defines styles for last node in a tree.
+</dd><dt><span class="term"><code class="literal">.rf-tr-nd-colps</code></span></dt><dd>
+This class defines styles for a collapsed tree node.
+</dd><dt><span class="term"><code class="literal">.rf-tr-nd-exp</code></span></dt><dd>
+This class defines styles for an expanded tree node.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Actions-treeSelectionChangeListener"/>11.1.9. <a id="richtreeSelectionChangeListener"/><code class="literal"><span class="sgmltag">&lt;rich:treeSelectionChangeListener&gt;</span></code></h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="sgmltag">&lt;rich:treeSelectionChangeListener&gt;</span></code> tag to register a <code class="literal"><span class="classname">TreeSelectionChangeListener</span></code> class on a parent <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component. The class provided as a listener must implement the <code class="literal"><span class="interfacename">org.richfaces.event.TreeSelectionChangeListener</span></code> interface. The <code class="literal"><span class="methodname">processTreeSelectionChange</span></code> method accepts an <code class="literal"><span class="classname">org.richface.event.TreeSelectionChangeEvent</span></code> event as a parameter.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Trees-treeNode"/>11.1.10. <a id="richtreeNode"/><code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> component is a child component of the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component. It represents nodes in the parent tree. The appearance and functionality of each tree node can be customized.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeNode-Basic_usage"/>11.1.10.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> component must be a child of a <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component or a tree adaptor component. It does not need any attributes declared for basic usage, but can provide markup templates for tree nodes of particular types. Default markup is used if the tree node type is not specified. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#exam-Component_Reference-tree-Basic_usage" title="Example 11.1. Basic usage">Example 11.1, “Basic usage”</a> for an example of basic <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> component usage.</p>
+<div class="example"><a id="exam-Component_Reference-treeNode-Basic_usage"/><p class="title"><b>Example 11.4. Basic usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodeType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{node.type}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;node&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{treeBean.rootNodes}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;country&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;state&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;city&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{node.name}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The example renders a simple tree of countries. Each country node expands to show state nodes for that country, and each state node expands to show city nodes for that state.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeNode-Appearance"/>11.1.10.2. Appearance</h4></div></div></div>
+
+<p>Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Appearance" title="11.1.2. Appearance">Section 11.1.2, “Appearance”</a> for the <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component for details and examples on styling nodes and icons. Icon styling for individual <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> components uses the same attributes as the parent <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component: <code class="literal"><span class="varname">iconLeaf</span></code>, <code class="literal"><span class="varname">iconExpanded</span></code>, and <code class="literal"><span class="varname">iconCollapsed</span></code>. Icon-related attributes specified for child <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> components overwrite any global icon attributes of the parent <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component.</p>
+<p>Use the <code class="literal"><span class="varname">rendered</span></code> attribute to determine whether the node should actually be rendered in the tree or not. Using the <code class="literal"><span class="varname">rendered</span></code> attribute in combination with the <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> <code class="literal"><span class="varname">type</span></code> attribute can allow further style differentiation between node content.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeNode-Interactivity"/>11.1.10.3. Interactivity</h4></div></div></div>
+
+<p>Interactivity with individual nodes, such as expanding, collapsing, and other event handling, can be managed by the parent <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Expanding_and_collapsing_tree_nodes" title="11.1.3. Expanding and collapsing tree nodes">Section 11.1.3, “Expanding and collapsing tree nodes”</a> and <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Event_handling" title="11.1.6. Event handling">Section 11.1.6, “Event handling”</a> for further details.</p>
+<p>Use the <code class="literal"><span class="varname">expanded</span></code> attribute to determine whether the node is expanded or collapsed.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeNode-Reference_data"/>11.1.10.4. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TreeNode</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITreeNode</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.TreeNode</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TreeNodeRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.TreeNodeHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeNode-Style_classes_and_skin_parameters"/>11.1.10.5. Style classes and skin parameters</h4></div></div></div>
+
+<div class="table"><a id="treeNode-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 11.1. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn</span></code></span></dt><dd>
+This class defines styles for a tree node.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-lbl</span></code></span></dt><dd>
+This class defines styles for a tree node label.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-cnt</span></code></span></dt><dd>
+This class defines styles for tree node content.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-sel</span></code></span></dt><dd>
+This class defines styles for a selected tree node.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">additionalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-ldn</span></code></span></dt><dd>
+This class defines styles for a tree node when it is loading.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">additionalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-hnd</span></code></span></dt><dd>
+This class defines styles for a tree node handle.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-hnd-lf</span></code></span></dt><dd>
+This class defines styles for the handle of a leaf node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-hnd-colps</span></code></span></dt><dd>
+This class defines styles for the handle of a collapsed node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-hnd-exp</span></code></span></dt><dd>
+This class defines styles for the handle of an expanded node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-hnd-ldn-fct</span></code></span></dt><dd>
+This class defines styles for the loading facet of a tree node handle.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-ico</span></code></span></dt><dd>
+This class defines styles for tree node icon.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-ico-lf</span></code></span></dt><dd>
+This class defines styles for the icon of a leaf node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-ico-colps</span></code></span></dt><dd>
+This class defines styles for the icon of a collapsed node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-ico-exp</span></code></span></dt><dd>
+This class defines styles for the icon of an expanded node.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-trn-ico-cst</span></code></span></dt><dd>
+This class defines styles for a custom node icon.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-Actions-treeToggleListener"/>11.1.10.6. <a id="richtreeToggleListener"/><code class="literal"><span class="sgmltag">&lt;rich:treeToggleListener&gt;</span></code></h4></div></div></div>
+
+<p>Use the <code class="literal"><span class="sgmltag">&lt;rich:treeToggleListener&gt;</span></code> tag to register a <code class="literal"><span class="classname">TreeToggleListener</span></code> class on a parent <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> component. The class provided as a listener must implement the <code class="literal"><span class="interfacename">org.richfaces.event.TreeToggleListener</span></code> interface. The <code class="literal"><span class="methodname">processTreeToggle</span></code> method accepts an <code class="literal"><span class="classname">org.richface.event.TreeToggleEvent</span></code> event as a parameter.</p>
+</div>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Trees-Tree_adaptors"/>11.2. Tree adaptors</h2></div></div></div>
+
+<p>Use a tree adaptor to populate a tree model declaratively from a non-hierarchical model, such as a list or a map.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Tree_adaptors-treeModelAdaptor"/>11.2.1. <a id="richtreeModelAdaptor"/><code class="literal"><span class="sgmltag">&lt;rich:treeModelAdaptor&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeModelAdaptor&gt;</span></code> component takes an object which implements the <code class="literal"><span class="interfacename">Map</span></code> or <code class="literal"><span class="interfacename">Iterable</span></code> interfaces. It adds all the object entries to the parent node as child nodes.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeModelAdaptor-Basic_usage"/>11.2.1.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeModelAdaptor&gt;</span></code> component is added as a nested child component to a <code class="literal"><span class="sgmltag">&lt;rich:tree&gt;</span></code> component, or to another tree adaptor component.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeModelAdaptor&gt;</span></code> component requires the <code class="literal"><span class="varname">nodes</span></code> attribute for basic usage. The <code class="literal"><span class="varname">nodes</span></code> attribute defines a collection of elements to iterate through for populating the nodes.</p>
+<p>Define the appearance of each node added by the adaptor with a child <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-Trees-treeNode" title="11.1.10. &lt;rich:treeNode&gt;">Section 11.1.10, “&lt;rich:treeNode&gt;”</a> for details on the <code class="literal"><span class="sgmltag">&lt;rich:treeNode&gt;</span></code> component.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeModelAdaptor-Identifying_nodes"/>11.2.1.2. Identifying nodes</h4></div></div></div>
+
+<p>Adaptors that use <code class="literal"><span class="interfacename">Map</span></code> interfaces or models with non-string keys require a row key converter in order to correctly identify nodes. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Identifying_nodes_with_the_rowKeyConverter_attribute" title="11.1.5. Identifying nodes with the rowKeyConverter attribute">Section 11.1.5, “Identifying nodes with the rowKeyConverter attribute”</a> for details on the use of the <code class="literal"><span class="varname">rowKeyConverter</span></code> attribute.</p>
+<p>Adaptors that use <code class="literal"><span class="interfacename">Iterable</span></code> interfaces have simple integer row keys. A default converter is provided and does not need to be referenced explicitly.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeModelAdaptor-Reference_data"/>11.2.1.3. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.treeModelAdaptor</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITreeModelAdaptor</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.TreeModelAdaptor</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.TreeModelAdaptorHandler</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Tree_adaptors-treeModelRecursiveAdaptor"/>11.2.2. <a id="richtreeModelRecursiveAdaptor"/><code class="literal"><span class="sgmltag">&lt;rich:treeModelRecursiveAdaptor&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeModelRecursiveAdaptor&gt;</span></code> component iterates through recursive collections in order to populate a tree with hierarchical nodes, such as for a file system with multiple levels of directories and files.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeModelRecursiveAdaptor-Basic_usage"/>11.2.2.1. Basic usage</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeModelRecursiveAdaptor&gt;</span></code> component is an extension of the <code class="literal"><span class="sgmltag">&lt;rich:treeModelAdaptor&gt;</span></code> component. As such, the <code class="literal"><span class="sgmltag">&lt;rich:treeModelRecursiveAdaptor&gt;</span></code> component uses all of the same attributes. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-Tree_adaptors-treeModelAdaptor" title="11.2.1. &lt;rich:treeModelAdaptor&gt;">Section 11.2.1, “&lt;rich:treeModelAdaptor&gt;”</a> for details on the <code class="literal"><span class="sgmltag">&lt;rich:treeModelAdaptor&gt;</span></code> component.</p>
+<p>In addition, the <code class="literal"><span class="sgmltag">&lt;rich:treeModelRecursiveAdaptor&gt;</span></code> component requires the <code class="literal"><span class="varname">roots</span></code> attribute. The <code class="literal"><span class="varname">roots</span></code> attribute defines the collection to use at the top of the recursion. For subsequent levels, the <code class="literal"><span class="varname">nodes</span></code> attribute is used for the collection.</p>
+<p><a class="xref" href="chap-Component_Reference-Trees.html#exam-Component_Reference-treeModelRecursiveAdaptor-Basic_usage" title="Example 11.5. Basic usage">Example 11.5, “Basic usage”</a> demonstrates how the <code class="literal"><span class="sgmltag">&lt;rich:treeModelRecursiveAdaptor&gt;</span></code> component can be used in conjunction with the <code class="literal"><span class="sgmltag">&lt;rich:treeModelAdaptor&gt;</span></code> component to recursively iterate through a file system and create a tree of directories and files.</p>
+<div class="example"><a id="exam-Component_Reference-treeModelRecursiveAdaptor-Basic_usage"/><p class="title"><b>Example 11.5. Basic usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeModelRecursiveAdaptor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">roots</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{fileSystemBean.sourceRoots}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodes</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.directories}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{item.shortPath}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeModelAdaptor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodes</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.files}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">#{item}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeModelAdaptor</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeModelRecursiveAdaptor</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:treeModelRecursiveAdaptor&gt;</span></code> component references the <code class="literal"><span class="classname">FileSystemBean</span></code> class as the source for the data.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">ManagedBean</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">RequestScoped</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">FileSystemBean</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_keyword">static</span><span class="java_plain">&nbsp;</span><span class="java_keyword">final</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;SRC_PATH&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;/WEB-INF&quot;</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">List</span><span class="java_operator">&lt;</span><span class="java_type">FileSystemNode</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;srcRoots</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">synchronized</span><span class="java_plain">&nbsp;</span><span class="java_type">List</span><span class="java_operator">&lt;</span><span class="java_type">FileSystemNode</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;getSourceRoots</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">srcRoots&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;srcRoots&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">FileSystemNode</span><span class="java_separator">(</span><span class="java_plain">SRC_PATH</span><span class="java_separator">).</span><span class="java_plain">getDirectories</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;srcRoots</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span>
+</pre>
+
+<p>The <code class="literal"><span class="classname">FileSystemBean</span></code> class in turn uses the <code class="literal"><span class="classname">FileSystemNode</span></code> class to recursively iterate through the collection.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">public</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">FileSystemNode</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">synchronized</span><span class="java_plain">&nbsp;</span><span class="java_type">List</span><span class="java_operator">&lt;</span><span class="java_type">FileSystemNode</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;getDirectories</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">directories&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directories&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">Lists</span><span class="java_separator">.</span><span class="java_plain">newArrayList</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Iterables</span><span class="java_separator">.</span><span class="java_plain">addAll</span><span class="java_separator">(</span><span class="java_plain">directories</span><span class="java_separator">,</span><span class="java_plain">&nbsp;transform</span><span class="java_separator">(</span><span class="java_plain">filter</span><span class="java_separator">(</span><span class="java_plain">getResourcePaths</span><span class="java_separator">(),</span><span class="java_plain">&nbsp;containsPattern</span><span class="java_separator">(</span><span class="java_literal">&quot;/$&quot;</span><span class="java_separator">)),</span><span class="java_plain">&nbsp;FACTORY</span><span class="java_separator">));</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;directories</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">synchronized</span><span class="java_plain">&nbsp;</span><span class="java_type">List</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;getFiles</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">files&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;files&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">ArrayList</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_operator">&gt;</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Iterables</span><span class="java_separator">.</span><span class="java_plain">addAll</span><span class="java_separator">(</span><span class="java_plain">files</span><span class="java_separator">,</span><span class="java_plain">&nbsp;transform</span><span class="java_separator">(</span><span class="java_plain">filter</span><span class="java_separator">(</span><span class="java_plain">getResourcePaths</span><span class="java_separator">(),</span><span class="java_plain">&nbsp;not</span><span class="java_separator">(</span><span class="java_plain">containsPattern</span><span class="java_separator">(</span><span class="java_literal">&quot;/$&quot;</span><span class="java_separator">))),</span><span class="java_plain">&nbsp;TO_SHORT_PATH</span><span class="java_separator">));</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;files</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">Iterable</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;getResourcePaths</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">FacesContext</span><span class="java_plain">&nbsp;facesContext&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">FacesContext</span><span class="java_separator">.</span><span class="java_plain">getCurrentInstance</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">ExternalContext</span><span class="java_plain">&nbsp;externalContext&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;facesContext</span><span class="java_separator">.</span><span class="java_plain">getExternalContext</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Set</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;resourcePaths&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;externalContext</span><span class="java_separator">.</span><span class="java_plain">getResourcePaths</span><span class="java_separator">(</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">path</span><span class="java_separator">);</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">resourcePaths&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourcePaths&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">Collections</span><span class="java_separator">.</span><span class="java_plain">emptySet</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;resourcePaths</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span>
+</pre>
+
+<p>The <code class="literal"><span class="function">getDirectories()</span></code> function is used recursively until the object has the collection of children. The model adaptor calls the <code class="literal"><span class="function">getFiles()</span></code> function at each level in order to add the file nodes.</p>
+<p>The resulting tree hierarchically lists the directories and files in the collection.</p>
+<div class="figure"><a id="d4e15690"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/exam-Component_Reference-treeModelRecursiveAdaptor-Basic_usage.png" alt="A hierarchical tree detailing a file system."/></div>
+</div><p class="title"><b>Figure 11.5. </b></p></div><br class="figure-break"/>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeModelRecursiveAdaptor-Identifying_nodes"/>11.2.2.2. Identifying nodes</h4></div></div></div>
+
+<p>Adaptors that use <code class="literal"><span class="interfacename">Map</span></code> interfaces or models with non-string keys require a row key converter in order to correctly identify nodes. Refer to <a class="xref" href="chap-Component_Reference-Trees.html#sect-Component_Reference-tree-Identifying_nodes_with_the_rowKeyConverter_attribute" title="11.1.5. Identifying nodes with the rowKeyConverter attribute">Section 11.1.5, “Identifying nodes with the rowKeyConverter attribute”</a> for details on the use of the <code class="literal"><span class="varname">rowKeyConverter</span></code> attribute.</p>
+<p>Adaptors that use <code class="literal"><span class="interfacename">Iterable</span></code> interfaces have simple integer row keys. A default converter is provided and does not need to be referenced explicitly.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-treeModelRecursiveAdaptor-Reference_data"/>11.2.2.3. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TreeModelRecursiveAdaptor</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITreeModelRecursiveAdaptor</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.TreeModelRecursiveAdaptor</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.TreeModelRecursiveAdaptorHandler</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Tables_and_grids.html"><strong>Prev</strong>Chapter 10. Tables and grids</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Menus_and_toolbars.html"><strong>Next</strong>Chapter 12. Menus and toolbars</a></li></ul></body></html>

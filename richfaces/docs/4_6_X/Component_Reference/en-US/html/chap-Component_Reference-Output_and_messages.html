@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 13. Output and messages</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="prev" href="chap-Component_Reference-Menus_and_toolbars.html" title="Chapter 12. Menus and toolbars"/><link rel="next" href="chap-Component_Reference-Drag_and_drop.html" title="Chapter 14. Drag and drop"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Menus_and_toolbars.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Drag_and_drop.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Output_and_messages"/>Chapter 13. Output and messages</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-message">13.1. &lt;rich:chart&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-chart-Basic_usage">13.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-chart-Data_input">13.1.2. Data input</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-chart-Look_customization">13.1.3. Chart look customization</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-chart-Advanced_customization">13.1.4. Advanced customization</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-chart-Interactivity_options">13.1.5. Interactivity options</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-chart-chart_server-side_events">13.1.6. &lt;rich:chart&gt; server-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-chart-chart_client-side_events">13.1.7. &lt;rich:chart&gt; client-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#_javascript_api_2">13.1.8. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#_reference_data">13.1.9. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#__anchor_id_richmessage_xreflabel_richmessage_literal_phrase_role_sgmltag_rich_message_phrase_literal">13.2. &lt;rich:message&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-message-Basic_usage">13.2.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-message-Appearance">13.2.2. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-message-Reference_data">13.2.3. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-message-Style_classes_and_skin_parameters">13.2.4. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-messages">13.3. &lt;rich:messages&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-messages-Basic_usage">13.3.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-messages-Appearance">13.3.2. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-messages-Reference_data">13.3.3. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-messages-Style_classes_and_skin_parameters">13.3.4. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-notify">13.4. &lt;rich:notify&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notify-Basic_usage">13.4.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notify-Customizing_notifications">13.4.2. Customizing notifications</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notify-Reference_data">13.4.3. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notify-Style_classes_and_skin_parameters">13.4.4. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-notifyMessage">13.5. &lt;rich:notifyMessage&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyMessage-Basic_usage">13.5.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyMessage-Reference_data">13.5.2. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyMessage-Style_classes_and_skin_parameters">13.5.3. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-notifyMessages">13.6. &lt;rich:notifyMessages&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyMessages-Reference_data">13.6.1. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyMessages-Style_classes_and_skin_parameters">13.6.2. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-notifyStack">13.7. &lt;rich:notifyStack&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyStack-Basic_usage">13.7.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyStack-Positioning_notifications">13.7.2. Positioning notifications</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyStack-Stacking_notifications">13.7.3. Stacking notifications</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyStack-Reference_data">13.7.4. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notifyStack-Style_classes_and_skin_parameters">13.7.5. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-progressBar">13.8. &lt;rich:progressBar&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-progressBar-Basic_usage">13.8.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-progressBar-Customizing_the_appearance">13.8.2. Customizing the appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-progressBar-Update_mode">13.8.3. Update mode</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-progressBar-Using_set_intervals">13.8.4. Using set intervals</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-progressBar-JavaScript_API">13.8.5. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-progressBar-Reference_data">13.8.6. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-progressBar-Style_classes_and_skin_parameters">13.8.7. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-tooltip">13.9. &lt;rich:tooltip&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-Basic_usage">13.9.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-Attaching_the_tool-tip_to_another_component">13.9.2. Attaching the tool-tip to another component</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-Appearance">13.9.3. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-Update_mode">13.9.4. Update mode</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-tooltip_client-side_events">13.9.5. &lt;rich:tooltip&gt; client-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-JavaScript_API">13.9.6. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-Reference_data">13.9.7. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-tooltip-Style_classes_and_skin_parameters">13.9.8. Style classes and skin parameters</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter for details on components that display messages and other feedback to the user.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-message"/>13.1. <a id="richchart"/><code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> component allows the user to plot data and to create line, bar or pie charts. It uses up to five children tags <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:chartLegend&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:chartXAxis&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:chartYAxis&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:chartPoint&gt;</span></code>. Each child tag customizes a particular aspect of the chart. All are optional except at least one <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> tag is required.</p>
+<p>Additionally the <code class="literal"><span class="sgml">&lt;rich:chart&gt;</span></code> component allows one to handle events using either a client-side JavaScript or using server-side listeners.</p>
+<div class="figure"><a id="figu-Component_Reference-chart-chart_component"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-chart-chart_component.png" alt="figu Component Reference chart chart component"/></div>
+</div><p class="title"><b>Figure 13.1. rich:chart component</b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-chart-Basic_usage"/>13.1.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> tag and its optional children tags generate and customize the chart. The chart type is selected by a <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> attribute.  The only requirements for use of the <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> are selection of the chart type and to pass at least one series of data - explained below.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-chart-Data_input"/>13.1.2. Data input</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> component accepts data by two means - by facelet iteration or by creating data model object.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_facelet_iteration"/>13.1.2.1. Facelet iteration</h4></div></div></div>
+
+<p>Use <code class="literal"><span class="sgmltag">&lt;a4j:repeat&gt;</span></code> and a collection of objects inside the <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> tag and specify what you want to be plotted on the x and y axis using <code class="literal"><span class="sgmltag">&lt;rich:chartPoint&gt;</span></code> tag. The <code class="literal"><span class="sgmltag">&lt;a4j:repeat&gt;</span></code> approach can also be used at the <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> level.</p>
+<div class="example"><a id="exam-Component_Reference-chart_facelet_iteration_example"/><p class="title"><b>Example 13.1. rich:chart facelet iteration example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chart</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;barChart&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">title</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Countries&nbsp;by&nbsp;vehicles&nbsp;per&nbsp;capita&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chartSeries</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;bar&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:repeat</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.records}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;record&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chartPoint</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">x</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{record.country}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">y</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{record.count}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:repeat</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:chartSeries</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chartYAxis</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Motor&nbsp;vehicles&nbsp;per&nbsp;1000&nbsp;people&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:chart</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_create_a_datamodel_object"/>13.1.2.2. Create a DataModel object</h4></div></div></div>
+
+<p>When facelet iteration is used the ChartDataModel object is created by the ChartRenderer. An alternative to this is to create a ChartDataModel yourself and pass it using <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> data attribute. To do this, create an instance of one of the child classes of ChartDataModel - NumberChartDataModel, StringChartDataModel or DateChartDataModel (not yet fully supported). Select the class according to the data type used on the x-axis. Add values to the model using the put method and pass it to the <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> tag using the data attribute.</p>
+<div class="example"><a id="exam-Component_Reference-chart_datamodel_object_example"/><p class="title"><b>Example 13.2. rich:chart DataModel object example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chart</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;barChart&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">title</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Countries&nbsp;by&nbsp;vehicles&nbsp;per&nbsp;capita&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chartSeries</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;bar&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">data</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.cars}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chartYAxis</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Motor&nbsp;vehicles&nbsp;per&nbsp;1000&nbsp;people&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:chart</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">cars&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">new</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">StringChartDataModel</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">ChartDataModel</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">ChartType</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">bar</span><!-- <br/> --><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">cars</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;San&nbsp;Marino&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">1263</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">cars</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;United&nbsp;States&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">797</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre>
+
+</div></div><br class="example-break"/>
+
+<p>If there is a model passed using the <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> data attribute, any nested <code class="literal"><span class="sgmltag">&lt;rich:chartPoint&gt;</span></code> tags are ignored. If the data attribute is not used, then nested <code class="literal"><span class="sgmltag">&lt;rich:chartPoint&gt;</span></code> tags are expected.</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-chart-Look_customization"/>13.1.3. Chart look customization</h3></div></div></div>
+
+<p>The chart configuration is split into multiple tags providing a clearer facelet API. To configure axes, their min/max values, and label use <code class="literal"><span class="sgmltag">&lt;rich:chartXAxis&gt;</span></code> or <code class="literal"><span class="sgmltag">&lt;rich:chartYAxis&gt;</span></code> tag. The <code class="literal"><span class="sgmltag">&lt;rich:chartLegend&gt;</span></code> allows one to set up the position of the legend and the order of the labels within it.</p>
+<p>To adjust the chart component size you can use CSS class .richfaces-chart-container, to customize title use .richfaces-chart-title the placeholder. The chart itself is placed in the div with the CSS class <code class="literal">.richfaces-chart</code>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-chart-Advanced_customization"/>13.1.4. Advanced customization</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> can also be customized directly through JavaScript to allow the use of plugins or objects that are not directly supported by the component.</p>
+<p>There are two ways to define the customization: the <code class="literal"><span class="parameter">hooks</span></code> attribute or a facet named <code class="literal"><span class="parameter">hooks</span></code>. The facet takes precedence over attribute when both are defined.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputScript</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;hooks&nbsp;=&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processOptions:&nbsp;[function(plot,options)&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.xaxes[0].tickFormatter&nbsp;=&nbsp;function&nbsp;(value,&nbsp;axis)&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value.toLocaleString('en-US',&nbsp;{minimumFractionDigits:&nbsp;2});</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;};</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:outputScript</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chart</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">hooks</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;hooks&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chart</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;hooks&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processOptions:&nbsp;[function(plot,options)&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.xaxes[0].tickFormatter&nbsp;=&nbsp;function&nbsp;(value,&nbsp;axis)&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value.toLocaleString('en-US',&nbsp;{minimumFractionDigits:&nbsp;2});</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:chart</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>In the above samples, the <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> is configured to display the label on x-axis according to US locale (e.g. 45,324.23).</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2>
+<p>For further configuration options, refer to <a class="ulink" href="https://github.com/flot/flot/blob/master/API.md#hooks">Flot API - Hooks</a> and <a class="ulink" href="https://github.com/flot/flot/blob/master/API.md#plugins">Flot API - Plugins</a>.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-chart-Interactivity_options"/>13.1.5. Interactivity options</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> component does not only create static charts.</p>
+<div class="itemizedlist"><ul><li>
+It allows the user to zoom line charts when the <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> attribute zoom is set true. To reset zoom you can use the JavaScript API.
+</li><li>
+You can also add functions to handle events fired by components. Event handlers are set up using proper <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> attributes. They handle events fired by any series. If you want to handle an event only fired by a particular series, set up handlers using the <code class="literal"><span class="sgmltag">&lt;rich:chartSeries&gt;</span></code> attributes.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-chart-chart_server-side_events"/>13.1.6. <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> server-side events</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">PlotClickEvent</span></code> is fired when the user clicks a point in the chart. To set a listener use the <code class="literal"><span class="varname">ClickListener</span></code> attribute.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-chart-chart_client-side_events"/>13.1.7. <code class="literal"><span class="sgmltag">&lt;rich:chart&gt;</span></code> client-side events</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">plothover</span></code> event points to the client-side function to execute when the mouse cursor is over the chart point.
+</li><li>
+The <code class="literal"><span class="varname">plotclick</span></code> event points to the client-side function to execute when the user clicks the chart point.
+</li><li>
+The <code class="literal"><span class="varname">mouseout</span></code> event points to the cient-side function to execute when the mouse cursor leaves the chart grid.
+</li></ul></div>
+
+<p>The plothover and plotclick handlers are given an event-object that contains the deatils of which point fired the event.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVASCRIPT">function log(e){
+           	console.log("Series index: "+
+                 	e.data.seriesIndex +" DataIndex: "+
+                 	e.data.dataIndex+' ['+e.data.x+','+e.data.y+']');
+}</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="_javascript_api_2"/>13.1.8. JavaScript API</h3></div></div></div>
+
+<p>To access the jQuery widget of the component, use the componentID + chart</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">resetZoom()</span></code></span></dt><dd>
+display chart without scaling
+</dd><dt><span class="term"><code class="literal"><span class="function">getPlotObject()</span></code></span></dt><dd>
+returns JavaScript object containing chart data and options
+</dd></dl></div>
+
+<p>Example</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:chart</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;priceChart&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVASCRIPT">$(document.getElementById("priceChart")).chart("resetZoom")</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="_reference_data"/>13.1.9. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Chart</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIChart</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Chart</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ChartRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.ChartTagHandler</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="__anchor_id_richmessage_xreflabel_richmessage_literal_phrase_role_sgmltag_rich_message_phrase_literal"/>13.2. <a id="richmessage"/><code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component renders a single <code class="literal"><span class="classname">FacesMessage</span></code> message instance added for the component. The appearance of the message can be customized, and tool-tips can be used for further information about the message.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component is rendered in the same way as the standard <code class="literal"><span class="sgmltag">&lt;h:message&gt;</span></code> component, but allows separate styling of the message summary and detail. It allows unified icons to be set using background images in predefined classes.</p>
+<div class="figure"><a id="figu-Component_Reference-message-message_component"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-message-message_component.png" alt="figu Component Reference message message component"/></div>
+</div><p class="title"><b>Figure 13.2. rich:message component</b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-message-Basic_usage"/>13.2.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component needs the <code class="literal"><span class="varname">for</span></code> attribute to point to the <code class="literal"><span class="varname">id</span></code> identifier of the related component. The message is displayed after the <code class="literal"><span class="classname">FacesMessage</span></code> message instance is created and added for the client identifier of the related component.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component is automatically rendered after an Ajax request. This occurs without the use of an <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component or a specific reference through the <code class="literal"><span class="varname">render</span></code> attribute of the Ajax request source.</p>
+<div class="example"><a id="exam-Component_Reference-message-message_example"/><p class="title"><b>Example 13.3. rich:message example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Zip:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Zip&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;zip&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">required</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{userBean.zip}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:validateLength</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">minimum</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;4&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">maximum</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;9&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:message</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;zip&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">ajaxRendered</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The example contains a text input for zip codes. The simple validation requires the entered zip code to be between 4 and 9 characters long. The <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component references the input box, and reports any messages relating to the input validation.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-message-Appearance"/>13.2.2. Appearance</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">showSummary</span></code> attribute specifies whether to display only a summary of the full message. The full message can be displayed in a tool-tip when hovering the mouse over the summary.</p>
+<p>Use CSS (Cascading Style Sheets) to customize the appearance and icon for the <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component. To use a custom icon, set the <code class="literal"><span class="property">background-image</span></code> property to the icon graphic, as shown in <a class="xref" href="chap-Component_Reference-Output_and_messages.html#exam-Component_Reference-message-Message_icons" title="Example 13.4. Message icons">Example 13.4, “Message icons”</a>. Refer to <a class="xref" href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-message-Style_classes_and_skin_parameters" title="13.2.4. Style classes and skin parameters">Section 13.2.4, “Style classes and skin parameters”</a> for a complete list of style classes for the <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component.</p>
+<div class="example"><a id="exam-Component_Reference-message-Message_icons"/><p class="title"><b>Example 13.4. Message icons</b></p><div class="example-contents">
+
+<pre class="screen">.rf-msg-err{
+   background-image: url('#{facesContext.externalContext.requestContextPath}/images/icons/error.gif');
+}
+</pre>
+
+<p>The example demonstrates how an icon for an error message could be added using CSS.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-message-Reference_data"/>13.2.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Message</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.html.HtmlMessage</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Message</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MessageRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-message-Style_classes_and_skin_parameters"/>13.2.4. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="message-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 13.1. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msg</span></code></span></dt><dd>
+This class defines styles for the message itself.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msg-err</span></code></span></dt><dd>
+This class defines styles for an error message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">errorColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msg-ftl</span></code></span></dt><dd>
+This class defines styles for a fatal message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">errorColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msg-inf</span></code></span></dt><dd>
+This class defines styles for an information message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msg-wrn</span></code></span></dt><dd>
+This class defines styles for a warning message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">warningTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msg-ok</span></code></span></dt><dd>
+This class defines styles for a basic <span class="guilabel"><strong>OK</strong></span> message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msg-sum</span></code>, <code class="literal">.rf-msg-det</code></span></dt><dd>
+These classes define styles for the summary or details of a message.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-messages"/>13.3. <a id="richmessages"/><code class="literal"><span class="sgmltag">&lt;rich:messages&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:messages&gt;</span></code> components works similarly to the <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component, but can display all the validation messages added for the current view instead of just a single message. Refer to <a class="xref" href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-Output_and_messages-message" title="13.1. &lt;rich:chart&gt;">Section 13.1, “&lt;rich:chart&gt;”</a> for details on the <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component.</p>
+<div class="figure"><a id="figu-Component_Reference-messages-messages_component"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-messages-messages_component.png" alt="figu Component Reference messages messages component"/></div>
+</div><p class="title"><b>Figure 13.3. rich:messages component</b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-messages-Basic_usage"/>13.3.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:messages&gt;</span></code> component doesn’t require any extra attributes for basic usage. It displays all messages relating to requests from components.</p>
+<p>To limit the messages to a specific component, use the <code class="literal"><span class="varname">for</span></code> attribute to reference the component’s identifier.</p>
+<p>To show only those messages that are not attached to specific components, set <code class="literal"><span class="code">globalOnly="true"</span></code>.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:messages&gt;</span></code> component is automatically rendered after an Ajax request. This occurs without the use of an <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component or a specific reference through the <code class="literal"><span class="varname">render</span></code> attribute of the Ajax request source.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-messages-Appearance"/>13.3.2. Appearance</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:messages&gt;</span></code> component displays error messages for each validating component in the same container.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:messages&gt;</span></code> component can be further styled through CSS, the same as for the <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-message-Appearance" title="13.2.2. Appearance">Section 13.2.2, “Appearance”</a> for an example of message styling, and refer to <a class="xref" href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-messages-Style_classes_and_skin_parameters" title="13.3.4. Style classes and skin parameters">Section 13.3.4, “Style classes and skin parameters”</a> for a complete list of style classes for the <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> component.</p>
+<p>The layout of the messages can also be customized through CSS. By default, the messages are arranged in a block as shown in <a class="xref" href="chap-Component_Reference-Output_and_messages.html#figu-Component_Reference-messages-Messages_in_a_block" title="Figure 13.4. Messages in a block">Figure 13.4, “Messages in a block”</a>.</p>
+<div class="figure"><a id="figu-Component_Reference-messages-Messages_in_a_block"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-messages-Messages_in_a_block.png" alt="figu Component Reference messages Messages in a block"/></div>
+</div><p class="title"><b>Figure 13.4. Messages in a block</b></p></div><br class="figure-break"/>
+
+<p>Override the <code class="literal"><span class="property">display</span></code> property for all CSS message classes to customize the layout as follows:</p>
+<div class="variablelist"><dl><dt><span class="term">Display messages in a list with no icons</span></dt><dd>
+To display the messages in a list format without the default icons, override the message styles as follows:
+</dd></dl></div>
+
+<pre class="screen">.rf-msg-err, .rf-msgs-err, .rf-msg-ftl, .rf-msgs-ftl, .rf-msg-inf,
+.rf-msgs-inf, .rf-msg-wrn, .rf-msgs-wrn, .rf-msg-ok, .rf-msgs-ok {
+   display: list-item;
+   margin-left: 20px;
+   padding-left: 0px; }
+
+.rf-msg-err, .rf-msgs-err{ background-image:none; }
+</pre>
+
+<div class="figure"><a id="figu-Component_Reference-messages-Messages_in_a_list"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-messages-Messages_in_a_list.png" alt="figu Component Reference messages Messages in a list"/></div>
+</div><p class="title"><b>Figure 13.5. Messages in a list</b></p></div><br class="figure-break"/>
+
+<div class="variablelist"><dl><dt><span class="term">Display in-line messages</span></dt><dd>
+To display the messages in line with text, override the message styles as follows:
+</dd></dl></div>
+
+<pre class="screen">.rf-msg-err, .rf-msgs-err, .rf-msg-ftl, .rf-msgs-ftl, .rf-msg-inf,
+.rf-msgs-inf, .rf-msg-wrn, .rf-msgs-wrn, .rf-msg-ok, .rf-msgs-ok { display:inline; }
+</pre>
+
+<div class="figure"><a id="figu-Component_Reference-messages-In-line_messages"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-messages-In-line_messages.png" alt="figu Component Reference messages In line messages"/></div>
+</div><p class="title"><b>Figure 13.6. In-line messages</b></p></div><br class="figure-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-messages-Reference_data"/>13.3.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Messages</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.html.HtmlMessages</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Messages</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.MessagesRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-messages-Style_classes_and_skin_parameters"/>13.3.4. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="messages-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 13.2. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msgs</span></code></span></dt><dd>
+This class defines styles for the message itself.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msgs-err</span></code></span></dt><dd>
+This class defines styles for an error message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">errorColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msgs-ftl</span></code></span></dt><dd>
+This class defines styles for a fatal message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">errorColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msgs-inf</span></code></span></dt><dd>
+This class defines styles for an information message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msgs-wrn</span></code></span></dt><dd>
+This class defines styles for a warning message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">warningTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msgs-ok</span></code></span></dt><dd>
+This class defines styles for a basic <span class="guilabel"><strong>OK</strong></span> message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-msgs-sum</span></code>, <code class="literal">.rf-msgs-det</code></span></dt><dd>
+These classes define styles for the summary or details of a message.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-notify"/>13.4. <a id="richnotify"/><code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code> component serves for advanced user interaction, using notification boxes to give the user instant feedback on what’s happening within the application. Each time this component is rendered, a floating notification box is displayed in the selected corner of the browser screen.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notify-Basic_usage"/>13.4.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code> has two message customization attributes: <code class="literal"><span class="parameter">summary</span></code> is short text summarizing the message, while <code class="literal"><span class="parameter">detail</span></code> configures the detailed body of the message. Both attributes have their counterparts in form of facets with the same names as the corresponding attributes.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notify-Customizing_notifications"/>13.4.2. Customizing notifications</h3></div></div></div>
+
+<p>A notification appears on the page each time it is rendered, either on full-page or ajax requests. The notification remains on the screen for 8 seconds and then disappears. Users can close the notification with the close button in the top-right corner of the notification.</p>
+<p>Notification stacks can be used to create sequences. For customization of stacking see the <code class="literal"><span class="sgmltag">&lt;rich:notifyStack&gt;</span></code> component.</p>
+<p>There are several attributes that can change default behavior:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">sticky</span></code>: notifications does not disappear automatically, they needs to be closed explicitly with close button (this attribute can’t be used together with <code class="literal"><span class="parameter">nonblocking</span></code> and <code class="literal"><span class="parameter">stayTime</span></code>)
+</li><li>
+<code class="literal"><span class="parameter">stayTime</span></code>: configures how long notification stays on the screen before it disappears (in miliseconds)
+</li><li>
+<code class="literal"><span class="parameter">styleClass</span></code>: defines the class customizing the notification
+</li><li>
+<code class="literal"><span class="parameter">nonblocking</span></code>: defines notifications which becomes partially transparent and user can click through. Non-blocking notifications don’t have close button.
+</li><li>
+<code class="literal"><span class="parameter">nonblockingOpacity</span></code>: defines opacity of nonblocking notifications when mouse hovers over notification (decimal number between 0 and 1)
+</li><li>
+<code class="literal"><span class="parameter">showShadow</span></code>: defines whether shadow will be displayed under the notification
+</li></ul></div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2>
+<p>Nonblocking notifications can be clicked through, but because they are using jQuery mechanism to bypass events, only jQuery event handlers are triggered. IThis means that standard links won’t be triggered.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notify-Reference_data"/>13.4.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Notify</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UINotify</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Notify</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notify-Style_classes_and_skin_parameters"/>13.4.4. Style classes and skin parameters</h3></div></div></div>
+
+<p>Note that skinning is common for <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code></p>
+<div class="table"><a id="notify-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 13.3. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf</span></code></span></dt><dd>
+This class defines styles for notification
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-shdw</span></code></span></dt><dd>
+This class defines style of the shadow under notification box.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">headerBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-cnt</span></code></span></dt><dd>
+This class defines style of the content of notification box.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">panelTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-ico</span></code></span></dt><dd>
+This class defines style for notification icon.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-sum</span></code></span></dt><dd>
+This class defines style for notification message summary.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-det</span></code></span></dt><dd>
+This class defines style for notification message detail.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-cls</span></code></span></dt><dd>
+This class defines style for element wrapping close button.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-cls-ico</span></code></span></dt><dd>
+This class defines style for close button icon.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-notifyMessage"/>13.5. <a id="richnotifyMessage"/><code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code></h2></div></div></div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyMessage-Basic_usage"/>13.5.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> component is built on top of <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code>, the difference is in usage. The <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> component displays <code class="literal"><span class="code">FacesMessage</span></code> s associated with a given component, similar to <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code>: one notification is displayed for first <code class="literal"><span class="code">FacesMessage</span></code> in the stack that is risen either programatically or during conversion/validation of the component. The severity of the message determines the color and icon of the resulting notification.</p>
+<p>For customization of notification behavior, please refer to <a class="link" href="chap-Component_Reference-Output_and_messages.html#sect-Component_Reference-notify-Customizing_notifications" title="13.4.2. Customizing notifications">Customizing notifications</a> of <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyMessage-Reference_data"/>13.5.2. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyMessage</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.html.HtmlNotifyMessage</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Message</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyMessageRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyMessage-Style_classes_and_skin_parameters"/>13.5.3. Style classes and skin parameters</h3></div></div></div>
+
+<p>Note that <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> shares common classes with <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code>, since there is exactly one notification rendered for each JSF message.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> specific classes are redefining the look for various message severity levels.</p>
+<div class="table"><a id="notifyMessage-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 13.4. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-inf</span></code></span></dt><dd>
+This class defines styles for an informative message.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-wrn</span></code></span></dt><dd>
+This class defines styles for a warning notifications.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-err</span></code></span></dt><dd>
+This class defines styles for a error notifications.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-ftl</span></code></span></dt><dd>
+This class defines styles for a fatal notifications.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal">.rf-ntf-inf .rf-ntf-ico</code>, <code class="literal">.rf-ntf-wrn .rf-ntf-ico</code>, <code class="literal">.rf-ntf-err .rf-ntf-ico</code>, <code class="literal">.rf-ntf-ftl .rf-ntf-ico</code></span></dt><dd>
+These classes define style for notification icon based on severity of notification message.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-notifyMessages"/>13.6. <a id="richnotifyMessages"/><code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code> component is the same as the <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> component, but each of the available messages generates one notification.</p>
+<p><code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code> shares the same set of attributes with <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code></p>
+<div class="figure"><a id="figu-Component_Reference-notifyMessages-notifyMessages"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/figu-Component_Reference-notifyMessages-notifyMessages.png" alt="figu Component Reference notifyMessages notifyMessages"/></div>
+</div><p class="title"><b>Figure 13.7. </b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyMessages-Reference_data"/>13.6.1. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyMessages</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.html.HtmlNotifyMessages</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Messages</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyMessagesRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyMessages-Style_classes_and_skin_parameters"/>13.6.2. Style classes and skin parameters</h3></div></div></div>
+
+<p><code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code> shares style classes with <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code>.</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-notifyStack"/>13.7. <a id="richnotifyStack"/><code class="literal"><span class="sgmltag">&lt;rich:notifyStack&gt;</span></code></h2></div></div></div>
+
+<p>Notifications emited by <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code> are displayed in top-right corner of the screen by default.</p>
+<p>It is <code class="literal"><span class="sgmltag">&lt;rich:notifyStack&gt;</span></code> which defines where messages will appear and handles their stacking.</p>
+<p>Stack also provides way how to remove messages from screen - when stack is re-rendered, current notifications are destroyed, freeing place for new notifications.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyStack-Basic_usage"/>13.7.1. Basic usage</h3></div></div></div>
+
+<p>They are three alternative ways to bind notifications with a stack:</p>
+<div class="itemizedlist"><ul><li>
+<span class="emphasis"><em>wrapping</em></span>: nesting <code class="literal"><span class="sgmltag">&lt;rich:notify&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> or <code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code> binds notifications with the stack in which they are wrapped
+</li><li>
+<span class="emphasis"><em>binding by id</em></span>: notification can be bound directly to a stack using it’s <code class="literal"><span class="code">componentId</span></code> in the <code class="literal"><span class="parameter">stack</span></code> attribute
+</li><li>
+<span class="emphasis"><em>using default stack</em></span>: a default stack is used when no other binding is defined for a given notification
+</li></ul></div>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:notifyStack</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">position</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;bottomRight&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:notifyMessages</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:notifyStack</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The sample above defines the stack explicitly, where notifications use the stack in which they are wrapped.</p>
+<p>The sample bellow uses a notification rendered into the top-left corner of the screen. The notification is bound to a stack using it’s id.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:notifyStack</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;leftStack&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">position</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;topLeft&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:notify</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">stack</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;leftStack&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyStack-Positioning_notifications"/>13.7.2. Positioning notifications</h3></div></div></div>
+
+<p>To redefine the position of a notification, one needs to define a stack and bind it with the given notification.</p>
+<p><code class="literal"><span class="sgmltag">&lt;rich:notifyStack&gt;</span></code> uses the <code class="literal"><span class="parameter">position</span></code> attribute to place the stack and it’s notifications into one of four corners: <code class="literal"><span class="code">topRight</span></code> (default), <code class="literal"><span class="code">bottomRight</span></code>, <code class="literal"><span class="code">bottomLeft</span></code>, <code class="literal"><span class="code">topLeft</span></code>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyStack-Stacking_notifications"/>13.7.3. Stacking notifications</h3></div></div></div>
+
+<p>There are two attributes which influences how notifications are placed into a stack:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">method</span></code>: defines where new notifications are placed and how they are removed. Options: <code class="literal"><span class="code">first</span></code> (default), <code class="literal"><span class="code">last</span></code>.
+<code class="literal"><span class="parameter">direction</span></code>: defines in which direction will be messages stacked. Options: <code class="literal"><span class="code">vertical</span></code> (default), <code class="literal"><span class="code">horizontal</span></code>
+</li></ul></div>
+
+<p>The following sample shows a stack which will place new notifications up front - the incoming message will appear first, causing all notifications currently in stack to shift. Subsequently, messages at the end of stack will be then removed.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:notifyStack</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">method</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;first&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>On the other hand, stacking method <code class="literal"><span class="code">last</span></code> provides a method to place messages on the end of the stack, and when removing a notification, it is removed from the start, causing all other notifications to shift.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyStack-Reference_data"/>13.7.4. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyStack</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UINotifyStack</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyStack</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.NotifyStackRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-notifyStack-Style_classes_and_skin_parameters"/>13.7.5. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="notifyStack-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 13.5. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-pos-tl</span></code></span></dt><dd>
+This class defines where top-left stack of notification will be positioned
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-pos-tr</span></code></span></dt><dd>
+This class defines where top-right stack of notification will be positioned
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-pos-bl</span></code></span></dt><dd>
+This class defines where bottom-left stack of notification will be positioned
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ntf-pos-br</span></code></span></dt><dd>
+This class defines where bottom-right stack of notification will be positioned
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-progressBar"/>13.8. <a id="richprogressBar"/><code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code> component displays a progress bar to indicate the status of a process to the user. It can update either through Ajax or on the client side, and the look and feel can be fully customized.</p>
+<div class="figure"><a id="figu-Component_Reference-progressBar-progressBar"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-progressBar-progressBar.png" alt="figu Component Reference progressBar progressBar"/></div>
+</div><p class="title"><b>Figure 13.8. <code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-progressBar-Basic_usage"/>13.8.1. Basic usage</h3></div></div></div>
+
+<p>Basic usage of the <code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code> component requires the <code class="literal"><span class="varname">value</span></code> attribute, which points to the property that holds the current progress value. When the value is greater than or equal to the minimum value ( <code class="literal">0</code> by default), the progress bar becomes active, and starts sending Ajax requests if in <code class="literal">ajax</code> mode.</p>
+<div class="example"><a id="exam-Component_Reference-progressBar-Basic_usage"/><p class="title"><b>Example 13.5. Basic usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:progressBar</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.incValue}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-progressBar-Customizing_the_appearance"/>13.8.2. Customizing the appearance</h3></div></div></div>
+
+<p>By default, the minimum value of the progress bar is <code class="literal">0</code> and the maximum value of the progress bar is <code class="literal">100</code>. These values can be customized using the <code class="literal"><span class="varname">minValue</span></code> and <code class="literal"><span class="varname">maxValue</span></code> attributes respectively.</p>
+<p>The progress bar can be labeled in one of two ways:</p>
+<div class="variablelist"><dl><dt><span class="term">Using the <code class="literal"><span class="varname">label</span></code>  attribute</span></dt><dd>
+The content of the <code class="literal"><span class="varname">label</span></code> attribute is displayed over the progress bar.
+</dd></dl></div>
+
+<div class="example"><a id="exam-Component_Reference-progressBar-Using_the_label_attribute"/><p class="title"><b>Example 13.6. Using the <code class="literal"><span class="varname">label</span></code> attribute</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:progressBar</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.incValue}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;progrs&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.incValue}&nbsp;%&nbsp;complete&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<div class="variablelist"><dl><dt><span class="term">Using nested child components</span></dt><dd>
+Child components, such as the JSF <code class="literal"><span class="sgmltag">&lt;h:outputText&gt;</span></code> component, can be nested in the <code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code> component to display over the progress bar.
+</dd></dl></div>
+
+<div class="example"><a id="exam-Component_Reference-progressBar-Using_nested_child_components"/><p class="title"><b>Example 13.7. Using nested child components</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:progressBar</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.incValue}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.incValue}&nbsp;%&nbsp;complete&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:progressBar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<p>Define the <code class="literal">initial</code> and <code class="literal">finish</code> facets to customize the progress bar’s appearance before progress has started and after progress has finished. When the current progress bar value is less than the minimum value, the <code class="literal">initial</code> facet is displayed. When the current progress bar is greater than the maximum value, the <code class="literal">finish</code> facet is displayed.</p>
+<div class="example"><a id="exam-Component_Reference-progressBar-Initial_and_complete_states"/><p class="title"><b>Example 13.8. Initial and finished states</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:progressBar</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.incValue1}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;initial&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Process&nbsp;has&nbsp;not&nbsp;started&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;finish&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Process&nbsp;has&nbsp;completed&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:progressBar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-progressBar-Update_mode"/>13.8.3. Update mode</h3></div></div></div>
+
+<p>The mode for updating the progress bar is determined by the <code class="literal"><span class="varname">mode</span></code> attribute, which can have one of the following values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+The progress bar updates in the same way as the <code class="literal"><span class="sgmltag">&lt;a4j:poll&gt;</span></code> component. The <code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code> component repeatedly polls the server for the current progress value.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+The progress bar must be explicitly updated on the client side through the JavaScript API.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-progressBar-Using_set_intervals"/>13.8.4. Using set intervals</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code> component can be set to constantly poll for updates at a constant interval. Use the <code class="literal"><span class="varname">interval</span></code> component to set the interval in milliseconds. The progress bar is updated whenever the polled value changes. Polling is only active when the <code class="literal"><span class="varname">enabled</span></code> attribute is set to <code class="literal">true</code>.</p>
+<div class="example"><a id="exam-Component_Reference-progressBar-Using_set_intervals"/><p class="title"><b>Example 13.9. Using set intervals</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:progressBar</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.incValue1}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;progress&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">interval</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;900&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">enabled</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.enabled1}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-progressBar-JavaScript_API"/>13.8.5. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:progressBar&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">getValue()</span></code></span></dt><dd>
+Return the current value displayed on the progress bar.
+</dd><dt><span class="term"><code class="literal"><span class="function">setValue()</span></code></span></dt><dd>
+Set the current value to display on the progress bar.
+</dd><dt><span class="term"><code class="literal"><span class="function">getMinValue()</span></code></span></dt><dd>
+Return the minimum value for the progress bar.
+</dd><dt><span class="term"><code class="literal"><span class="function">getMaxValue()</span></code></span></dt><dd>
+Return the maximum value for the progress bar.
+</dd><dt><span class="term"><code class="literal"><span class="function">disable()</span></code></span></dt><dd>
+Disables the progress bar.
+</dd><dt><span class="term"><code class="literal"><span class="function">enable()</span></code></span></dt><dd>
+Enables the progress bar.
+</dd><dt><span class="term"><code class="literal"><span class="function">isEnabled()</span></code></span></dt><dd>
+Returns a boolean value indicating whether the progress bar is enabled.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-progressBar-Reference_data"/>13.8.6. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ProgressBar</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIProgressBar</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.ProgressBar</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.ProgressBarRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-progressBar-Style_classes_and_skin_parameters"/>13.8.7. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="progressBar-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 13.6. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pb-lbl</span></code></span></dt><dd>
+This class defines styles for labels on the progress bar.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pb-prgs</span></code></span></dt><dd>
+This class defines styles for the progressed portion of the progress bar.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">selectControlColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pb-init</span></code>, <code class="literal">.rf-pb-fin</code></span></dt><dd>
+These classes define styles for the initial state and finished state.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Output_and_messages-tooltip"/>13.9. <a id="richtooltip"/><code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component provides an informational tool-tip. The tool-tip can be attached to any control and is displayed when hovering the mouse cursor over the control.</p>
+<div class="figure"><a id="figu-Component_Reference-tooltip-tooltip"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-toolTip-toolTip.png" alt="figu Component Reference toolTip toolTip"/></div>
+</div><p class="title"><b>Figure 13.9. <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-Basic_usage"/>13.9.1. Basic usage</h3></div></div></div>
+
+<p>For basic usage, define the tool-tip text using the <code class="literal"><span class="varname">value</span></code> attribute. The <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component is then automatically attached to the parent element, and is usually shown when the mouse cursor hovers.</p>
+<p>Alternatively, the content of the tool-tip can be defined inside the <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> tags, and the <code class="literal"><span class="varname">value</span></code> attribute is not used. This allows HTML tags to be used to define the content, and provides for rich content such as images, links, buttons, and other RichFaces components.</p>
+<div class="example"><a id="exam-Component_Reference-tooltip-Defining_tool-tip_content"/><p class="title"><b>Example 13.10. Defining tool-tip content</b></p><div class="example-contents">
+
+<div class="variablelist"><dl><dt><span class="term">Basic content</span></dt><dd>
+</dd></dl></div>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tooltip</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;This&nbsp;is&nbsp;a&nbsp;tool-tip.&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<div class="variablelist"><dl><dt><span class="term">Rich content</span></dt><dd>
+</dd></dl></div>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tooltip</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">b</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">tool-tip</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">b</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">.</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tooltip</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-Attaching_the_tool-tip_to_another_component"/>13.9.2. Attaching the tool-tip to another component</h3></div></div></div>
+
+<p>If not otherwise specified, the tool-tip is attached to the parent element in which it is defined. The <code class="literal"><span class="varname">target</span></code> attribute is used to attach the tool-tip to another component, pointing to the target component’s <code class="literal"><span class="varname">id</span></code> identifier. This allows the <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component to be specified outside the target element. This approach is demonstrated in <a class="xref" href="chap-Component_Reference-Output_and_messages.html#exam-Component_Reference-tooltip-Attaching_the_tool-tip" title="Example 13.11. Attaching the tool-tip">Example 13.11, “Attaching the tool-tip”</a>.</p>
+<div class="example"><a id="exam-Component_Reference-tooltip-Attaching_the_tool-tip"/><p class="title"><b>Example 13.11. Attaching the tool-tip</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelId&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tooltip</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;This&nbsp;is&nbsp;a&nbsp;tool-tip.&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelId&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component can alternatively be left unattached, and is instead invoked through an event handler on the target component. To leave the <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component unattached, set <code class="literal"><span class="code">attached="false"</span></code>, and define the event handler to trigger the tool-tip on the target component. This approach is demonstrated in <a class="xref" href="chap-Component_Reference-Output_and_messages.html#exam-Component_Reference-tooltip-Unattached_tool-tips" title="Example 13.12. Unattached tool-tips">Example 13.12, “Unattached tool-tips”</a>. When leaving the <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component unattached, ensure it has an <code class="literal"><span class="varname">id</span></code> identifier defined. If it is defined outside the target element, it must be nested in an <code class="literal"><span class="sgmltag">&lt;h:form&gt;</span></code> component.</p>
+<div class="example"><a id="exam-Component_Reference-tooltip-Unattached_tool-tips"/><p class="title"><b>Example 13.12. Unattached tool-tips</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelId&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{rich:component('tooltipId')}.show(event);&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tooltip</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;toolTipId&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">attached</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;false&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;This&nbsp;is&nbsp;a&nbsp;tool-tip.&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-Appearance"/>13.9.3. Appearance</h3></div></div></div>
+
+<p>By default, the <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component is positioned intelligently based on the position of the mouse cursor. Use the <code class="literal"><span class="varname">jointPoint</span></code> attribute to specify a corner of the target component at which to display the tool-tip instead, and use the <code class="literal"><span class="varname">direction</span></code> attribute to specify the direction the tool-tip will appear relative to that corner. Possible values for both attributes are:  <code class="literal">auto</code>, <code class="literal">autoLeft</code>, <code class="literal">autoRight</code>, <code class="literal">bottomAuto</code>, <code class="literal">bottomLeft</code>, <code class="literal">bottomRight</code>, <code class="literal">topAuto</code>, <code class="literal">topLeft</code>, <code class="literal">topRight</code>. Use the <code class="literal"><span class="varname">horizontalOffset</span></code> and <code class="literal"><span class="varname">verticalOffset</span></code> attributes to specify the horizontal offset and vertical offset at which to display the tool-tip.</p>
+<p>Use the <code class="literal"><span class="varname">showEvent</span></code> attribute to specify when the tool-tip is shown. By default it appears when the attached component is hovered-over with the mouse. Use the <code class="literal"><span class="varname">hideEvent</span></code> attribute to specify when the tool-tip is hidden. The default value is <code class="literal">none</code>, so the tool-tip remains shown. However, it can be linked to an event on the target component, such as the <code class="literal">mouseout</code> event.</p>
+<p>Set <code class="literal"><span class="code">followMouse="true"</span></code> to cause the tool-tip to follow the user’s mouse movements.</p>
+<p>Advanced appearance features are demonstrated in <a class="xref" href="chap-Component_Reference-Output_and_messages.html#exam-Component_Reference-tooltip-Advanced_tool-tip_usage" title="Example 13.13. Advanced tool-tip usage">Example 13.13, “Advanced tool-tip usage”</a>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-Update_mode"/>13.9.4. Update mode</h3></div></div></div>
+
+<p>The mode for updating the tool-tip is determined by the <code class="literal"><span class="varname">mode</span></code> attribute, which can have one of the following values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+The tool-tip content is requested from the server with every activation.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+The tool-tip content is rendered once on the server. An external submit causes the content to re-render.
+</dd></dl></div>
+
+<p>When using <code class="literal"><span class="code">mode="ajax"</span></code>, define the <code class="literal">loading</code> facet. The tool-tip displays the content of the <code class="literal">loading</code> facet while loading the actual content from the server.</p>
+<div class="example"><a id="exam-Component_Reference-tooltip-Advanced_tool-tip_usage"/><p class="title"><b>Example 13.13. Advanced tool-tip usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandLink</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Simple&nbsp;Link&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;link&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tooltip</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">followMouse</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">direction</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;topRight&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">mode</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ajax&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.toolTipContent}&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">horizontalOffset</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;5&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">verticalOffset</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;5&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">layout</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;block&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;loading&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:verbatim</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Loading...</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:verbatim</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tooltip</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandLink</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-tooltip_client-side_events"/>13.9.5. <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> client-side events</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component supports the following client-side events:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">click</code></span></dt><dd>
+This event is activated when the tool-tip is clicked with the mouse.
+</dd><dt><span class="term"><code class="literal">dblclick</code></span></dt><dd>
+This event is activated when the tool-tip is double-clicked with the mouse.
+</dd><dt><span class="term"><code class="literal">mouseout</code></span></dt><dd>
+This event is activated when the mouse cursor leaves the tool-tip.
+</dd><dt><span class="term"><code class="literal">mousemove</code></span></dt><dd>
+This event is activated when the mouse cursor moves over the tool-tip.
+</dd><dt><span class="term"><code class="literal">mouseover</code></span></dt><dd>
+This event is activated when the mouse cursor hovers over the tool-tip.
+</dd><dt><span class="term"><code class="literal">show</code></span></dt><dd>
+This event is activated when the tool-tip is shown.
+</dd><dt><span class="term"><code class="literal">complete</code></span></dt><dd>
+This event is activated when the tool-tip is completed.
+</dd><dt><span class="term"><code class="literal">hide</code></span></dt><dd>
+This event is activated when the tool-tip is hidden.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-JavaScript_API"/>13.9.6. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tooltip&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">show(event)</span></code></span></dt><dd>
+Show the tool-tip.
+</dd><dt><span class="term"><code class="literal"><span class="function">hide()</span></code></span></dt><dd>
+Hide the tool-tip.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-Reference_data"/>13.9.7. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Tooltip</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITooltip</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Tooltip</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TooltipRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tooltip-Style_classes_and_skin_parameters"/>13.9.8. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="tooltip-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 13.7. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tt</span></code></span></dt><dd>
+This class defines styles for the tool-tip itself.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tt-loading</span></code></span></dt><dd>
+This class defines styles for the tool-tip when it is loading.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tt-cnt</span></code></span></dt><dd>
+This class defines styles for the tool-tip content.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tt-cntr</span></code></span></dt><dd>
+This class defines styles for the progressed portion of the progress bar.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">tipBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Menus_and_toolbars.html"><strong>Prev</strong>Chapter 12. Menus and toolbars</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Drag_and_drop.html"><strong>Next</strong>Chapter 14. Drag and drop</a></li></ul></body></html>

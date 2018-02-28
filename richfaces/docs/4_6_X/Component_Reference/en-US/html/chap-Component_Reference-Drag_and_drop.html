@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 14. Drag and drop</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="prev" href="chap-Component_Reference-Output_and_messages.html" title="Chapter 13. Output and messages"/><link rel="next" href="chap-Component_Reference-Layout_and_appearance.html" title="Chapter 15. Layout and appearance"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Output_and_messages.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Layout_and_appearance.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Drag_and_drop"/>Chapter 14. Drag and drop</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-Drag_and_drop-dragSource">14.1. &lt;rich:dragSource&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dragSource-Basic_usage">14.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dragSource-Dragging_an_object">14.1.2. Dragging an object</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dragSource-Reference_data">14.1.3. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-Drag_and_drop-dropTarget">14.2. &lt;rich:dropTarget&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dropTarget-Basic_usage">14.2.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dropTarget-Handling_dropped_data">14.2.2. Handling dropped data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dropTarget-Reference_data">14.2.3. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dropTarget-Style_classes">14.2.4. Style classes</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-Drag_and_drop-dragIndicator">14.3. &lt;rich:dragIndicator&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dragIndicator-Basic_usage">14.3.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dragIndicator-Styling_the_indicator">14.3.2. Styling the indicator</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dragIndicator-Reference_data">14.3.3. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Drag_and_drop.html#sect-Component_Reference-dragIndicator-Style_classes">14.3.4. Style classes</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter for details on adding drag and drop support to controls.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Drag_and_drop-dragSource"/>14.1. <a id="richdragSource"/><code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component can be added to a component to indicate it is capable of being dragged by the user. The dragged item can then be dropped into a compatible drop area, designated using the <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dragSource-Basic_usage"/>14.1.1. Basic usage</h3></div></div></div>
+
+<p>To add drag support to a component, attach the <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component as a child element.</p>
+<p>The <code class="literal"><span class="varname">type</span></code> attribute must be specified, and can be any identifying string. Dragged items can only be dropped in drop zones where the <code class="literal"><span class="varname">type</span></code> attribute of the <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component is listed in the <code class="literal"><span class="varname">acceptedTypes</span></code> attribute of the <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dragSource-Dragging_an_object"/>14.1.2. Dragging an object</h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">dragIndicator</span></code> parameter to customize the appearance of a dragged object while it is being dragged. The <code class="literal"><span class="varname">dragIndicator</span></code> parameter must point to the <code class="literal"><span class="varname">id</span></code> identifier of a <code class="literal"><span class="sgmltag">&lt;rich:dragIndicator&gt;</span></code> component. If the <code class="literal"><span class="varname">dragIndicator</span></code> attribute is not defined, the drag indicator appears as a clone of the <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component’s parent control.</p>
+<p>To bind data to the dragged object, use the <code class="literal"><span class="varname">dragValue</span></code> attribute. The <code class="literal"><span class="varname">dragValue</span></code> attribute specifies a server-side object, which is then bound to the parent component when it is dragged. This facilitates handling event data during a drop event.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_dragindicator_customization"/>14.1.2.1. DragIndicator customization</h4></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">dragOptions</span></code> parameter to further customize the appearance and behavior of the dragIndicator.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputScript</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;opts&nbsp;=&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helper:&nbsp;function&nbsp;()&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$(&quot;#indicator&quot;).clone();</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursorAt:&nbsp;{</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;5,</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;5</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;}</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:outputScript</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dragSource</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">dragOptions</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;opts&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>For full list of options see the <a class="ulink" href="http://api.jqueryui.com/draggable/">jQuery.draggable documentation</a>.</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dragSource-Reference_data"/>14.1.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DragSource</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIDragSource</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.DragSource</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DragSourceRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Drag_and_drop-dropTarget"/>14.2. <a id="richdropTarget"/><code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component can be added to a component so that the component can accept dragged items. The dragged items must be defined with a compatible drop type for the <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropTarget-Basic_usage"/>14.2.1. Basic usage</h3></div></div></div>
+
+<p>To allow dragged items to be dropped on a component, attach the <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component as a child element to the component.</p>
+<p>The <code class="literal"><span class="varname">acceptedTypes</span></code> attribute must be specified. The <code class="literal"><span class="varname">acceptedTypes</span></code> attribute is a comma-separated list of strings that match the types of dragged items. Dragged items can only be dropped in drop zones where the <code class="literal"><span class="varname">type</span></code> attribute of the <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component is listed in the <code class="literal"><span class="varname">acceptedTypes</span></code> attribute of the <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component.</p>
+<p>The <code class="literal"><span class="varname">acceptedTypes</span></code> attribute can optionally be set to either <code class="literal">@none</code> or <code class="literal">@all</code>. If set to <code class="literal">@none</code>, the component will not accept any type of dropped object. If set to <code class="literal">@all</code>, the component accepts all dropped objects. If the <code class="literal"><span class="varname">acceptedTypes</span></code> attribute is not specified, the default value is <code class="literal">null</code>, which is the same as a <code class="literal">@none</code> setting.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropTarget-Handling_dropped_data"/>14.2.2. Handling dropped data</h3></div></div></div>
+
+<p>To provide additional parameters for the server-side drop event, use the <code class="literal"><span class="varname">dropValue</span></code> attribute.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component raises the <code class="literal"><span class="varname">DropEvent</span></code> server-side event when an object is dropped. The event uses the following parameters:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="parameter">dragSource</span></code> identifies the component being dragged (the parent of the <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component).
+</li><li>
+The <code class="literal"><span class="parameter">dragValue</span></code> parameter is the content of the <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component’s <code class="literal"><span class="varname">dragValue</span></code> attribute.
+</li><li>
+The <code class="literal"><span class="parameter">dropValue</span></code> parameter is the content of the <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component’s <code class="literal"><span class="varname">dropValue</span></code> attribute.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropTarget-Reference_data"/>14.2.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DropTarget</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIDropTarget</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.DropTarget</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DropTargetRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.DropHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dropTarget-Style_classes"/>14.2.4. Style classes</h3></div></div></div>
+
+<div class="variablelist"><a id="dropTarget-Style_classes"/><p class="title"><b>Style classes (selectors)</b></p><dl><dt><span class="term"><code class="literal">.rf-drp-hvr</code></span></dt><dd>
+This class defines styles for the drop target when a dragged item is hovering over it.
+</dd><dt><span class="term"><code class="literal">.rf-drp-hlight</code></span></dt><dd>
+This class defines styles for a highlighted drop target.
+</dd></dl></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Drag_and_drop-dragIndicator"/>14.3. <a id="richdragIndicator"/><code class="literal"><span class="sgmltag">&lt;rich:dragIndicator&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:dragIndicator&gt;</span></code> component defines a graphical element to display under the mouse cursor during a drag-and-drop operation.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dragIndicator-Basic_usage"/>14.3.1. Basic usage</h3></div></div></div>
+
+<p>To use a drag indicator, define the inner content that appears during a drag event. No additional attributes are required. If a drag indicator is not used, a clone of the drag source is used instead.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dragIndicator-Styling_the_indicator"/>14.3.2. Styling the indicator</h3></div></div></div>
+
+<p>The drag indicator can be styled depending on the current state of the dragged element. There are three attributes for different states. The attributes reference the CSS class to use for styling the drag indicator when the dragged element is in the relevant state.</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="varname">acceptClass</span></code></span></dt><dd>
+The <code class="literal"><span class="varname">acceptClass</span></code> attribute specifies the style when the dragged element is over an acceptable drop target. It indicates that the <code class="literal"><span class="varname">type</span></code> attribute of the element’s <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component matches <code class="literal"><span class="varname">acceptedTypes</span></code> attribute of the drop target’s <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component.
+</dd><dt><span class="term"><code class="literal"><span class="varname">rejectClass</span></code></span></dt><dd>
+The <code class="literal"><span class="varname">rejectClass</span></code> attribute specifies the style when the dragged element is over a drop target that is not acceptable. It indicates that the <code class="literal"><span class="varname">type</span></code> attribute of the element’s <code class="literal"><span class="sgmltag">&lt;rich:dragSource&gt;</span></code> component is not found in the <code class="literal"><span class="varname">acceptedTypes</span></code> attribute of the drop target’s <code class="literal"><span class="sgmltag">&lt;rich:dropTarget&gt;</span></code> component.
+</dd><dt><span class="term"><code class="literal"><span class="varname">draggingClass</span></code></span></dt><dd>
+The <code class="literal"><span class="varname">draggingClass</span></code> attribute specifies the style when the dragged element is being dragged. It indicates that the dragged element is not over a drop target.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dragIndicator-Reference_data"/>14.3.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DragIndicator</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIDragIndicator</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.DragIndicator</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.DragIndicatorRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-dragIndicator-Style_classes"/>14.3.4. Style classes</h3></div></div></div>
+
+<div class="variablelist"><a id="dragIndicator-Style_classes"/><p class="title"><b>Style classes (selectors)</b></p><dl><dt><span class="term"><code class="literal">.rf-ind</code></span></dt><dd>
+This class defines styles for the drag indicator.
+</dd><dt><span class="term"><code class="literal">.rf-ind-drag.accept</code></span></dt><dd>
+This class defines styles for the indicator when it is over an acceptable drop target.
+</dd><dt><span class="term"><code class="literal">.rf-ind-drag.reject</code></span></dt><dd>
+This class defines styles for the indicator when it is over an unacceptable drop target.
+</dd><dt><span class="term"><code class="literal">.rf-ind-drag.default</code></span></dt><dd>
+This class defines styles for the indicator when it is being dragged, and is not over any drop targets.
+</dd></dl></div>
+
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Output_and_messages.html"><strong>Prev</strong>Chapter 13. Output and messages</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Layout_and_appearance.html"><strong>Next</strong>Chapter 15. Layout and appearance</a></li></ul></body></html>

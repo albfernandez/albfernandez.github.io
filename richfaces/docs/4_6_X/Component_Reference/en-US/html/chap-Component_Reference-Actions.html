@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 3. Actions</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-Ajax_control_components.html" title="Part I. Ajax control components"/><link rel="prev" href="part-Component_Reference-Ajax_control_components.html" title="Part I. Ajax control components"/><link rel="next" href="chap-Component_Reference-Resources.html" title="Chapter 4. Resources"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="part-Component_Reference-Ajax_control_components.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Resources.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Actions"/>Chapter 3. Actions</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-ajax">3.1. &lt;a4j:ajax&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-ajax-Basic_usage">3.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-ajax-Reference_data">3.1.2. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-param">3.2. &lt;a4j:param&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-param-Basic_usage">3.2.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-param-Interoperability">3.2.2. Interoperability</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-param-Passing_client-side_parameters">3.2.3. Passing client-side parameters</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-param-Reference_data">3.2.4. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-actionListener">3.3. &lt;a4j:actionListener&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-commandButton">3.4. &lt;a4j:commandButton&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-commandButton-Basic_usage">3.4.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-commandButton-Reference_data">3.4.2. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-commandLink">3.5. &lt;a4j:commandLink&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-commandLink-Basic_usage">3.5.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-commandLink-Reference_data">3.5.2. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-jsFunction">3.6. &lt;a4j:jsFunction&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-jsFunction-Basic_usage">3.6.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-jsFunction-Parameters_and_JavaScript">3.6.2. Parameters and JavaScript</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-jsFunction-Reference_data">3.6.3. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-poll">3.7. &lt;a4j:poll&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-poll-Timing_options">3.7.1. Timing options</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-poll-Reference_data">3.7.2. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-Actions-push">3.8. &lt;a4j:push&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Setting_up_push">3.8.1. Setting up Push</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Server_side_Push_methods">3.8.2. Server-side Push methods</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Client_side_Push_methods">3.8.3. Client-side Push methods</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Push_Topics">3.8.4. Push Topics</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Handling_a_push_message">3.8.5. Handling a push message</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Handling_a_push_subscription">3.8.6. Handling a push subscription</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Using_TopicsContext_to_publish_message">3.8.7. Using TopicsContext to publish message</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Push_CDI_Integration">3.8.8. Integrating Push with CDI events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Push_and_JMS_integration">3.8.9. Push and JMS integration</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Actions.html#sect-Component_Reference-push-Reference_data">3.8.10. Reference data</a></span></dt></dl></dd></dl></div>
+
+<p>This chapter details the basic components that respond to a user action and submit an Ajax request.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-ajax"/>3.1. <a id="a4jajax"/><code class="literal"><span class="sgmltag">&lt;a4j:ajax&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:ajax&gt;</span></code> behavior allows Ajax capability to be added to a non-Ajax component. The non-Ajax component must implement the <code class="literal"><span class="interfacename">ClientBehaviorHolder</span></code> interface for all the event attributes that support behavior rendering.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-ajax-Basic_usage"/>3.1.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:ajax&gt;</span></code> behavior is placed as a direct child to the component that requires Ajax support.</p>
+<p>Point the <code class="literal"><span class="varname">event</span></code> attribute to the standard JSF event that triggers the behavior. If the <code class="literal"><span class="varname">event</span></code> attribute is not defined, the behavior is triggered on the event that normally provides interaction behavior for the parent component.</p>
+<div class="example"><a id="exam-Component_Reference-ajax-ajax_example"/><p class="title"><b>Example 3.1. <code class="literal"><span class="sgmltag">&lt;a4j:ajax&gt;</span></code> example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">columns</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;2&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myinput&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{userBean.name}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:ajax</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;keyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">render</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;outtext&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;outtext&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{userBean.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-ajax-Reference_data"/>3.1.2. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">client-behavior-renderer-type</span></code>: <code class="literal"><span class="classname">org.ajax4jsf.behavior.Ajax</span></code>
+</li><li>
+<code class="literal"><span class="parameter">behavior-id</span></code>: <code class="literal"><span class="classname">org.ajax4jsf.behavior.Ajax</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.AjaxHandler</span></code>
+</li><li>
+<code class="literal"><span class="parameter">behavior-class</span></code>: <code class="literal"><span class="classname">org.ajax4jsf.component.behavior.AjaxBehavior</span></code>
+</li><li>
+<code class="literal"><span class="parameter">client-behavior-renderer-class</span></code>: <code class="literal"><span class="classname">org.ajax4jsf.renderkit.AjaxBehaviorRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-param"/>3.2. <a id="a4jparam"/><code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code> behavior combines the functionality of the JavaServer Faces ( <acronym class="acronym">JSF</acronym>) components <code class="literal"><span class="sgmltag">&lt;f:param&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;f:actionListener&gt;</span></code>.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-param-Basic_usage"/>3.2.1. Basic usage</h3></div></div></div>
+
+<p>Basic usage of the <code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code> requires three main attributes:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">value</span></code> attribute is the initial value of the parameter.
+</li><li>
+The <code class="literal"><span class="varname">assignTo</span></code> attribute defines the bean property. The property is updated if the parent command component performs an action event during the <span class="emphasis"><em>Process Request</em></span> phase.
+</li></ul></div>
+
+<p><a class="xref" href="chap-Component_Reference-Actions.html#exam-Component_Reference-param-param_example" title="Example 3.2. &lt;a4j:param&gt; example">Example 3.2, “&lt;a4j:param&gt; example”</a> shows a simple implementation along with the accompanying managed bean.</p>
+<div class="example"><a id="exam-Component_Reference-param-param_example"/><p class="title"><b>Example 3.2. <code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code> example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;form&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Set&nbsp;name&nbsp;to&nbsp;Alex&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">reRender</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;rep&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;username&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Alex&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">assignTo</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{paramBean.name}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;rep&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Name:&nbsp;#{paramBean.name}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">public</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">ParamBean</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;name&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;John&quot;</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;getName</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;name</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;setName</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;name</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">name&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;name</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span>
+</pre>
+
+<p>When the <span class="guibutton"><strong>Set name to Alex</strong></span> button is pressed, the application sets the <code class="literal"><span class="varname">name</span></code> parameter of the bean to <code class="literal">Alex</code>, and displays the name in the output field.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-param-Interoperability"/>3.2.2. Interoperability</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code> tag can be used with non-Ajax components in addition to Ajax components. This includes components which are working through the <code class="literal"><span class="code">GET</span></code> request, such as the <code class="literal"><span class="sgmltag">&lt;h:link&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;h:button&gt;</span></code> components. In this way, data model values can also be updated without any Java code on the server side.</p>
+<p>The <code class="literal"><span class="varname">converter</span></code> attribute can be used to specify how to convert the value before it is submitted to the data model. The property is assigned the new value during the <span class="emphasis"><em>Update Model</em></span> phase.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Validation failure</h2>
+
+<p>If the validation of the form fails, the <span class="emphasis"><em>Update Model</em></span> phase will be skipped and the property will not be updated.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-param-Passing_client-side_parameters"/>3.2.3. Passing client-side parameters</h3></div></div></div>
+
+<p>Variables from JavaScript functions can be used for the <code class="literal"><span class="varname">value</span></code> attribute. In such an implementation, the <code class="literal"><span class="varname">noEscape</span></code> attribute should be set to <code class="literal">true</code>. Using <code class="literal"><span class="code">noEscape="true"</span></code>, the <code class="literal"><span class="varname">value</span></code> attribute can contain any JavaScript expression or JavaScript function invocation, and the result will be sent to the server as the <code class="literal"><span class="varname">value</span></code> attribute.</p>
+<div class="example"><a id="exam-Component_Reference-param-Passing_client-side_parameters"/><p class="title"><b>Example 3.3. Passing client-side parameters</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Show&nbsp;Screen&nbsp;Size&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">render</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;infoPanel&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;w&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;screen.width&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">assignTo</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{paramBean.screenWidth}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">noEscape</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;h&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;screen.height&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">assignTo</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{paramBean.screenHeight}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">noEscape</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">columns</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;2&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;infoPanel&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Width:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{paramBean.screenWidth}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Height:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{paramBean.screenHeight}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The command button triggers the <code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code> behaviors and renders the output text. The <code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code> behaviors pass client-side parameters for the screen width and height through the backing bean. These parameters are then used to populate the output text values.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-param-Reference_data"/>3.2.4. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Parameter</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIParameter</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Parameter</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.ParameterHandler</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-actionListener"/>3.3. <a id="a4jactionListener"/><code class="literal"><span class="sgmltag">&lt;a4j:actionListener&gt;</span></code></h2></div></div></div>
+
+<p>Use the <code class="literal"><span class="sgmltag">&lt;a4j:actionListener&gt;</span></code> tag to register an <code class="literal"><span class="classname">ActionListener</span></code> class on a parent action component. The class provided as a listener must implement the <code class="literal"><span class="interfacename">javax.faces.event.ActionListener</span></code> interface. Multiple listener methods can be registered on an action component in this way.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:actionListener&gt;</span></code> tag differs from the standard JSF tag by allowing a listener method to be defined instead of just a class. Use the <code class="literal"><span class="varname">listener</span></code> attribute to define the listener method.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-commandButton"/>3.4. <a id="a4jcommandButton"/><code class="literal"><span class="sgmltag">&lt;a4j:commandButton&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:commandButton&gt;</span></code> component is similar to the JavaServer Faces ( <acronym class="acronym">JSF</acronym>) <code class="literal"><span class="sgmltag">&lt;h:commandButton&gt;</span></code> component, but additionally includes Ajax support.</p>
+<div class="figure"><a id="figu-Component_Reference-commandButton-commandButton"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-commandButton-commandButton.png" alt="figu Component Reference commandButton commandButton"/></div>
+</div><p class="title"><b>Figure 3.1. <code class="literal"><span class="sgmltag">&lt;a4j:commandButton&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>The &lt;a4j:commandButton&gt; component executes the complete form</h2>
+
+<p>Button controls are typically used to perform complete form submissions for data storing. As a consequence, the <code class="literal"><span class="sgmltag">&lt;a4j:commandButton&gt;</span></code> component has the <code class="literal"><span class="code">execute="@form"</span></code> setting by default. To limit rendering to a different scope, redefine the <code class="literal"><span class="varname">execute</span></code> attribute.</p>
+</div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-commandButton-Basic_usage"/>3.4.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:commandButton&gt;</span></code> requires only the <code class="literal"><span class="varname">value</span></code> attribute to function. Use the <code class="literal"><span class="varname">value</span></code> attribute to specify the text of the button.</p>
+<p>By default, the <code class="literal"><span class="sgmltag">&lt;a4j:commandButton&gt;</span></code> uses the <code class="literal"><span class="varname">click</span></code> event instead of the <code class="literal"><span class="varname">submit</span></code> event.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-commandButton-Reference_data"/>3.4.2. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.CommandButton</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UICommandButton</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Command</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.CommandButtonRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-commandLink"/>3.5. <a id="a4jcommandLink"/><code class="literal"><span class="sgmltag">&lt;a4j:commandLink&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:commandLink&gt;</span></code> component is similar to the JavaServer Faces ( <acronym class="acronym">JSF</acronym>) <code class="literal"><span class="sgmltag">&lt;h:commandLink&gt;</span></code> component, except that it includes plugged-in Ajax behavior.</p>
+<div class="figure"><a id="figu-Component_Reference-commandLink-commandLink"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-commandLink-commandLink.png" alt="figu Component Reference commandLink commandLink"/></div>
+</div><p class="title"><b>Figure 3.2. <code class="literal"><span class="sgmltag">&lt;a4j:commandLink&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>The &lt;a4j:commandLink&gt; component executes the complete form</h2>
+
+<p>Link controls are typically used to perform complete form submissions for data storing. As a consequence, the <code class="literal"><span class="sgmltag">&lt;a4j:commandLink&gt;</span></code> component has the <code class="literal"><span class="code">execute="@form"</span></code> setting by default. To limit rendering to a different scope, redefine the <code class="literal"><span class="varname">execute</span></code> attribute.</p>
+</div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-commandLink-Basic_usage"/>3.5.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:commandLink&gt;</span></code> requires only the <code class="literal"><span class="varname">value</span></code> attribute to function. Use the <code class="literal"><span class="varname">value</span></code> attribute to specify the text of the link.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:commandLink&gt;</span></code> uses the <code class="literal"><span class="varname">click</span></code> event instead of the <code class="literal"><span class="varname">submit</span></code> event.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-commandLink-Reference_data"/>3.5.2. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.CommandLink</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UICommandLink</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Command</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.CommandLinkRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-jsFunction"/>3.6. <a id="a4jjsFunction"/><code class="literal"><span class="sgmltag">&lt;a4j:jsFunction&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:jsFunction&gt;</span></code> component performs Ajax requests directly from JavaScript code and retrieves server-side data. The server-side data is returned in JavaScript Object Notation ( <acronym class="acronym">JSON</acronym>) format prior to the execution of any JavaScript code defined using the <code class="literal"><span class="varname">oncomplete</span></code> attribute.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jsFunction-Basic_usage"/>3.6.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:jsFunction&gt;</span></code> component requires the <code class="literal"><span class="varname">data</span></code> attribute. Use the <code class="literal"><span class="varname">data</span></code> attribute to define where the retrieved server-side data is stored.</p>
+<p><a class="xref" href="chap-Component_Reference-Actions.html#exam-Component_Reference-jsFunction-jsFunction_example" title="Example 3.4. &lt;a4j:jsFunction&gt; example">Example 3.4, “&lt;a4j:jsFunction&gt; example”</a> shows how an Ajax request can be initiated from the JavaScript and a partial page update performed. The JavaScript function can be invoked with the data returned by the Ajax response.</p>
+<div class="example"><a id="exam-Component_Reference-jsFunction-jsFunction_example"/><p class="title"><b>Example 3.4. <code class="literal"><span class="sgmltag">&lt;a4j:jsFunction&gt;</span></code> example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">table</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">width</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;400&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">tbody</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">tr</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">td</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">span</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;updateName('Kate')&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onmouseout</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;updateName('')&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Kate</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">span</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">td</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">td</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">span</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;updateName('John')&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onmouseout</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;updateName('')&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">John</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">span</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">td</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">td</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">span</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;updateName('Alex')&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onmouseout</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;updateName('')&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Alex</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">span</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">td</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">tr</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">tr</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">td</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">colspan</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;3&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">b</span><span class="xml_tag_symbols">&gt;&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;showname&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{functionBean.text}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;&lt;/</span><span class="xml_tag_name">b</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">td</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">tr</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">tbody</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">table</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:jsFunction</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;updateName&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">render</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;showname&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;name&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">assignTo</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{functionBean.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:jsFunction</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The output text for the name is changed depending on which table cell the user hovers over with the mouse. The <code class="literal"><span class="sgmltag">&lt;a4j:jsFunction&gt;</span></code> component manages the updating and display of the name.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jsFunction-Parameters_and_JavaScript"/>3.6.2. Parameters and JavaScript</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:jsFunction&gt;</span></code> component allows the use of the <code class="literal"><span class="sgmltag">&lt;a4j:param&gt;</span></code> component or the JavaServer Faces <code class="literal"><span class="sgmltag">&lt;f:param&gt;</span></code> component to pass any number of parameters for the JavaScript function.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jsFunction-Reference_data"/>3.6.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Function</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIFunction</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">javax.faces.Command</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.FunctionRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-poll"/>3.7. <a id="a4jpoll"/><code class="literal"><span class="sgmltag">&lt;a4j:poll&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:poll&gt;</span></code> component allows periodical sending of Ajax requests to the server. It is used for repeatedly updating a page at specific time intervals.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-poll-Timing_options"/>3.7.1. Timing options</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">interval</span></code> attribute specifies the time in milliseconds between requests. The default for this value is 1000 ms (1 second).</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:poll&gt;</span></code> component can be enabled and disabled using the <code class="literal"><span class="varname">enabled</span></code> attribute. Using Expression Language ( <acronym class="acronym">EL</acronym>), the <code class="literal"><span class="varname">enabled</span></code> attribute can point to a bean property to apply a particular attribute value.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-poll-Reference_data"/>3.7.2. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Poll</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPoll</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Poll</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PollRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.AjaxPollHandler</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Actions-push"/>3.8. <a id="a4jpush"/><code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> component performs real-time updates on the client side from events triggered at the server side. The events are pushed out to the client through the RichFaces messaging queue. When the <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> component is triggered by a server event, it can in turn cause Ajax updates and changes.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> component uses the Comet model for pushing data to the client.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Setting_up_push"/>3.8.1. Setting up Push</h3></div></div></div>
+
+<p>Using the Push component requires configuration steps which depends on an environment in which the Push is used:</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-push-Installing_runtime_dependencies"/>3.8.1.1. Installing runtime dependencies</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> uses an Atmosphere framework for transporting messages. In order to use the Atmosphere on the server-side, it is necessary to add Atmosphere libraries into a project.</p>
+<p>In a Maven-based project, you should add <code class="literal"><span class="code">richfaces-push-depchain</span></code> as a runtime dependency:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">richfaces-push-depchain</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">pom</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">4.5.18-SNAPSHOT</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">runtime</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>By declarating a dependency chain, all the required runtime dependencies such as <code class="literal"><span class="code">atmosphere-runtime</span></code> will be added transitively to your project.</p>
+<p>For non-Maven-based projects, it is necessary to add dependencies manually - check "RichFaces Developer Guide", section "Project libraries and dependencies" for details.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-push-Registering_Push_servlet"/>3.8.1.2. Registering Push servlet</h4></div></div></div>
+
+<p>The Push requires a <code class="literal"><span class="code">PushServlet</span></code> registered in web application and listening for Push client connections.</p>
+<p>In the Servlets 3.0 and higher environments, the servlet will be registered automatically.</p>
+<p>However in the Servlets 2.5 and lower environments, the servlet needs to be registered manually in <code class="literal"><span class="code">web.xml</span></code>:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_comment">&lt;!--&nbsp;Push&nbsp;Servlet&nbsp;-&nbsp;listens&nbsp;for&nbsp;user&nbsp;sessions&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Push&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.webapp.PushServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Push&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">/__richfaces_push</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_comment">&lt;!--&nbsp;setups&nbsp;servlet-mapping&nbsp;in&nbsp;RichFaces&nbsp;configuration&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.push.handlerMapping</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">/__richfaces_push</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Manual registration of servlet in Servlets 3.0</h2>
+
+<p>When you attempt to register the Push servlet manually in Servlet 3.0 environments, RichFaces will detect that the Push servlet is already registered and avoid initializing it again.</p>
+<p>However, be sure to setup the Push servlet to support asynchronous requests - modify the servlet registration from the previous <code class="literal"><span class="code">web.xml</span></code> snippet as follows:</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Push&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.webapp.PushServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">async-supported</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">true</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">async-supported</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Switching to Blocking I/O instead of asynchronous servlets</h2>
+
+<p>Although a container you use supports Servlets 3.0, you may experience problems with using asynchronous servlets.</p>
+<p>It is possible to force the Atmosphere to use a blocking I/O approach with the following <code class="literal"><span class="code">web.xml</span></code> configuration:</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.atmosphere.useBlocking</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">true</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Server_side_Push_methods"/>3.8.2. Server-side Push methods</h3></div></div></div>
+
+<p>The Push events can be fired on the server-side in several ways:</p>
+<div class="itemizedlist"><ul><li>
+<span class="emphasis"><em>TopicsContext</em></span> - accesses a RichFaces message queue directly
+</li><li>
+<span class="emphasis"><em>Push CDI</em></span> - uses the CDI Event mechanism to fire messages
+</li><li>
+<span class="emphasis"><em>Push JMS</em></span> - the RichFaces Push consumes messages from an enterprise messaging system and exposes them to the client (tightly coupled with the JMS runtime)
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Client_side_Push_methods"/>3.8.3. Client-side Push methods</h3></div></div></div>
+
+<p>On the client side, push notifications may be processed in the following ways:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="code">ondataavailable</span></code> event handler (serialized message is available)
+</li><li>
+Client behaviors attached to <code class="literal"><span class="code">dataavailable</span></code> event
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Push_Topics"/>3.8.4. Push Topics</h3></div></div></div>
+
+<p>The Push messages are delivered to the client based on a <code class="literal"><span class="code">TopicKey</span></code>'s name (e.g. <code class="literal"><span class="code">someTopic</span></code>).</p>
+<p>The <code class="literal"><span class="code">TopicKey</span></code> can optionally include a subtopic name (e.g. <code class="literal"><span class="code">subtopic@anotherTopic</span></code>).</p>
+<p>On the client side, the topic is represted by an <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code>'s attribute <code class="literal"><span class="varname">address</span></code>.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Push Topic relates to JMS topic</h2>
+
+<p>The format for the name of the push topic is very close to the JMS topic name and thus enables a seamless transport of JMS messages to the RichFaces message queue.</p>
+</div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Topics with EL expressions</h2>
+
+<p>Since the topic key can contain EL expressions, it is possible to achieve dynamic end-points (e.g. addressing specific clients).</p>
+<p>You need to push a message by using <code class="literal"><span class="code">TopicContext.publish(TopicKey key, Object message)</span></code> or using CDI events to publish message to dynamically evaluated topic key.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code>'s attribute <code class="literal"><span class="varname">address</span></code> accepts EL expressions.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Handling_a_push_message"/>3.8.5. Handling a push message</h3></div></div></div>
+
+<p>A push message sent from the server to the <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> component on the client will cause it to trigger any event handlers defined using the <code class="literal"><span class="varname">dataavailable</span></code> event handler.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> component should also include the <code class="literal"><span class="varname">onerror</span></code> event handler to inform the user when an error has occurred with the push messages.</p>
+<p><code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> can be used for either immediate processing of messages (like in the previous example) or it can trigger a partial page update. Check out following samples:</p>
+<div class="example"><a id="exam-Component_Reference-push-Handling_a_push_message"/><p class="title"><b>Example 3.5. Handling a push message</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:push</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">address</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;chat&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onerror</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;alert(event.rf.data)&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">ondataavailable</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;chat.addMessage(event.rf.data)&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>This example uses the <code class="literal"><span class="varname">dataavailable</span></code> event attribute with some JavaScript to update messages in a chat room. The <code class="literal"><span class="parameter">event.rf.data</span></code> parameter contains Push message data serialized to JavaScript.</p>
+</div></div><br class="example-break"/>
+
+<div class="example"><a id="exam-Component_Reference-push-Updating_DOM_for_each_push_notification"/><p class="title"><b>Example 3.6. Updating DOM for each push message</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:push</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">address</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;chat&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onerror</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;alert(event.rf.data)&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:ajax</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;datavailable&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">render</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;chat&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:push</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>This example uses the <code class="literal"><span class="varname">dataavailable</span></code> event handler to trigger an AJAX request and a partial page update.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Handling_a_push_subscription"/>3.8.6. Handling a push subscription</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> component establishes connection with server on complete page load (when document is ready).</p>
+<p>It means that the application starts to handle push messages once the page is completely loaded.</p>
+<p>However time-critical applications may require keeping client stricly synchronized with the server state.</p>
+<p>For such applications you may use <code class="literal"><span class="varname">onsubscribed</span></code> event handler, which is triggered every time the given component is successfully subscribed to the address/topic it listens to (on a page load and on each AJAX re-render).</p>
+<div class="example"><a id="exam-Component_Reference-push-Handling_a_push_subscription"/><p class="title"><b>Example 3.7. The time-critical updates in stock application</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:push</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">address</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;stockUpdates&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onerror</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;alert(event.rf.data)&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:ajax</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;dataavailable&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">render</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;stocksTable&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:ajax</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;subscribed&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">render</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;stocksTable&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:push</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>This example uses the <code class="literal"><span class="varname">subscribed</span></code> event to update the table content once the push component is subscribed to the topic, ensuring that the table content is not stale.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Using_TopicsContext_to_publish_message"/>3.8.7. Using TopicsContext to publish message</h3></div></div></div>
+
+<p>Messages could be produced using the <code class="literal"><span class="code">TopicsContext</span></code> interface directly as in the following sample:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">private</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">TopicKey</span><!-- <br/> --><span class="java_plain">&nbsp;topicKey&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">new</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">TopicKey</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_literal">&quot;chat&quot;</span><!-- <br/> --><span class="java_separator">);</span>
+</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;initializeTopic</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">TopicsContext</span><span class="java_plain">&nbsp;topicsContext&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">TopicsContext</span><span class="java_separator">.</span><span class="java_plain">lookup</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;topicsContext</span><span class="java_separator">.</span><span class="java_plain">getOrCreateTopic</span><span class="java_separator">(</span><span class="java_plain">topicKey</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;sendMessage</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;message</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_keyword">throws</span><span class="java_plain">&nbsp;</span><span class="java_type">MessageException</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">TopicsContext</span><span class="java_plain">&nbsp;topicsContext&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">TopicsContext</span><span class="java_separator">.</span><span class="java_plain">lookup</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;topicsContext</span><span class="java_separator">.</span><span class="java_plain">publish</span><span class="java_separator">(</span><span class="java_plain">topicKey</span><span class="java_separator">,</span><span class="java_plain">&nbsp;message</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_separator">}</span></pre>
+
+<p>A topic needs to first be created using <code class="literal"><span class="code">TopicsContext#getOrCreate(TopicKey)</span></code> where <code class="literal"><span class="code">TopicKey</span></code> is the name of the topic. A message to the topic can be sent using the method: <code class="literal"><span class="code">TopicsContext#publish(topicKey, message)</span></code>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Push_CDI_Integration"/>3.8.8. Integrating Push with CDI events</h3></div></div></div>
+
+<p>An alternative way of producing messages is to use the CDI event mechanism.</p>
+<p>Push notifications can be produced by annotating a CDI event injection point with the <code class="literal"><span class="code">@Push</span></code> annotation, which specifies an end-point (topic name).</p>
+<p>The payload of the message is the serialized object sent using the CDI event interface ( <code class="literal"><span class="code">Event.fire(T object)</span></code>).</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">Push</span><span class="java_separator">(</span><span class="java_plain">topic&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;chat&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_type">Event</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;pushEvent</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;sendMessage</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;message</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;pushEvent</span><span class="java_separator">.</span><span class="java_plain">fire</span><span class="java_separator">(</span><span class="java_plain">message</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_separator">}</span></pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Push_and_JMS_integration"/>3.8.9. Push and JMS integration</h3></div></div></div>
+
+<p>An integration of the RichFaces Push and the Java Messaging Service ( JMS) allows to write robust interactive applications.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_enabling_jms_integraction"/>3.8.9.1. Enabling JMS integraction</h4></div></div></div>
+
+<p>The JMS integration needs to be enabled in <code class="literal"><span class="code">web.xml</span></code> with a following configuration:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.push.jms.enabled</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">true</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_configuring_jms_backend"/>3.8.9.2. Configuring JMS backend</h4></div></div></div>
+
+<p>The JMS instance on the back-end must be configured to work with your <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> components.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Configuring JMS on JBoss EAP</h2>
+
+<p>Refer to the <span class="strong"><strong><span class="emphasis"><em>JBoss EAP Administration and Configuration Guide</em></span></strong></span> for details on configuring JMS in JBoss EAP.</p>
+</div>
+
+<div class="example"><a id="exam-Component_Reference-push-JMS_server_configuration"/><p class="title"><b>Example 3.8. JMS server configuration</b></p><div class="example-contents">
+
+<p>This simple example describes the JMS server configuration required for a pushing server date to the client.</p>
+<p>The JMS server needs to be setup in order to propagate JMS messages to Push components. Create a new JMS topic using the following settings:</p>
+<div class="horizontal">
+<table border="0"><colgroup><col/><col/></colgroup><tbody valign="top"><tr><td valign="top">
+<p><span class="guilabel"><strong>Name:</strong></span></p>
+</td><td valign="top">
+<p>datePush</p>
+</td></tr><tr><td valign="top">
+<p><span class="guilabel"><strong>JNDI name:</strong></span></p>
+</td><td valign="top">
+<p>/topic/datePush</p>
+</td></tr><tr><td valign="top">
+<p/>
+</td><td valign="top">
+<p>Use the default settings for other options.</p>
+</td></tr></tbody></table>
+</div>
+
+<p>Add a single role for the topic in the same form using the following settings:</p>
+<div class="horizontal">
+<table border="0"><colgroup><col/><col/></colgroup><tbody valign="top"><tr><td valign="top">
+<p><span class="guilabel"><strong>Name:</strong></span></p>
+</td><td valign="top">
+<p>guest</p>
+</td></tr><tr><td valign="top">
+<p><span class="guilabel"><strong>Send:</strong></span></p>
+</td><td valign="top">
+<p>true</p>
+</td></tr><tr><td valign="top">
+<p><span class="guilabel"><strong>Consume:</strong></span></p>
+</td><td valign="top">
+<p>true</p>
+</td></tr><tr><td valign="top">
+<p><span class="guilabel"><strong>Create subscriber:</strong></span></p>
+</td><td valign="top">
+<p>true</p>
+</td></tr><tr><td valign="top">
+<p><span class="guilabel"><strong>Delete subscriber:</strong></span></p>
+</td><td valign="top">
+<p>true</p>
+</td></tr><tr><td valign="top">
+<p><span class="guilabel"><strong>Create durable subscriber:</strong></span></p>
+</td><td valign="top">
+<p>true</p>
+</td></tr><tr><td valign="top">
+<p><span class="guilabel"><strong>Delete durable subscriber:</strong></span></p>
+</td><td valign="top">
+<p>true</p>
+</td></tr></tbody></table>
+</div>
+
+</div></div><br class="example-break"/>
+
+<p>Ensure the <span class="guilabel"><strong>Create durable subscriber</strong></span> and the <span class="guilabel"><strong>Delete durable subscriber</strong></span> options are set to <span class="guilabel"><strong>true</strong></span> for proper push functionality.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Durable subscriptions</h2>
+
+<p>Durable subscriptions receive all events, including those events which were sent while the push component was not connected.</p>
+<p>Refer to <span class="strong"><strong><span class="emphasis"><em>JMS Documentation</em></span></strong></span> for details on configuring the JMS Server.</p>
+</div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>JMS integration with custom configuration</h2>
+
+<p>RichFaces looks for the JMS Connection Factory on the JNDI context <code class="literal"><span class="code">/ConnectionFactory</span></code> by default.</p>
+<p>The prefix <code class="literal"><span class="code">/topic</span></code> is used for deriving JMS topic names from Push topic names.</p>
+<p>When integrating component into an enterprise system, this defaults can be changed.</p>
+<p>Use following <code class="literal"><span class="code">web.xml</span></code> parameters to change default values: <code class="literal"><span class="code">org.richfaces.push.jms.connectionFactory</span></code>, <code class="literal"><span class="code">org.richfaces.push.jms.topicsNamespace</span></code>.</p>
+<p>When RichFaces obtains a connection, an empty user name is used with an empty password.</p>
+<p>Use following <code class="literal"><span class="code">web.xml</span></code> parameters or equivalent JVM parameters to change default values: <code class="literal"><span class="code">org.richfaces.push.jms.connectionUsername</span></code>, <code class="literal"><span class="code">org.richfaces.push.jms.connectionPassword</span></code>.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_sending_and_receiving_push_messages_using_jms"/>3.8.9.3. Sending and receiving Push messages using JMS</h4></div></div></div>
+
+<p>The JMS message which should be propagated to Push needs to be created with the method <code class="literal"><span class="code">session.createObjectMessage(message);</span></code>.</p>
+<p>The message could be then published using <code class="literal"><span class="code">publisher.publish(message);</span></code> like in a following example:</p>
+<div class="example"><a id="exam-Component_Reference-push-Sending_messages_using_JMS"/><p class="title"><b>Example 3.9. Sending messages using JMS</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_type">TopicConnection</span><!-- <br/> --><span class="java_plain">&nbsp;connection</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_type">TopicSession</span><span class="java_plain">&nbsp;session</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_type">TopicPublisher</span><span class="java_plain">&nbsp;publisher</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;sendCurrentDate</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_keyword">throws</span><span class="java_plain">&nbsp;</span><span class="java_type">JMSException</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;currentDate&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Date</span><span class="java_separator">().</span><span class="java_plain">toString</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">ObjectMessage</span><span class="java_plain">&nbsp;message&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;session</span><span class="java_separator">.</span><span class="java_plain">createObjectMessage</span><span class="java_separator">(</span><span class="java_plain">message</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;publisher</span><span class="java_separator">.</span><span class="java_plain">publish</span><span class="java_separator">(</span><span class="java_plain">message</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_operator">//</span><span class="java_plain">&nbsp;messaging&nbsp;needs&nbsp;to&nbsp;be&nbsp;initialized&nbsp;before&nbsp;using&nbsp;method&nbsp;#sendCurrentDate</span><span class="java_separator">()</span>
+<!--  --><br/><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;initializeMessaging</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_keyword">throws</span><span class="java_plain">&nbsp;</span><span class="java_type">JMSException</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">NamingException</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">connection&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">TopicConnectionFactory</span><span class="java_plain">&nbsp;tcf&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_type">TopicConnectionFactory</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_type">InitialContext</span><span class="java_separator">.</span><span class="java_plain">doLookup</span><span class="java_separator">(</span><span class="java_literal">&quot;java:/ConnectionFactory&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connection&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;tcf</span><span class="java_separator">.</span><span class="java_plain">createTopicConnection</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">session&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;connection</span><span class="java_separator">.</span><span class="java_plain">createTopicSession</span><span class="java_separator">(</span><span class="java_literal">false</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">Session</span><span class="java_separator">.</span><span class="java_plain">AUTO_ACKNOWLEDGE</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">topic&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topic&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">InitialContext</span><span class="java_separator">.</span><span class="java_plain">doLookup</span><span class="java_separator">(</span><span class="java_literal">&quot;topic/datePush&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_plain">&nbsp;</span><span class="java_separator">(</span><span class="java_plain">publisher&nbsp;</span><span class="java_operator">==</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publisher&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;session</span><span class="java_separator">.</span><span class="java_plain">createPublisher</span><span class="java_separator">(</span><span class="java_plain">topic</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre>
+
+</div></div><br class="example-break"/>
+
+<p>Receiving messages from a JMS queue doesn’t differ from receiving messages sent by the <code class="literal"><span class="code">TopicsContext</span></code> or using CDI events.</p>
+<div class="example"><a id="exam-Component_Reference-push-Receiving_messages_using_JMS"/><p class="title"><b>Example 3.10. Receiving messages using JMS</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:push</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;datePush&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">address</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;datePush&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">ondataavailable</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;jQuery(#{rich:element('serverDate')}).text(event.rf.data)&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:outputPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;serverDate&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">layout</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;block&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">i</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">waiting&nbsp;for&nbsp;event...</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">i</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:outputPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<p>The above example demonstrates a simple use of the <code class="literal"><span class="sgmltag">&lt;a4j:push&gt;</span></code> tag that causes an immediate update of the page content.</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-push-Reference_data"/>3.8.10. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Push</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPush</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Push</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PushRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="part-Component_Reference-Ajax_control_components.html"><strong>Prev</strong>Part I. Ajax control components</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Resources.html"><strong>Next</strong>Chapter 4. Resources</a></li></ul></body></html>

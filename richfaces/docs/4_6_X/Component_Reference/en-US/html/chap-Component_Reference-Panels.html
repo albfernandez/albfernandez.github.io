@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 9. Panels</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="prev" href="chap-Component_Reference-inputs.html" title="Chapter 8. Rich inputs"/><link rel="next" href="chap-Component_Reference-Tables_and_grids.html" title="Chapter 10. Tables and grids"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-inputs.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Tables_and_grids.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Panels"/>Chapter 9. Panels</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-panel">9.1. &lt;rich:panel&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-panel-Basic_usage">9.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-panel-Adding_a_header">9.1.2. Adding a header</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-panel-Reference_data">9.1.3. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-panel-Style_classes_and_skin_parameters">9.1.4. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-accordion">9.2. &lt;rich:accordion&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-Basic_usage">9.2.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-Switching_panels">9.2.2. Switching panels</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-Appearance">9.2.3. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#__literal_phrase_role_sgmltag_rich_accordion_phrase_literal_client_side_events">9.2.4. &lt;rich:accordion&gt; client-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-accordion_server-side_events">9.2.5. &lt;rich:accordion&gt; server-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-JavaScript_API">9.2.6. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-Reference_data">9.2.7. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-Style_classes_and_skin_parameters">9.2.8. Style classes and skin parameters</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-accordionItem">9.2.9. &lt;rich:accordionItem&gt;</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-collapsiblePanel">9.3. &lt;rich:collapsiblePanel&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-collapsiblePanel-Basic_usage">9.3.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-collapsiblePanel-Expanding_and_collapsing_the_panel">9.3.2. Expanding and collapsing the panel</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-collapsiblePanel-Appearance">9.3.3. Appearance</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-collapsiblePanel-collapsiblePanel_server-side_events">9.3.4. &lt;rich:collapsiblePanel&gt; server-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-collapsiblePanel-JavaScript_API">9.3.5. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-collapsiblePanel-Reference_data">9.3.6. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-collapsiblePanel-Style_classes_and_skin_parameters">9.3.7. Style classes and skin parameters</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-panelToggleListener">9.3.8. &lt;rich:panelToggleListener&gt;</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-popupPanel">9.4. &lt;rich:popupPanel&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Basic_usage">9.4.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Showing_and_hiding_the_pop-up">9.4.2. Showing and hiding the pop-up</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Modal_and_non-modal_panels">9.4.3. Modal and non-modal panels</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Size_and_positioning">9.4.4. Size and positioning</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Header_and_controls">9.4.5. Header and controls</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Contents_of_the_pop-up">9.4.6. Contents of the pop-up</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-JavaScript_API">9.4.7. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Reference_data">9.4.8. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-popupPanel-Style_classes_and_skin_parameters">9.4.9. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-tabPanel">9.5. &lt;rich:tabPanel&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-tabPanel-Switching_tabs">9.5.1. Switching panels</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-tabPanel-tabPanel_client-side_events">9.5.2. &lt;rich:tabPanel&gt; client-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-tabPanel-tabPanel_server-side_events">9.5.3. &lt;rich:tabPanel&gt; server-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-tabPanel-JavaScript_API">9.5.4. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-tabPanel-Reference_data">9.5.5. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-tabPanel-Style_classes_and_skin_parameters">9.5.6. Style classes and skin parameters</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-tab">9.5.7. &lt;rich:tab&gt;</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-togglePanel">9.6. &lt;rich:togglePanel&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-togglePanel-Basic_usage">9.6.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-tab-Repeating_panels">9.6.2. Dynamic panel item generation</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-togglePanel-Toggling_between_panels">9.6.3. Toggling between components</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-togglePanel-JavaScript_API">9.6.4. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-togglePanel-Reference_data">9.6.5. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-itemChangeListener">9.6.6. &lt;rich:itemChangeListener&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-toggleControl">9.6.7. &lt;rich:toggleControl&gt;</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-togglePanelItem">9.6.8. &lt;rich:togglePanelItem&gt;</a></span></dt></dl></dd></dl></div>
+
+<p>This chapter details those components which act as panels and containers to hold groups of other components.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Panels-panel"/>9.1. <a id="richpanel"/><code class="literal"><span class="sgmltag">&lt;rich:panel&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:panel&gt;</span></code> component is a bordered panel with an optional header.</p>
+<div class="figure"><a id="figu-Component_Reference-panel-panel"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-panel-panel.png" alt="figu Component Reference panel panel"/></div>
+</div><p class="title"><b>Figure 9.1. <code class="literal"><span class="sgmltag">&lt;rich:panel&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panel-Basic_usage"/>9.1.1. Basic usage</h3></div></div></div>
+
+<p>No attributes need to be listed for basic usage. a <code class="literal"><span class="sgmltag">&lt;rich:panel&gt;</span></code> without any attributes defined renders a bordered region with no header.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panel-Adding_a_header"/>9.1.2. Adding a header</h3></div></div></div>
+
+<p>To add a header to the panel, use the <code class="literal"><span class="varname">header</span></code> attribute to specify the text to appear in the header. Alternatively the header can be constructed using a header facet. <a class="xref" href="chap-Component_Reference-Panels.html#exam-Component_Reference-panel-Adding_a_header" title="Example 9.1. Adding a header">Example 9.1, “Adding a header”</a> demonstrates the two different approaches.</p>
+<div class="example"><a id="exam-Component_Reference-panel-Adding_a_header"/><p class="title"><b>Example 9.1. Adding a header</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">header</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;This&nbsp;is&nbsp;the&nbsp;panel&nbsp;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;This&nbsp;is&nbsp;the&nbsp;panel&nbsp;content&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;This&nbsp;is&nbsp;the&nbsp;panel&nbsp;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;This&nbsp;is&nbsp;the&nbsp;panel&nbsp;content&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>Both the examples render an identical panel.</p>
+<div class="blockquote"><blockquote class="blockquote">
+  
+<div class="figure"><a id="figu-Component_Reference-panel-Adding_a_header"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-panel-Adding_a_header.png" alt="figu Component Reference panel Adding a header"/></div>
+</div><p class="title"><b>Figure 9.2. Adding a header</b></p></div><br class="figure-break"/>
+
+</blockquote></div>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panel-Reference_data"/>9.1.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Panel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Panel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PanelRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-panel-Style_classes_and_skin_parameters"/>9.1.4. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="panel-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 9.1. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-p</span></code></span></dt><dd>
+This class defines styles for the panel itself.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td rowspan="5" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-p-hdr</span></code></span></dt><dd>
+This class defines styles for the header of a panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">headerBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code>, <code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerWeightFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-weight</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">headerFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-p-b</span></code></span></dt><dd>
+This class defines styles for the body of a panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Panels-accordion"/>9.2. <a id="richaccordion"/><code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> is a series of panels stacked on top of each other, each collapsed such that only the header of the panel is showing. When the header of a panel is clicked, it is expanded to show the content of the panel. Clicking on a different header will collapse the previous panel and epand the selected one. Each panel contained in a <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component is a <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component.</p>
+<div class="figure"><a id="figu-Component_Reference-accordion-accordion"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-accordion-accordion.png" alt="figu Component Reference accordion accordion"/></div>
+</div><p class="title"><b>Figure 9.3. A <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component containing three <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> components</b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-accordion-Basic_usage"/>9.2.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component requires no attributes for basic usage. The component can contain any number of <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> components as children. The headers of the <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> components control the expanding and collapsing when clicked. Only a single <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> can be displayed at a time. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-accordionItem" title="9.2.9. &lt;rich:accordionItem&gt;">Section 9.2.9, “&lt;rich:accordionItem&gt;”</a> for details on the <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Form elements required</h2>
+
+<p>All <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> components should be wrapped in a form element when using either <code class="literal">ajax</code> or <code class="literal">server</code> mode, as usual for submitting components.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-accordion-Switching_panels"/>9.2.2. Switching panels</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">activeItem</span></code> attribute holds the active panel name. This name is a reference to the <code class="literal"><span class="varname">name</span></code> identifier of the active child <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component.</p>
+<p>The switching mode for performing submissions is determined by the <code class="literal"><span class="varname">switchType</span></code> attribute, which can have one of the following three values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">server</code></span></dt><dd>
+The default setting. Activation of a <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component to perform a common submission, completely refreshing the page. Only one panel at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+Activation of a <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component to perform an Ajax form submission, and the content of the panel is rendered. Only one panel at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+Activation of a <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component to perform updates on the client side. All the panels are rendered on the client side during the initial page render. JavaScript changes the styles such that one panel component becomes hidden while the other is shown.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-accordion-Appearance"/>9.2.3. Appearance</h3></div></div></div>
+
+<p>Icons for the accordion can be chosen from a set of standard icons. They can be set for the left and right side of the panel and for active, inactive state.</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="varname">itemActiveLeftIcon</span></code>, <code class="literal"><span class="varname">itemActiveRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for the active item.
+</dd><dt><span class="term"><code class="literal"><span class="varname">itemInactiveLeftIcon</span></code>, <code class="literal"><span class="varname">itemInactiveRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for the inactive item.
+</dd><dt><span class="term"><code class="literal"><span class="varname">itemDisabledLeftIcon</span></code>, <code class="literal"><span class="varname">itemDisabledRightIcon</span></code></span></dt><dd>
+These attributes determine the icons for the disabled item.
+</dd></dl></div>
+
+<p>The standard icons are shown in <a class="xref" href="chap-Component_Reference-Panels.html#figu-Component_Reference-panelMenu-Standard_icons" title="Figure 9.4. &lt;Standard icons&gt;">Figure 9.4, “&lt;Standard icons&gt;”</a>. Alternatively, point the icon attributes to the paths of image files. The image files are then used as icons.</p>
+<p>Any icons specified by child <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component overwrite the relevant icons declared with the parent <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component.</p>
+<div class="figure"><a id="figu-Component_Reference-panelMenu-Standard_icons"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-panelMenuGroup-Standard_icons.png" alt="figu Component Reference panelMenuGroup Standard icons"/></div>
+</div><p class="title"><b>Figure 9.4. <code class="literal"><span class="sgmltag">&lt;Standard icons&gt;</span></code></b></p></div><br class="figure-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="__literal_phrase_role_sgmltag_rich_accordion_phrase_literal_client_side_events"/>9.2.4. <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> client-side events</h3></div></div></div>
+
+<p>In addition to the standard Ajax events and HTML events, the <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component uses the client-side events common to all switchable panels:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">itemchange</span></code> event points to the function to perform when the switchable item is changed.
+</li><li>
+The <code class="literal"><span class="varname">beforeitemchange</span></code> event points to the function to perform when before the switchable item is changed.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-accordion-accordion_server-side_events"/>9.2.5. <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> server-side events</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component uses the server-side events common to all switchable panels:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">ItemChangeEvent</span></code> event occurs on the server side when an item is changed through Ajax using the <code class="literal">server</code> mode. It can be processed using the <code class="literal"><span class="varname">ItemChangeListener</span></code> attribute. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-itemChangeListener" title="9.6.6. &lt;rich:itemChangeListener&gt;">Section 9.6.6, “&lt;rich:itemChangeListener&gt;”</a> for details on the <code class="literal"><span class="sgmltag">&lt;rich:itemChangeListener&gt;</span></code> tag.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-accordion-JavaScript_API"/>9.2.6. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions, which are common to all switchable panels:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">getItems()</span></code></span></dt><dd>
+Return an array of the items contained in the accordion control.
+</dd><dt><span class="term"><code class="literal"><span class="function">getItemsNames()</span></code></span></dt><dd>
+Return an array of the names of the items contained in the accordion control.
+</dd><dt><span class="term"><code class="literal"><span class="function">switchToItem(itemName)</span></code></span></dt><dd>
+Switch to and display the item identified by the <code class="literal"><span class="parameter">itemName</span></code> string passed as a parameter.
+</dd><dt><span class="term"><code class="literal"><span class="function">firstItem()</span></code>, <code class="literal"><span class="function">prevItem()</span></code>, <code class="literal"><span class="function">nextItem()</span></code>, <code class="literal"><span class="function">lastItem()</span></code></span></dt><dd>
+Get the name of the first item, the previous item, the next item, or the last item.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-accordion-Reference_data"/>9.2.7. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Accordion</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIAccordion</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Accordion</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.AccordionRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.TogglePanelTagHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-accordion-Style_classes_and_skin_parameters"/>9.2.8. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="accordion-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 9.2. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac</span></code></span></dt><dd>
+This class defines styles for the accordion control itself.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td rowspan="6" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-hdr</span></code></span></dt><dd>
+This class defines styles for the header of an accordion item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-bottom-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerWeightFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-weight</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-hdr-act</span></code>, <code class="literal">.rf-ac-itm-hdr-inact</code></span></dt><dd>
+These classes define styles for the header when the item is either active (expanded) or inactive (collapsed).
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-hdr-dis</span></code></span></dt><dd>
+This class defines styles for the header when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabDisabledTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-gr</span></code></span></dt><dd>
+This class defines styles for an item group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="4" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-cnt</span></code></span></dt><dd>
+This class defines styles for the content of an accordion item.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-bottom-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-ico</span></code></span></dt><dd>
+This class defines styles for the item icon.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-exp-ico</span></code></span></dt><dd>
+This class defines styles for the expanded icon for an item.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-ico-act</span></code>, <code class="literal">.rf-ac-itm-ico-inact</code></span></dt><dd>
+These classes define styles for the icon when the item is either active (expanded) or inactive (collapsed).
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-lbl</span></code></span></dt><dd>
+This class defines styles for the item label.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-ac-itm-lbl-act</span></code>, <code class="literal">.rf-ac-itm-lbl-inact</code></span></dt><dd>
+These classes define styles for the label when the item is either active (expanded) or inactive (collapsed).
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Panels-accordionItem"/>9.2.9. <a id="richaccordionItem"/><code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component is a panel for use with the <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component. <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> components can be added dynamically using iteration models with the <code class="literal"><span class="sgmltag">&lt;c:forEach&gt;</span></code> tag.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-accordionItem-Basic_usage"/>9.2.9.1. Basic usage</h4></div></div></div>
+
+<p>Basic usage of the <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component requires the <code class="literal"><span class="varname">header</span></code> attribute, which provides the text on the panel header. The panel header is all that is visible when the accordion item is collapsed.</p>
+<p>Alternatively the <code class="literal">header</code> facet could be used in place of the <code class="literal"><span class="varname">header</span></code> attribute. This would allow for additional styles and custom content to be applied to the tab.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-accordionItem-accordionItem_client-side_events"/>9.2.9.2. Appearance</h4></div></div></div>
+
+<p>Icons for the accordion item are inherited from the parent <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-accordion-Appearance" title="9.2.3. Appearance">Section 9.2.3, “Appearance”</a> for details on icon attributes. Alternatively, the item’s icons can be re-defined at the <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component level, and these settings will be used instead of the parent component’s settings.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="__literal_phrase_role_sgmltag_rich_accordionitem_phrase_literal_client_side_events"/>9.2.9.3. <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> client-side events</h4></div></div></div>
+
+<p>In addition to the standard HTML events, the <code class="literal"><span class="sgmltag">&lt;rich:accordionItem&gt;</span></code> component uses the client-side events common to all switchable panel items:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">enter</span></code> event points to the function to perform when the mouse enters the panel.
+</li><li>
+The <code class="literal"><span class="varname">leave</span></code> event points to the function to perform when the mouse leaves the panel.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-accordionItem-Reference_data"/>9.2.9.4. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.AccordionItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIAccordionItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.AccordionItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.AccordionItemRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Panels-collapsiblePanel"/>9.3. <a id="richcollapsiblePanel"/><code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component is a collapsible panel that shows or hides content when the header bar is activated. It is a simplified version of <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component.</p>
+<div class="figure"><a id="figu-Component_Reference-collapsiblePanel-collapsiblePanel"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-collapsiblePanel-collapsiblePanel.png" alt="figu Component Reference collapsiblePanel collapsiblePanel"/></div>
+</div><p class="title"><b>Figure 9.5. <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-collapsiblePanel-Basic_usage"/>9.3.1. Basic usage</h3></div></div></div>
+
+<p>Basic usage requires the header content is specified either by the <code class="literal"><span class="varname">header</span></code> attribute, or by the <code class="literal"><span class="varname">headerExpanded</span></code> / <code class="literal"><span class="varname">headerCollapsed</span></code> facets. Additionally the panel requires content to display when it is expanded. Content is added as child elements like a standard panel.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-collapsiblePanel-Expanding_and_collapsing_the_panel"/>9.3.2. Expanding and collapsing the panel</h3></div></div></div>
+
+<p>The switching mode for performing submissions is determined by the <code class="literal"><span class="varname">switchType</span></code> attribute, which can have one of the following three values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">server</code></span></dt><dd>
+This is the default setting. The <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component performs a common submission, completely refreshing the page. Only one panel at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+The <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component performs an Ajax form submission, and only the content of the panel is refreshed. Only one panel at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+The <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component changes the state on the client side without any additional requests being sent.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-collapsiblePanel-Appearance"/>9.3.3. Appearance</h3></div></div></div>
+
+<p>The appearance of the <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component can be customized using facets. The <code class="literal">headerExpanded</code> and <code class="literal">headerCollapsed</code> CSS classes are used to style the appearance of the panel when it is expanded and collapsed respectively.
+Icons for the collapsible panel can be chosen from a set of standard icons. They can be set for the left and right side of the panel and for expanded and collapsed state.</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="varname">leftCollapsedIcon</span></code>, <code class="literal"><span class="varname">rightCollapsedIcon</span></code></span></dt><dd>
+These attributes determine the icons for the collapsed state.
+</dd><dt><span class="term"><code class="literal"><span class="varname">leftExpandedIcon</span></code>, <code class="literal"><span class="varname">rightExpandedIcon</span></code></span></dt><dd>
+These attributes determine the icons for the expanded state.
+</dd></dl></div>
+
+<p>The standard icons are shown in <a class="xref" href="chap-Component_Reference-Panels.html#figu-Component_Reference-panelMenu-Standard_icons" title="Figure 9.4. &lt;Standard icons&gt;">Figure 9.4, “&lt;Standard icons&gt;”</a>. Alternatively, point the icon attributes to the paths of image files. The image files are then used as icons. Use "none" to hide the default icons.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-collapsiblePanel-collapsiblePanel_server-side_events"/>9.3.4. <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> server-side events</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component uses the following unique server-side events:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">PanelToggleEvent</span></code> event occurs on the server side when the <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component is expanded or collapsed in either the <code class="literal">ajax</code> or <code class="literal">server</code> modes. It can be processed using the <code class="literal"><span class="varname">panelTogglerListener</span></code> attribute.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-collapsiblePanel-JavaScript_API"/>9.3.5. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">switchPanel()</span></code></span></dt><dd>
+Switch the state of the collapsible panel (expanded or collapsed).
+</dd><dt><span class="term"><code class="literal"><span class="function">expand()</span></code></span></dt><dd>
+Expand this collapsible panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">collapse()</span></code></span></dt><dd>
+Collapse this collapsible panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">isExpanded()</span></code></span></dt><dd>
+Returns <code class="literal">true</code> if this collapsible panel is expanded.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-collapsiblePanel-Reference_data"/>9.3.6. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.CollapsiblePanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UICollapsiblePanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.CollapsiblePanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.CollapsiblePanelRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.CollapsiblePanelTagHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-collapsiblePanel-Style_classes_and_skin_parameters"/>9.3.7. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="collapsiblePanel-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 9.3. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp</span></code></span></dt><dd>
+This class defines styles for the collapsible panel itself.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td rowspan="5" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-hdr</span></code></span></dt><dd>
+This class defines styles for the header of a collapsible panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code>, <code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerWeightFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-weight</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-hdr-exp</span></code>, <code class="literal">.rf-cp-hdr-colps</code></span></dt><dd>
+These classes define styles for the header when the item is either expanded or collapsed.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-gr</span></code></span></dt><dd>
+This class defines styles for a collapsible panel group.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-b</span></code></span></dt><dd>
+This class defines styles for the body of a collapsible panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-ico</span></code></span></dt><dd>
+This class defines styles for the panel icon.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-exp-ico</span></code></span></dt><dd>
+This class defines styles for the expanded icon for a panel.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-ico-exp</span></code>, <code class="literal">.rf-cp-ico-colps</code></span></dt><dd>
+These classes define styles for the icon when the panel is either expanded or collapsed.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-lbl</span></code></span></dt><dd>
+This class defines styles for the panel label.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-cp-lbl-exp</span></code>, <code class="literal">.rf-cp-lbl-colps</code></span></dt><dd>
+These classes define styles for the label when the panel is either expanded or collapsed.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Panels-panelToggleListener"/>9.3.8. <a id="richpanelToggleListener"/><code class="literal"><span class="sgmltag">&lt;rich:panelToggleListener&gt;</span></code></h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="sgmltag">&lt;rich:panelToggleListener&gt;</span></code> tag to register a <code class="literal"><span class="classname">PanelToggleListener</span></code> class on a parent <code class="literal"><span class="sgmltag">&lt;rich:collapsiblePanel&gt;</span></code> component. The class provided as a listener must implement the <code class="literal"><span class="interfacename">org.richfaces.event.PanelToggleListener</span></code> interface. The <code class="literal"><span class="methodname">processPanelToggle</span></code> method accepts an <code class="literal"><span class="classname">org.richface.event.PanelToggleEvent</span></code> event as a parameter.</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Panels-popupPanel"/>9.4. <a id="richpopupPanel"/><code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component provides a pop-up panel or window that appears in front of the rest of the application. The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component functions either as a modal window which blocks interaction with the rest of the application while active, or as a non-modal window. It can be positioned on the screen, dragged to a new position by the user, and re-sized.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Basic_usage"/>9.4.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> does not require any compulsory attributes, though certain use cases require different attributes.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Showing_and_hiding_the_pop-up"/>9.4.2. Showing and hiding the pop-up</h3></div></div></div>
+
+<p>If <code class="literal"><span class="code">show="true"</span></code> then the pop-up panel will display when the page is first loaded.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component can be shown and hidden manually using the <code class="literal"><span class="code">show()</span></code> and <code class="literal"><span class="code">hide()</span></code> methods from the JavaScript API. These can be implemented using two different approaches:</p>
+<div class="itemizedlist"><ul><li>
+Using the <code class="literal"><span class="sgmltag">&lt;rich:componentControl&gt;</span></code> component. For details on the component, refer to <a class="xref" href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-Functionality_extension-componentControl" title="17.1. &lt;rich:componentControl&gt;">Section 17.1, “&lt;rich:componentControl&gt;”</a>.
+</li><li>
+Using the <code class="literal"><span class="code">rich:component</span></code> function. For details on the function, refer to <a class="xref" href="chap-Component_Reference-Functions.html#sect-Component_Reference-Functions-component" title="16.2. rich:component">Section 16.2, “rich:component”</a>.
+</li></ul></div>
+
+<p>For explicit referencing when using the functions, the component can be given an <code class="literal"><span class="varname">id</span></code> identifier.</p>
+<p><a class="xref" href="chap-Component_Reference-Panels.html#exam-Component_Reference-popupPanel-popupPanel_example" title="Example 9.2. &lt;rich:popupPanel&gt; example">Example 9.2, “&lt;rich:popupPanel&gt; example”</a> demonstrates basic use of both the <code class="literal"><span class="sgmltag">&lt;rich:componentControl&gt;</span></code> component and the <code class="literal"><span class="code">rich:component</span></code> function to show and hide the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component.</p>
+<div class="example"><a id="exam-Component_Reference-popupPanel-popupPanel_example"/><p class="title"><b>Example 9.2. <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Show&nbsp;the&nbsp;panel&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;popup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">operation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;show&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:popupPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;popup&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">p</span><span class="xml_tag_symbols">&gt;&lt;</span><span class="xml_tag_name">a</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">href</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{rich:component('popup')}.hide()&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Hide&nbsp;the&nbsp;panel</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a</span><span class="xml_tag_symbols">&gt;&lt;/</span><span class="xml_tag_name">p</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:popupPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Placement</h2>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component is usually rendered in front of any other objects on the page. This is achieved by attaching the component to the <code class="literal"><span class="sgmltag">&lt;body&gt;</span></code> element of the page, and setting a very high <span class="emphasis"><em>"z-index"</em></span> (the stack order of the object). This approach is taken because relatively-positioned elements could still overlap the pop-up panel if they exist at higher levels of the <acronym class="acronym">DOM</acronym> hierarchy, even if their z-index is less than the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component.</p>
+<p>If the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> is to participate in submitting child components/behaviors, then a form element must be nested within the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code>. Alternatively, if no overlapping elements exist, the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component can be reattached to its original <acronym class="acronym">DOM</acronym> element by setting <code class="literal"><span class="varname">domElementAttachment</span></code> to either <code class="literal">parent</code> or <code class="literal">form</code>.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Modal_and_non-modal_panels"/>9.4.3. Modal and non-modal panels</h3></div></div></div>
+
+<p>By default, the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> appears as a modal window that blocks interaction with the other objects on the page. To implement a non-modal window instead, set <code class="literal"><span class="code">modal="false"</span></code>. This will allow interaction with other objects outside the pop-up panel.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Size_and_positioning"/>9.4.4. Size and positioning</h3></div></div></div>
+
+<p>The pop-up panel can be both re-sized and re-positioned by the user. The minimum possible size for the panel can be set with the <code class="literal"><span class="varname">minWith</span></code> and <code class="literal"><span class="varname">minHeight</span></code> attributes. These abilities can be deactivated by setting <code class="literal"><span class="code">resizable</span></code> or <code class="literal"><span class="code">movable</span></code> to <code class="literal">false</code> as necessary.</p>
+<p>The pop-up panel can be automatically sized when it is shown if the <code class="literal"><span class="varname">autosized</span></code> attribute is set to <code class="literal">true</code>.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Embedded objects in the panel</h2>
+
+<p>Embedded objects inserted into the <acronym class="acronym">HTML</acronym> with the <code class="literal"><span class="sgmltag">&lt;embed&gt;</span></code> tag could be rendered in front of a <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component in some browsers. The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component can be forcibly rendered in front of these objects by setting <code class="literal"><span class="code">overlapEmbedObjects="true"</span></code>.</p>
+<p>However, due to the additional script processing required when using the <code class="literal"><span class="varname">overlapEmbedObjects</span></code> attribute, applications can suffer from decreased performance. As such, <code class="literal"><span class="varname">overlapEmbedObjects</span></code> should only be set to <code class="literal">true</code> when <code class="literal"><span class="sgmltag">&lt;embed&gt;</span></code> or <code class="literal"><span class="sgmltag">&lt;object&gt;</span></code> tags are being used in the parent view. Do not set it to <code class="literal">true</code> for applications that do not require it.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Header_and_controls"/>9.4.5. Header and controls</h3></div></div></div>
+
+<p>A panel header and associated controls can be added to the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component through the use of facets. The <code class="literal">header</code> facet displays a title for the panel, and the <code class="literal">controls</code> facet can be customized to allow window controls such as a button for closing the pop-up. <a class="xref" href="chap-Component_Reference-Panels.html#exam-Component_Reference-popupPanel-Header_and_controls" title="Example 9.3. Header and controls">Example 9.3, “Header and controls”</a> demonstrates the use of the facets.</p>
+<div class="example"><a id="exam-Component_Reference-popupPanel-Header_and_controls"/><p class="title"><b>Example 9.3. Header and controls</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandLink</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Show&nbsp;pop-up&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;popup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">operation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;show&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandLink</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:popupPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;popup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">modal</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;false&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">autosized</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">resizeable</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;false&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;The&nbsp;title&nbsp;of&nbsp;the&nbsp;panel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;controls&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/pages/close.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">style</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cursor:pointer&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{rich:component('popup')}.hide()&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">p</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;panel.</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">p</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:popupPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<div class="blockquote"><blockquote class="blockquote">
+  
+<div class="figure"><a id="figu-Component_Reference-popupPanel-Header_and_controls"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-popupPanel-Header_and_controls.png" alt="figu Component Reference popupPanel Header and controls"/></div>
+</div><p class="title"><b>Figure 9.6. Header and controls</b></p></div><br class="figure-break"/>
+
+</blockquote></div>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Contents_of_the_pop-up"/>9.4.6. Contents of the pop-up</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component can contain any other component just like a normal panel.</p>
+<p>Contents of the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component which are positioned relatively may be trimmed if they extend beyond the borders of the pop-up panel. For certain in-line controls this behavior may be preferable, but for other dynamic controls it could be undesirable. If the <code class="literal"><span class="varname">trimOverlayedElements</span></code> attribute is set to <code class="literal">false</code> then child components will not be trimmed if they extend beyond the borders of the pop-up panel. For example, if using a calendar, select, or other pop-up component, set <code class="literal"><span class="code">trimOverlayedElements="false"</span></code>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-JavaScript_API"/>9.4.7. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">getTop()</span></code></span></dt><dd>
+Return the top co-ordinate for the position of the pop-up panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">getLeft()</span></code></span></dt><dd>
+Return the left co-ordinate for the position of the pop-up panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">moveTo(top,left)</span></code></span></dt><dd>
+Move the pop-up panel to the co-ordinates specified with the <code class="literal"><span class="parameter">top</span></code> and <code class="literal"><span class="parameter">left</span></code> parameters.
+</dd><dt><span class="term"><code class="literal"><span class="function">resize(width,height)</span></code></span></dt><dd>
+Resize the pop-up panel to the size specified with the <code class="literal"><span class="parameter">width</span></code> and <code class="literal"><span class="parameter">height</span></code> parameters.
+</dd><dt><span class="term"><code class="literal"><span class="function">show()</span></code></span></dt><dd>
+Show the pop-up panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">hide()</span></code></span></dt><dd>
+Hide the pop-up panel.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Reference_data"/>9.4.8. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PopupPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPopupPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.PopupPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PopupPanelRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-popupPanel-Style_classes_and_skin_parameters"/>9.4.9. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="popupPanel-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 9.4. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-btn</span></code></span></dt><dd>
+This class defines styles for the pop-up panel button.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-shade</span></code></span></dt><dd>
+This class defines styles for the shading that covers the page when presenting a modal pop-up panel.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-cntr</span></code></span></dt><dd>
+This class defines styles for the container for the pop-up panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-hdr</span></code></span></dt><dd>
+This class defines styles for the header of the pop-up panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td rowspan="4" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-hdr-cnt</span></code></span></dt><dd>
+This class defines styles for the content of the header.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerWeightFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-weight</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-cnt</span></code></span></dt><dd>
+This class defines styles for the content of the pop-up panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-cnt-scrlr</span></code></span></dt><dd>
+This class defines styles for the scroll bars of the pop-up panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-hndlr</span></code></span></dt><dd>
+This class defines styles for borders of the pop-up panel. The border handler is used to re-size the panel.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-pp-hndlr-t</span></code>, <code class="literal">.rf-pp-hndlr-b</code>, <code class="literal">.rf-pp-hndlr-l</code>, <code class="literal">.rf-pp-hndlr-r</code>, <code class="literal">.rf-pp-hndlr-tl</code>, <code class="literal">.rf-pp-hndlr-tr</code>, <code class="literal">.rf-pp-hndlr-bl</code>, <code class="literal">.rf-pp-hndlr-br</code></span></dt><dd>
+These classes define styles for the top, bottom, left, right, top-left, top-right, bottom-left, and bottom-right edges of the border handler.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Panels-tabPanel"/>9.5. <a id="richtabPanel"/><code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component provides a set of tabbed panels for displaying one panel of content at a time. The tabs can be highly customized and themed. Each tab within a <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> container is a <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-tab" title="9.5.7. &lt;rich:tab&gt;">Section 9.5.7, “&lt;rich:tab&gt;”</a> for further details on the <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component.</p>
+<div class="figure"><a id="figu-Component_Reference-tabPanel-tabPanel_component"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-tabPanel-tabPanel_component.png" alt="figu Component Reference tabPanel tabPanel component"/></div>
+</div><p class="title"><b>Figure 9.7. A <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component containing three <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> components</b></p></div><br class="figure-break"/>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Form elements required</h2>
+
+<p>All <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> components should be wrapped in a form element when using either <code class="literal">ajax</code> or <code class="literal">server</code> mode, as usual for submitting components.</p>
+</div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tabPanel-Switching_tabs"/>9.5.1. Switching panels</h3></div></div></div>
+
+<p>The <code class="literal"><span class="code">activeItem</span></code> attribute holds the active tab name. This name is a reference to the <code class="literal"><span class="varname">name</span></code> identifier of the active child <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component.</p>
+<p>The switching mode for performing submissions is determined by the <code class="literal"><span class="code">switchType</span></code> attribute, which can have one of the following three values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">server</code></span></dt><dd>
+The default setting. Activation of a <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component to perform a common submission, completely refreshing the page. Only one tab at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+Activation of a <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component to perform an Ajax form submission, and the content of the tab panel is refreshed. Only one tab at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+Activation of a <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component to update on the client side. All the tabs are rendered to the client during the initial page render. JavaScript changes the styles such that one tab becomes hidden while the other is shown.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tabPanel-tabPanel_client-side_events"/>9.5.2. <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> client-side events</h3></div></div></div>
+
+<p>In addition to the standard Ajax events and HTML events, the <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component uses the client-side events common to all switchable panels:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">itemchange</span></code> event points to the function to perform when the switchable item is changed.
+</li><li>
+The <code class="literal"><span class="varname">beforeitemchange</span></code> event points to the function to perform when before the switchable item is changed.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tabPanel-tabPanel_server-side_events"/>9.5.3. <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> server-side events</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component uses the server-side events common to all switchable panels:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">ItemChangeEvent</span></code> event occurs on the server side when an item is changed through Ajax using the <code class="literal">server</code> mode. It can be processed using the <code class="literal"><span class="varname">ItemChangeListener</span></code> attribute. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-itemChangeListener" title="9.6.6. &lt;rich:itemChangeListener&gt;">Section 9.6.6, “&lt;rich:itemChangeListener&gt;”</a> for details on the <code class="literal"><span class="sgmltag">&lt;rich:itemChangeListener&gt;</span></code> tag.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tabPanel-JavaScript_API"/>9.5.4. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions, which are common to all switchable panels:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">getItems()</span></code></span></dt><dd>
+Return an array of the tabs contained in the tab panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">getItemsNames()</span></code></span></dt><dd>
+Return an array of the names of the tabs contained in the tab panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">switchToItem(itemName)</span></code></span></dt><dd>
+Switch to and display the item identified by the <code class="literal"><span class="parameter">itemName</span></code> string passed as a parameter.
+</dd><dt><span class="term"><code class="literal"><span class="function">firstItem()</span></code>, <code class="literal"><span class="function">prevItem()</span></code>, <code class="literal"><span class="function">nextItem()</span></code>, <code class="literal"><span class="function">lastItem()</span></code></span></dt><dd>
+Get the name of the first item, the previous item, the next item, or the last item.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tabPanel-Reference_data"/>9.5.5. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TabPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITabPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.TabPanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TabPanelRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.TogglePanelTagHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tabPanel-Style_classes_and_skin_parameters"/>9.5.6. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="tabPanel-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 9.5. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr</span></code></span></dt><dd>
+This class defines styles for a tab header.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">tabBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-act</span></code></span></dt><dd>
+This class defines styles for a tab header when it is active.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">additionalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-inact</span></code></span></dt><dd>
+This class defines styles for a tab header when it is inactive.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-dis</span></code></span></dt><dd>
+This class defines styles for a tab header when it is disabled.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">tabDisabledTextColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-tabline-vis</span></code></span></dt><dd>
+This class defines styles for the header tab line when it is visible.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">additionalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background-color</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-tabs</span></code></span></dt><dd>
+This class defines styles for the tabs in the header.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-spcr</span></code></span></dt><dd>
+This class defines styles for the tab header spacer.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border-bottom</span></code></p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-lbl</span></code></span></dt><dd>
+This class defines styles for the tab label.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdn</span></code></span></dt><dd>
+This class defines styles for the tab when it is hidden.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td rowspan="4" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-scrl-lft</span></code>, <code class="literal">.rf-tab-hdr-scrl-rgh</code></span></dt><dd>
+These classes define styles for the left and right controls for the tab header scroller.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">additionalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr><tr><td rowspan="3" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-tablst</span></code></span></dt><dd>
+This class define styles for the tab header list.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">additionalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td rowspan="2" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-hdr-brd</span></code></span></dt><dd>
+This class define styles for the tab header border.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">tabBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border</span></code></p></td></tr><tr><td rowspan="4" align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-tab-cnt</span></code></span></dt><dd>
+This class define styles for the content of the tab panel.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal">generalBackgroundColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">background</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">panelBorderColor</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">border</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalFamilyFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-family</span></code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal">generalSizeFont</code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">font-size</span></code></p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Panels-tab"/>9.5.7. <a id="richtab"/><code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component represents an individual tab inside a <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component, including the tab’s content. Clicking on the tab header will bring its corresponding content to the front of other tabs.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-tab-Basic_usage"/>9.5.7.1. Basic usage</h4></div></div></div>
+
+<p>Basic usage of the <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component requires only the tab header and tab content. No additional attributes are required.</p>
+<p>The <code class="literal"><span class="varname">header</span></code> attribute provides the text on the tab header. The content of the tab is then detailed inside the <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> tags.</p>
+<p>Alternatively, the <code class="literal">header</code> facet could be used in place of the <code class="literal"><span class="varname">header</span></code> attribute. This would allow custom components to be applied to the tab header. The component also supports three facets to customize the appearance depending on the current state of the tab:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">headerActive</code>  facet</span></dt><dd>
+This facet is used when the tab is the currently active tab.
+</dd><dt><span class="term"><code class="literal">headerInactive</code>  facet</span></dt><dd>
+This facet is used when the tab is not currently active.
+</dd><dt><span class="term"><code class="literal">headerDisabled</code>  facet</span></dt><dd>
+This facet is used when the tab is disabled.
+The <code class="literal">header</code> facet is used in place of any state-based facet that has not been defined.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-tab-Switching_tabs"/>9.5.7.2. Switching tabs</h4></div></div></div>
+
+<p>The switching mode for performing submissions can be inherited from the <code class="literal"><span class="varname">switchType</span></code> attribute of the parent <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component, or set individually for each <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-tabPanel" title="9.5. &lt;rich:tabPanel&gt;">Section 9.5, “&lt;rich:tabPanel&gt;”</a> for details on the <code class="literal"><span class="varname">switchType</span></code> attribute.</p>
+<p>An individual tab can be disabled by setting <code class="literal"><span class="code">disabled="true"</span></code>. Disabled tabs cannot be activated or switched to.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-tab-tab_client-side_events"/>9.5.7.3. <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> client-side events</h4></div></div></div>
+
+<p>In addition to the standard HTML events, the <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component uses the client-side events common to all switchable panel items:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">enter</span></code> event points to the function to perform when the mouse enters the tab.
+</li><li>
+The <code class="literal"><span class="varname">leave</span></code> attribute points to the function to perform when the mouse leaves the tab.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-tab-Reference_data"/>9.5.7.4. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Tab</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITab</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Tab</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TabRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-tab-Style_classes_and_skin_parameters"/>9.5.7.5. Style classes and skin parameters</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:tab&gt;</span></code> component uses the same styles as those applied to the parent <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-tabPanel-Style_classes_and_skin_parameters" title="9.5.6. Style classes and skin parameters">Section 9.5.6, “Style classes and skin parameters”</a> for details.</p>
+</div>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Panels-togglePanel"/>9.6. <a id="richtogglePanel"/><code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component is used as a base for the other switchable components, the <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component and the <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> component. It provides an abstract switchable component without any associated markup. As such, the <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component could be customized to provide a switchable component when neither an accordion component or a tab panel component is appropriate.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component acts as a wrapper for multiple <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> components. Each child component is displayed after being activated with the <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> behavior.</p>
+<p>Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-toggleControl" title="9.6.7. &lt;rich:toggleControl&gt;">Section 9.6.7, “&lt;rich:toggleControl&gt;”</a> and <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-togglePanel" title="9.6. &lt;rich:togglePanel&gt;">Section 9.6, “&lt;rich:togglePanel&gt;”</a> for details on how to use the components together.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-togglePanel-Basic_usage"/>9.6.1. Basic usage</h3></div></div></div>
+
+<p>The initial state of the component can be configured using the <code class="literal"><span class="varname">activeItem</span></code> attribute, which points to a child component to display. Alternatively, if no <code class="literal"><span class="varname">activeItem</span></code> attribute is defined, the initial state will be blank until the user activates a panel component with a connected <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> behavior.</p>
+<p>The child components are shown in the order in which they are defined in the view, as shown in <a class="xref" href="chap-Component_Reference-Panels.html#exam-Component_Reference-togglePanel-Basic_usage" title="Example 9.4. Basic usage">Example 9.4, “Basic usage”</a>.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Form elements required</h2>
+
+<p>All <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> components should be wrapped in a form element when using either <code class="literal">ajax</code> or <code class="literal">server</code> mode, as usual for submitting components.</p>
+</div>
+
+<div class="example"><a id="exam-Component_Reference-togglePanel-Basic_usage"/><p class="title"><b>Example 9.4. Basic usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;layout&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">activeItem</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item2&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toggleControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">targetPanel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;layout&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;</span><span class="xml_comment">&lt;!--cycles&nbsp;through&nbsp;the&nbsp;states--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-tab-Repeating_panels"/>9.6.2. Dynamic panel item generation</h3></div></div></div>
+
+<p>All the switchable components ( <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code>, <code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> component and the <code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code>) can leverage the <code class="literal"><span class="sgmltag">&lt;a4j:repeat&gt;</span></code> tag to dynamically create child components. This can be useful when the definition of the panel items is determined at run-time from a backing bean list.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-togglePanel-Toggling_between_panels"/>9.6.3. Toggling between components</h3></div></div></div>
+
+<p>The switching mode for performing submissions is determined by the <code class="literal"><span class="code">switchType</span></code> attribute, which can have one of the following three values:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">server</code></span></dt><dd>
+The default setting. Activation of a child component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component to perform a common submission, completely refreshing the page. Only one child at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">ajax</code></span></dt><dd>
+Activation of a child component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component to perform an Ajax form submission, and the content of the panel is refreshed. Only one child at a time is rendered to the client side.
+</dd><dt><span class="term"><code class="literal">client</code></span></dt><dd>
+Activation of a child component causes the parent <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component to update on the client side. All the items are rendered to the client side during the initial page render. JavaScript changes the styles such that one child component becomes hidden while the other is shown.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-togglePanel-JavaScript_API"/>9.6.4. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions, which are common to all switchable panels:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">getItems()</span></code></span></dt><dd>
+Return an array of the items contained in the toggle panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">getItemsNames()</span></code></span></dt><dd>
+Return an array of the names of the items contained in the toggle panel.
+</dd><dt><span class="term"><code class="literal"><span class="function">switchToItem(itemName)</span></code></span></dt><dd>
+Switch to and display the item identified by the <code class="literal"><span class="parameter">itemName</span></code> string passed as a parameter.
+</dd><dt><span class="term"><code class="literal"><span class="function">firstItem()</span></code>, <code class="literal"><span class="function">prevItem()</span></code>, <code class="literal"><span class="function">nextItem()</span></code>, <code class="literal"><span class="function">lastItem()</span></code></span></dt><dd>
+Get the name of the first item, the previous item, the next item, or the last item.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-togglePanel-Reference_data"/>9.6.5. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TogglePanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITogglePanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.TogglePanel</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TogglePanelRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.TogglePanelTagHandler</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Panels-itemChangeListener"/>9.6.6. <a id="richitemChangeListener"/><code class="literal"><span class="sgmltag">&lt;rich:itemChangeListener&gt;</span></code></h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="sgmltag">&lt;rich:itemChangeListener&gt;</span></code> tag to register an <code class="literal"><span class="classname">ItemChangeListener</span></code> class on a parent panel component. The class provided as a listener must implement the <code class="literal"><span class="interfacename">org.richfaces.event.ItemChangeListener</span></code> interface. The <code class="literal"><span class="methodname">processItemChange</span></code> method accepts an <code class="literal"><span class="classname">org.richface.event.ItemChangeEvent</span></code> event as a parameter.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:itemChangeListener&gt;</span></code> tag can be used with any of the switchable panel components:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> (refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-togglePanel" title="9.6. &lt;rich:togglePanel&gt;">Section 9.6, “&lt;rich:togglePanel&gt;”</a>)
+</li><li>
+<code class="literal"><span class="sgmltag">&lt;rich:accordion&gt;</span></code> (refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-accordion" title="9.2. &lt;rich:accordion&gt;">Section 9.2, “&lt;rich:accordion&gt;”</a>)
+</li><li>
+<code class="literal"><span class="sgmltag">&lt;rich:tabPanel&gt;</span></code> (refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-tabPanel" title="9.5. &lt;rich:tabPanel&gt;">Section 9.5, “&lt;rich:tabPanel&gt;”</a>)
+</li><li>
+<code class="literal"><span class="sgmltag">&lt;rich:panelMenu&gt;</span></code> (refer to <a class="xref" href="chap-Component_Reference-Menus_and_toolbars.html#sect-Component_Reference-Menus_and_toolbars-panelMenu" title="12.4. &lt;rich:panelMenu&gt;">Section 12.4, “&lt;rich:panelMenu&gt;”</a>)
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Panels-toggleControl"/>9.6.7. <a id="richtoggleControl"/><code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> behavior can be attached to any interface component, whether inside or outside the controlled panel itself. It works with a <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component to switch between different <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> components. Refer to <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-togglePanel" title="9.6. &lt;rich:togglePanel&gt;">Section 9.6, “&lt;rich:togglePanel&gt;”</a> and <a class="xref" href="chap-Component_Reference-Panels.html#sect-Component_Reference-Panels-togglePanelItem" title="9.6.8. &lt;rich:togglePanelItem&gt;">Section 9.6.8, “&lt;rich:togglePanelItem&gt;”</a> for details on how to use the components together.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> implements the JSF <code class="literal"><span class="classname">BehaviorHolder</span></code> component, which provides events to attached components and behaviors.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-toggleControl-Basic_usage"/>9.6.7.1. Basic usage</h4></div></div></div>
+
+<p>If the <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> component is positioned inside a <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component, no panel attachment attributes need to be defined, as the control is assumed to switch through the <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> components of its parent <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component.</p>
+<p>A <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> component can be located outside the <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component it needs to switch. Where this is the case, the <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> is identified using the <code class="literal"><span class="varname">targetPanel</span></code> attribute.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-toggleControl-Specifying_the_next_state"/>9.6.7.2. Specifying the next state</h4></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> component can switch the attached <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component in multiple ways:</p>
+<div class="itemizedlist"><ul><li>
+By default, the <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> component will cycle through <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> components in the order they are defined within the view.
+</li></ul></div>
+
+<div class="example"><a id="d4e10849"/><p class="title"><b>Example 9.5. Default switching</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;layout&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toggleControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">targetPanel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;layout&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;</span><span class="xml_comment">&lt;!--cycles&nbsp;through&nbsp;the&nbsp;states--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<div class="itemizedlist"><ul><li>
+The next item to switch to can be explicitly defined by including a <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> component within a <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> component. Point the <code class="literal"><span class="varname">targetItem</span></code> to the <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> to switch to when the state is next changed.
+</li></ul></div>
+
+<div class="example"><a id="d4e10863"/><p class="title"><b>Example 9.6. Explicit switching</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">activeItem</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toggleControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">targetItem</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item2&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><span class="xml_comment">&lt;!--switches&nbsp;to&nbsp;item2&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item2&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toggleControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">targetItem</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><span class="xml_comment">&lt;!--switches&nbsp;to&nbsp;item1&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<div class="itemizedlist"><ul><li>
+Alternatively, use the <code class="literal"><span class="varname">targetItem</span></code> attribute with keywords to switch items. The <code class="literal">@first</code>, <code class="literal">@prev</code>, <code class="literal">@next</code>, and <code class="literal">@last</code> keywords switch to the first item, the previous item, the next item, and the last item respectively.
+</li></ul></div>
+
+<div class="example"><a id="d4e10875"/><p class="title"><b>Example 9.7. Keyword-based switching</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">activeItem</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item1&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toggleControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">targetItem</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;@next&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><span class="xml_comment">&lt;!--switches&nbsp;to&nbsp;next&nbsp;item&nbsp;(item2)--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item2&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toggleControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">targetItem</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;@prev&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><span class="xml_comment">&lt;!--switches&nbsp;to&nbsp;previous&nbsp;item&nbsp;(item1)--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanelItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-toggleControl-Reference_data"/>9.6.7.3. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">client-behavior-renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.component.behavior.ToggleControl</span></code>
+</li><li>
+<code class="literal"><span class="parameter">behavior-id</span></code>: <code class="literal"><span class="classname">org.richfaces.component.behavior.ToggleControl</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.CustomBehaviorHandler</span></code>
+</li><li>
+<code class="literal"><span class="parameter">behavior-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.behavior.ToggleControl</span></code>
+</li><li>
+<code class="literal"><span class="parameter">client-behavior-renderer-class</span></code>: <code class="literal"><span class="classname">org.richfaces.renderkit.html.ToggleControlRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Panels-togglePanelItem"/>9.6.8. <a id="richtogglePanelItem"/><code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> component is a switchable panel for use with the <code class="literal"><span class="sgmltag">&lt;rich:togglePanel&gt;</span></code> component. Use the <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> component to define the content for a panel using nested components. Switching between <code class="literal"><span class="sgmltag">&lt;rich:togglePanelItem&gt;</span></code> components is handled by the <code class="literal"><span class="sgmltag">&lt;rich:toggleControl&gt;</span></code> behavior.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-togglePanelItem-Reference_data"/>9.6.8.1. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TogglePanelItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UITogglePanelItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.TogglePanelItem</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.TogglePanelItemRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-inputs.html"><strong>Prev</strong>Chapter 8. Rich inputs</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Tables_and_grids.html"><strong>Next</strong>Chapter 10. Tables and grids</a></li></ul></body></html>

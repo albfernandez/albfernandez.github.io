@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 17. Functionality extension</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="prev" href="chap-Component_Reference-Functions.html" title="Chapter 16. Functions"/><link rel="next" href="appe-Component_Reference-Revision_History.html" title="Appendix A. Revision History"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Functions.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="appe-Component_Reference-Revision_History.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Functionality_extension"/>Chapter 17. Functionality extension</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-Functionality_extension-componentControl">17.1. &lt;rich:componentControl&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-componentControl-Basic_usage">17.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-componentControl-Passing_parameters_to_API_methods">17.1.2. Passing parameters to API methods</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-componentControl-Reference_data">17.1.3. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-Functionality_extension-focus">17.2. &lt;rich:focus&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-focus-Placement">17.2.1. Placement</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-focus-Applying_focus">17.2.2. Applying Focus</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-focus-Validation_aware">17.2.3. Validation-Aware</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-focus-Preserving_focus">17.2.4. Preserving Focus</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-focus-Delaying_focus">17.2.5. Delaying Focus</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-focus-Focus_Manager">17.2.6. Focus Manager</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-focus-Reference_data">17.2.7. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-Functionality_extension-hotKey">17.3. &lt;rich:hotKey&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-hotKey-Basic_usage">17.3.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-hotKey-Event_processing">17.3.2. Event processing</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-hotKey-Event_handlers">17.3.3. Event handlers</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-hotKey-Reference_data">17.3.4. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-Functionality_extension-hashParam">17.4. &lt;rich:hashParam&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-hashParam-Basic_usage">17.4.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-hashParam-Reference_data">17.4.2. Reference data</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-Functionality_extension-placeholder">17.5. &lt;rich:placeholder&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-placeholder-Reference_data">17.5.1. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-placeholder-Style_classes_and_skin_parameters">17.5.2. Style classes and skin parameters</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter for details on miscellaneous components that provide extended functionality to web applications.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Functionality_extension-componentControl"/>17.1. <a id="richcomponentControl"/><code class="literal"><span class="sgmltag">&lt;rich:componentControl&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:componentControl&gt;</span></code> behavior allows JavaScript API functions to be called on target components. The functions are called after defined events are triggered on the component to with the <code class="literal"><span class="sgmltag">&lt;rich:componentControl&gt;</span></code> behavior is attached. Initialization variants and activation events can be customized, and parameters can be passed to the target component.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-componentControl-Basic_usage"/>17.1.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">operation</span></code> attribute is required to attach JavaScript functions to the parent component, along with either the <code class="literal"><span class="varname">target</span></code> or <code class="literal"><span class="varname">selector</span></code> attributes. Use the <code class="literal"><span class="varname">operation</span></code> attribute to specify the JavaScript API function to perform. Use the <code class="literal"><span class="varname">target</span></code> attribute to define the <code class="literal"><span class="varname">id</span></code> identifier of the target component, or use the <code class="literal"><span class="varname">selector</span></code> attribute to define a number of target components through the use of valid jQuery selectors.</p>
+<p>Use the <code class="literal"><span class="varname">event</span></code> attribute to specify the event that triggers the JavaScript API function call if it is different from the default triggering event for the parent component.</p>
+<div class="example"><a id="exam-Component_Reference-componentControl-componentControl_basic_usage"/><p class="title"><b>Example 17.1. <code class="literal"><span class="sgmltag">&lt;rich:componentControl&gt;</span></code> basic usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Show&nbsp;Modal&nbsp;Panel&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--componentControl&nbsp;is&nbsp;attached&nbsp;to&nbsp;the&nbsp;commandButton--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ccModalPanelID&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;click&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">operation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;show&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The example contains a single command button, which when clicked shows the modal panel with the identifier <code class="literal">ccModalPanelID</code>.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-componentControl-Passing_parameters_to_API_methods"/>17.1.2. Passing parameters to API methods</h3></div></div></div>
+
+<p>The operation can receive parameters through nested <code class="literal"><span class="sgmltag">&lt;f:param&gt;</span></code> elements.</p>
+<div class="example"><a id="exam-Component_Reference-componentControl-Using_parameters"/><p class="title"><b>Example 17.2. Using parameters</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;click&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;modalPanel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">operation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;show&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;width&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;500&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<p>To group multiple parameters for a function, use the <code class="literal"><span class="sgmltag">&lt;rich:hashParam&gt;</span></code> component to create a hash map. Refer to <a class="xref" href="chap-Component_Reference-Functionality_extension.html#sect-Component_Reference-Functionality_extension-hashParam" title="17.4. &lt;rich:hashParam&gt;">Section 17.4, “&lt;rich:hashParam&gt;”</a> for details.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-componentControl-Reference_data"/>17.1.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">client-behavior-renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.behavior.ComponentControlBehavior</span></code>
+</li><li>
+<code class="literal"><span class="parameter">behavior-id</span></code>: <code class="literal"><span class="classname">org.richfaces.behavior.ComponentControlBehavior</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.taglib.ComponentControlHandler</span></code>
+</li><li>
+<code class="literal"><span class="parameter">behavior-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.behavior.ComponentControlBehavior</span></code>
+</li><li>
+<code class="literal"><span class="parameter">client-behavior-renderer-class</span></code>: <code class="literal"><span class="classname">org.richfaces.renderkit.html.ToggleControlRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Functionality_extension-focus"/>17.2. <a id="richfocus"/><code class="literal"><span class="sgmltag">&lt;rich:focus&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:focus&gt;</span></code> component allows one to manipulate the focus of components on a page. It is intended to be used with any input field.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-focus-Placement"/>17.2.1. Placement</h3></div></div></div>
+
+<p>The component will behave differently when placed:</p>
+<div class="itemizedlist"><ul><li>
+in a form - defines behavior for components in the given form
+</li><li>
+in a view (outside of forms) - defines behavior for components in all forms in the view
+</li></ul></div>
+
+<p>There can be only one focus per form.</p>
+<p>If both, form- and view-based focuses are defined, the form one takes a priority.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-focus-Applying_focus"/>17.2.2. Applying Focus</h3></div></div></div>
+
+<p>The focus is applied each time it is rendered - either on form submission or after an AJAX request. Only focuses inside the form which is submitted are applied.</p>
+<p>You can turn focusing-after-AJAX-requests off by setting the <code class="literal"><span class="varname">ajaxRendered</span></code> attribute to <code class="literal"><span class="varname">false</span></code>.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-focus-Validation_aware"/>17.2.3. Validation-Aware</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:focus&gt;</span></code> component reflects the results of validation of components in a view. Focus is given to the first input component in the page which is invalid.</p>
+<p>If all components are valid, then first component in the form is focused.</p>
+<p>The order of input components is determined on the client-side and reflects the <code class="literal"><span class="varname">tabindex</span></code> and position in the page. You can prioritize the focusing of a specific component by increasing its tabindex.</p>
+<p>You can turn validation awareness off by setting the <code class="literal"><span class="varname">validationAware</span></code> attribute to <code class="literal"><span class="varname">false</span></code>.</p>
+<div class="figure"><a id="figu-Component_Reference-focus-Validation_aware"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-focus-Validation_aware.png" alt="figu Component Reference focus Validation aware"/></div>
+</div><p class="title"><b>Figure 17.1. Validation-aware <code class="literal"><span class="sgmltag">&lt;rich:focus&gt;</span></code></b></p></div><br class="figure-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-focus-Preserving_focus"/>17.2.4. Preserving Focus</h3></div></div></div>
+
+<p>Focus can be configured to keep focus on the input component which had focus before sending the JSF request (using either AJAX or form submission).</p>
+<div class="example"><a id="exam-Component_Reference-focus-focus_preserving_focus"/><p class="title"><b>Example 17.3. <code class="literal"><span class="sgmltag">&lt;rich:focus&gt;</span></code> preserving focus</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:focus</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">preserve</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;query&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{query}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Search&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">render</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;output&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Searched&nbsp;query:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;output&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{query}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>In the example above, everytime the user hits Search (or hits enter), the focus is given back to the query input after the request.</p>
+</div></div><br class="example-break"/>
+
+<p>This configuration will take priority over any other focus setup.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-focus-Delaying_focus"/>17.2.5. Delaying Focus</h3></div></div></div>
+
+<p>In certain situations, focus needs to be applied with a delay - once suitable conditions are met.</p>
+<p>By configuring a focus with the attribute <code class="literal"><span class="varname">delayed</span></code> to <code class="literal"><span class="varname">true</span></code>, the focus won’t be applied on initial page request.</p>
+<p>Then it is possible to call the <code class="literal"><span class="varname">applyFocus()</span></code> JavaScript API method in order to let the focus be applied.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-focus-Focus_Manager"/>17.2.6. Focus Manager</h3></div></div></div>
+
+<p>For a situation when none of the options above help one to achieve the desired focus behavior, one can use the server-side component <code class="literal"><span class="varname">FocusManager</span></code>.</p>
+<p>A component focus chosen by the <code class="literal"><span class="varname">FocusManager</span></code> will take priority over any focus configuration.</p>
+<div class="example"><a id="exam-Component_Reference-focus-Focus_Manager"/><p class="title"><b>Example 17.4. <code class="literal"><span class="sgmltag">&lt;rich:focus&gt;</span></code> preserving focus</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_type">FocusManager</span><!-- <br/> --><span class="java_plain">&nbsp;focusManager&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">ServiceTracker</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">getService</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">FocusManager</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">focusManager</span><span class="java_separator">.</span><span class="java_plain">focus</span><span class="java_separator">(</span><span class="java_literal">&quot;input2&quot;</span><span class="java_separator">);</span></pre>
+
+<p>If the target component is inside an iteration component such as <code class="literal"><span class="sgmltag">&lt;rich:dataTable&gt;</span></code> or <code class="literal"><span class="sgmltag">&lt;ui:repeat&gt;</span></code>
+the string passed to the focus method has to include a part of the full id containing the row number, starting with a separator (by default ":")</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">focusManager</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">focus</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_literal">&quot;:2:input&quot;</span><!-- <br/> --><span class="java_separator">);</span></pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-focus-Reference_data"/>17.2.7. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Focus</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIFocus</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Focus</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.FocusRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Functionality_extension-hotKey"/>17.3. <a id="richhotKey"/><code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code> component allows one to register hot keys for the page or particular elements and to define client-side processing functions for these keys.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-hotKey-Basic_usage"/>17.3.1. Basic usage</h3></div></div></div>
+
+<p>There are two ways to register <code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code>:</p>
+<div class="itemizedlist"><ul><li>
+place it anywhere on the page. In this case the <code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code> component is attached to the whole page. This is the default scenario.
+</li><li>
+attach it to specific elements by defining the <code class="literal"><span class="varname">selector</span></code> attribute. This attribute uses the syntax of the jQuery Selectors (a superset of CSS selectors defined by W3C consortium) and additionally it expands JSF component IDs to client-side IDs (see the VDL documentation for the <code class="literal"><span class="varname">selector</span></code> attribute).
+</li></ul></div>
+
+<p>The <code class="literal"><span class="varname">key</span></code> attribute defines the hot key itself, which is processed by the component.</p>
+<p>The key sequences can be defined using a " <code class="literal"><span class="code">+</span></code>" key separator. The key sequence modifiers needs to be defined in alphabetical order, e.g. <code class="literal"><span class="code">alt+ctrl+shift</span></code>.</p>
+<p>Hot key processing can be disabled by setting <code class="literal"><span class="varname">rendered</span></code> to <code class="literal"><span class="code">false</span></code>.</p>
+<div class="example"><a id="exam-Component_Reference-hotkey-hotkey_basic_usage"/><p class="title"><b>Example 17.5. <code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code> basic usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:hotKey</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">key</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ctrl+z&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;popup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">operation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;show&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:hotKey</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:popupPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;popup&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:popupPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The example contains <code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code> which handles the <code class="literal"><span class="code">Ctrl+Z</span></code> key sequence on the whole page. When the key sequence is pressed, the <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> is displayed.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-hotKey-Event_processing"/>17.3.2. Event processing</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">enabledInInput</span></code> attribute enables the hot key event processing when form inputs are focused. This attribute is <code class="literal"><span class="code">false</span></code> by default.</p>
+<p>The <code class="literal"><span class="varname">preventDefault</span></code> attribute specifies whether the hot key binding should prevent default browser-specific actions to be taken (e.g. <code class="literal"><span class="code">Ctrl+A</span></code> hot key selecting all available text, Ctrl+B opening bookmarks bar, etc.). This attribute has a default value of <code class="literal"><span class="code">true</span></code>.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Cross-browser support for preventing default actions</h2>
+
+<p>Even though RichFaces instructs the browser to prevent the default action, browser implementations do not support preventing browser’s native actions for selected key combinations.</p>
+<p>Although the inability to prevent default action is not usual, you may experience that both the programatically-defined action and the browser’s native action are triggered (e.g. native popup appears).</p>
+<p>To keep an application accessible, it is convenient to not depend on hot keys or hot key combinations heavily. Best practice is using a hot key only as shortcut for a given action.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-hotKey-Event_handlers"/>17.3.3. Event handlers</h3></div></div></div>
+
+<p>The following event handlers could be used to trigger client-side behaviors or to invoke javascript directly:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="varname">keydown</span></code> (default event) is fired when the hot key sequence is initiated (the keys are down)
+</li><li>
+<code class="literal"><span class="varname">keyup</span></code> is fired when the hot key sequence is finished (the keys are up)
+</li></ul></div>
+
+<div class="example"><a id="exam-Component_Reference-hotKey-hotkKey_event_handlers"/><p class="title"><b>Example 17.6. <code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code> event handlers</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:hotKey</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">key</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ctrl+a&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onkeyup</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;alert('Ctrl+A&nbsp;was&nbsp;pressed')&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Hot Key in Editor</h2>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:editor&gt;</span></code> uses <code class="literal"><span class="sgmltag">&lt;iframe&gt;</span></code> for the editable area.</p>
+<p>The <code class="literal"><span class="sgmltag">&lt;iframe&gt;</span></code> doesn’t allow one to propagate events outside of the <code class="literal"><span class="sgmltag">&lt;rich:editor&gt;</span></code>, making <code class="literal"><span class="sgmltag">&lt;rich:hotKey&gt;</span></code> unusable for handling events from <code class="literal"><span class="sgmltag">&lt;rich:editor&gt;</span></code>.</p>
+<p>The CKEditor specific event handling mechanism should be used instead.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-hotKey-Reference_data"/>17.3.4. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.HotKey</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIHotKey</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.HotKey</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.HotKeyRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Functionality_extension-hashParam"/>17.4. <a id="richhashParam"/><code class="literal"><span class="sgmltag">&lt;rich:hashParam&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:hashParam&gt;</span></code> component allows client-side parameters to be grouped into a hash map. The hash map can then be passed to the client JavaScript API functions of any RichFaces component.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-hashParam-Basic_usage"/>17.4.1. Basic usage</h3></div></div></div>
+
+<p>Nest parameter tags in the <code class="literal"><span class="sgmltag">&lt;rich:hashParam&gt;</span></code> component to group them in the hash map. The hash map itself can then be passed as a function parameter.</p>
+<div class="example"><a id="exam-Component_Reference-hashParam-hashParam"/><p class="title"><b>Example 17.7. <code class="literal"><span class="sgmltag">&lt;rich:hashParam&gt;</span></code></b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Show&nbsp;popup&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">target</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;popupPanel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">operation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;show&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">noEscape</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;event&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:hashParam</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;width&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;500&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;height&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;300&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;minWidth&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;300&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;minHeight&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;150&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">noEscape</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;left&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;(jQuery(window).width()/2)-250&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">noEscape</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;top&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;(jQuery(window).height()/2)-150&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:hashParam</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:componentControl</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The example illustrates the use of the <code class="literal"><span class="sgmltag">&lt;rich:hashParam&gt;</span></code> component to group multiple parameters into a hash map. The parameters are passed through to the <code class="literal"><span class="function">show</span></code> function pop-up panel with the <code class="literal">popupPanel</code> identifier.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-hashParam-Reference_data"/>17.4.2. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.HashParameter</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIHashParameter</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.HashParameter</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">javax.faces.view.facelets.ComponentHandler</span></code>
+</li></ul></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Functionality_extension-placeholder"/>17.5. <a id="richplaceholder"/><code class="literal"><span class="sgmltag">&lt;rich:placeholder&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:placeholder&gt;</span></code> component allows one to use functionality similar to the HTML5 <code class="literal"><span class="varname">placeholder</span></code> attribute for input components.</p>
+<p>This component brings a backward compatibility for HTML5 non-compliant browsers and some additional features:</p>
+<div class="itemizedlist"><ul><li>
+per-component styling using <code class="literal"><span class="varname">styleClass</span></code> attribute
+</li><li>
+application to multiple components at once using <code class="literal"><span class="varname">selector</span></code> attribute
+</li></ul></div>
+
+<div class="example"><a id="exam-Component_Reference-placeholder-Input_components"/><p class="title"><b>Example 17.8. <code class="literal"><span class="sgmltag">&lt;rich:placeholder&gt;</span></code> with input components</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputLabel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Input&nbsp;text:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;input&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:placeholder</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Type&nbsp;text&nbsp;here...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputLabel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Textarea:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputTextarea</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;textarea&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:placeholder</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;A&nbsp;space&nbsp;for&nbsp;long&nbsp;content...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputTextarea</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputLabel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Date:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:calendar</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">datePattern</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;dd/M/yyyy&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">enableManualInput</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:placeholder</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;dd/mm/yyyy&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:calendar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<div class="figure"><a id="figu-Component_Reference-placeholder-Input_components"/><div class="figure-contents">
+
+  <div class="mediaobject"><img src="images/figu-Component_Reference-placeholder-Input_components.png" alt="figu Component Reference placeholder Input components"/></div>
+</div><p class="title"><b>Figure 17.2. <code class="literal"><span class="sgmltag">&lt;rich:placeholder&gt;</span></code></b></p></div><br class="figure-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-placeholder-Reference_data"/>17.5.1. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Placeholder</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIPlaceholder</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Placeholder</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.PlaceholderRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-placeholder-Style_classes_and_skin_parameters"/>17.5.2. Style classes and skin parameters</h3></div></div></div>
+
+<div class="table"><a id="placeholder-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 17.1. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-plhdr</span></code></span></dt><dd>
+This class identifies which input elements have their placeholder text managed by the placeholder component. Use this class to apply custom styles to the placeholder text.
+</dd></dl></div>
+</td><td align="left" valign="top"> </td><td align="left" valign="top"> </td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Functions.html"><strong>Prev</strong>Chapter 16. Functions</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="appe-Component_Reference-Revision_History.html"><strong>Next</strong>Appendix A. Revision History</a></li></ul></body></html>

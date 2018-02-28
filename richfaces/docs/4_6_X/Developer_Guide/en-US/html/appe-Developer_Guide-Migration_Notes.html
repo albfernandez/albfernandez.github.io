@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Appendix B. Migration Notes</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Developer Guide"/><link rel="up" href="index.html" title="Developer Guide"/><link rel="prev" href="appe-Developer_Guide-Style_classes_and_skin_parameters.html" title="Appendix A. Style classes and skin parameters"/><link rel="next" href="appe-Developer_Guide-Revision_History.html" title="Appendix C. Revision History"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="appe-Developer_Guide-Style_classes_and_skin_parameters.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="appe-Developer_Guide-Revision_History.html"><strong>Next</strong></a></li></ul><div class="appendix" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="appe-Developer_Guide-Migration_Notes"/>Appendix B. Migration Notes</h2></div></div></div>
+
+<p>This section of the guide will track any breaking changes introduced in new releases, and identify any steps required to accommodate those changes in your application.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="appe-Developer_Guide-Migration_Notes-4_3_0"/>B.1. RichFaces 4.3.7.Final</h2></div></div></div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="_autosize_changes_for_the_popuppanel"/>B.1.1. Autosize changes for the popupPanel</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:popupPanel&gt;</span></code> no longer ignores the min and max sizes for width and height when <code class="literal">autosize=true</code>.</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="_richfaces_4_3_0_final"/>B.2. RichFaces 4.3.0.Final</h2></div></div></div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="appe-Developer_Guide-Migration_Notes-4_3_0-built_in_sorting_and_filtering_controls"/>B.2.1. Built-in sorting and filtering controls</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:extendedDataTable&gt;</span></code> now has built-in sorting and filtering controls. If you have existing <code class="literal"><span class="sgmltag">&lt;rich:extendedDataTable&gt;</span></code> with custom sort and/or filter controls, you will want to disable the built-in sort and/or filter controls. This can be done either on a column-by-column basis, or for all columns in your applications.</p>
+<p>For details on disabling the built-in sort and filter controls, refer to sections "External filter controls" and "External sort controls" in the RichFaces Component Reference.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="appe-Developer_Guide-Migration_Notes-4_3_0-NotifyMessage_Sting_Escaping"/>B.2.2. NotifyMessage string escaping</h3></div></div></div>
+
+<p>Prior to version 4.3.0.Final, the message summary and details of the <code class="literal"><span class="sgmltag">&lt;rich:notifyMessage&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:notifyMessages&gt;</span></code> components were not escaped. In the 4.3.0.Final release, an attribute <code class="literal"><span class="varname">escape</span></code> was added with a default value true.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="appe-Developer_Guide-Migration_Notes-4_3_0-Select_Input_Validation"/>B.2.3. Select input validation</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:select&gt;</span></code> now validates that manually entered input values match one of the values of the provided list (including support for client-side validation).</p>
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="appe-Developer_Guide-Style_classes_and_skin_parameters.html"><strong>Prev</strong>Appendix A. Style classes and skin parameters</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="appe-Developer_Guide-Revision_History.html"><strong>Next</strong>Appendix C. Revision History</a></li></ul></body></html>

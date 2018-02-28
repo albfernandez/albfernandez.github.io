@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 7. Processing management</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-Ajax_control_components.html" title="Part I. Ajax control components"/><link rel="prev" href="chap-Component_Reference-Validation.html" title="Chapter 6. Validation"/><link rel="next" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Validation.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="part-Component_Reference-User_interface_components.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Processing_management"/>Chapter 7. Processing management</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-Processing_management-queue">7.1. &lt;a4j:queue&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-queue-Basic_usage">7.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-queue-Delaying_requests">7.1.2. Delaying requests</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-queue-Duplicate_responses">7.1.3. Duplicate responses</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-queue-Queue_scopes">7.1.4. Queue scopes</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-queue-queue_client-side_events">7.1.5. &lt;a4j:queue&gt; client-side events</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-queue-Reference_data">7.1.6. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-Processing_management-attachQueue">7.1.7. &lt;a4j:attachQueue&gt;</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-Processing_management-log">7.2. &lt;a4j:log&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-log-Basic_usage">7.2.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-log-Log_monitoring">7.2.2. Log monitoring</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-log-Reference_data">7.2.3. Reference data</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-log-Style_classes_and_skin_parameters">7.2.4. Style classes and skin parameters</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-Processing_management-status">7.3. &lt;a4j:status&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-status-Customizing_the_text">7.3.1. Customizing the text</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-status-Specifying_a_region">7.3.2. Specifying a region</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-status-JavaScript_API">7.3.3. JavaScript API</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-status-Reference_data">7.3.4. Reference data</a></span></dt></dl></dd></dl></div>
+
+<p>This chapter covers those components that manage the processing of information, requests, and updates.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Processing_management-queue"/>7.1. <a id="a4jqueue"/><code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component manages the JSF queue of Ajax requests. It provides additional options for a finer control of request processing.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-queue-Basic_usage"/>7.1.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component works in the same basic way as the standard JSF queue. It can be enabled and disabled through the <code class="literal"><span class="varname">enabled</span></code> attribute.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Requests from other libraries</h2>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component does not handle standard JSF requests or requests from component libraries other than RichFaces.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-queue-Delaying_requests"/>7.1.2. Delaying requests</h3></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">requestDelay</span></code> attribute to add a delay between each request in the queue. Set the <code class="literal"><span class="varname">requestDelay</span></code> attribute to the number of milliseconds to wait in between each request. Delaying requests avoids unnecessary processing for actions that would otherwise cause multiple requests, such as typing. Similar requests in the queue are combined while waiting for the request delay.</p>
+<div class="example"><a id="exam-Component_Reference-queue-Delaying_requests"/><p class="title"><b>Example 7.1. Delaying requests</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:queue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestDelay</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;1500&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The queue delays each request by 1500 milliseconds.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-queue-Duplicate_responses"/>7.1.3. Duplicate responses</h3></div></div></div>
+
+<p>The client side can update unnecessarily if duplicate responses require similar updates. Set <code class="literal"><span class="code">ignoreDupResponses="true"</span></code> to ignore duplicate responses. With this setting, the client will not update from a request if a similar request is in the queue.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-queue-Queue_scopes"/>7.1.4. Queue scopes</h3></div></div></div>
+
+<p>Define the queue scope to make it the default queue for all requests in that scope. The scope depends on the placement of the queue and any naming identifiers.</p>
+<div class="itemizedlist"><ul><li>
+An unnamed <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component placed outside any forms becomes the default queue for all requests on the page.
+</li><li>
+An unnamed <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component placed inside a form becomes the default queue for all requests within that form.
+</li><li>
+Use the <code class="literal"><span class="varname">name</span></code> identifier attribute to name an <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component. Named queues can be accessed with the <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behavior to act as a queue for specific components and behaviors. Refer to <a class="xref" href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-Processing_management-attachQueue" title="7.1.7. &lt;a4j:attachQueue&gt;">Section 7.1.7, “&lt;a4j:attachQueue&gt;”</a> for details.
+</li></ul></div>
+
+<div class="example"><a id="exam-Component_Reference-queue-Queue_scopes"/><p class="title"><b>Example 7.2. Queue scopes</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:queue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;viewQueue&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestDelay</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;2000&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:queue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;formQueue&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestDelay</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;1500&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The queue outside the form is scoped to the view. The queue inside the form is scoped only to that form.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-queue-queue_client-side_events"/>7.1.5. <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> client-side events</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component features several events relating to queuing actions in addition to the common JSF events:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">complete</span></code> event is fired after a request is completed. The request object is passed as a parameter to the event handler, so the queue is accessible using <code class="literal"><span class="code">request.queue</span></code> and the element which was the source of the request is accessible using <code class="literal">this</code>.
+</li><li>
+The <code class="literal"><span class="varname">requestqueue</span></code> event is fired after a new request has been added to the queue.
+</li><li>
+The <code class="literal"><span class="varname">requestdequeue</span></code> event is fired after a request has been removed from the queue.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-queue-Reference_data"/>7.1.6. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Queue</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIQueue</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Queue</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.QueueRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Processing_management-attachQueue"/>7.1.7. <a id="a4jattachQueue"/><code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code></h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behavior is used together with a <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component to further customize queuing for particular components and behaviors. The <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behavior can override the scope-wide queue settings for an individual component, or attach specific requests to a queue.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-attachQueue-Overriding_scope_settings"/>7.1.7.1. Overriding scope settings</h4></div></div></div>
+
+<p>Queues can be scoped to various levels as described in <a class="xref" href="chap-Component_Reference-Processing_management.html#sect-Component_Reference-queue-Queue_scopes" title="7.1.4. Queue scopes">Section 7.1.4, “Queue scopes”</a>. Use an <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behavior in the same scope as a queue to override the queue settings for a particular control.</p>
+<div class="example"><a id="exam-Component_Reference-attachQueue-Overriding_scope_settings"/><p class="title"><b>Example 7.3. Overriding scope settings</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:queue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestDelay</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;2000&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:ajax</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;keyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;submit&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:attachQueue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestDelay</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;0&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The request delay is overridden by the <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behavior on the submit button.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-attachQueue-Using_a_named_queue"/>7.1.7.2. Using a named queue</h4></div></div></div>
+
+<p>Name an <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component using the <code class="literal"><span class="varname">name</span></code> attribute. It can then be used by specific components through the <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behavior. Use the <code class="literal"><span class="varname">name</span></code> attribute of the <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behavior to identify the name of the destination queue.</p>
+<div class="example"><a id="exam-Component_Reference-attachQueue-Using_a_named_queue"/><p class="title"><b>Example 7.4. Using a named queue</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:queue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;viewQueue&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:queue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;formQueue&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;submit&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:attachQueue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;viewQueue&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:commandButton</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The requests from the button are attached to the <code class="literal">viewQueue</code> queue, rather than the <code class="literal">formQueue</code> queue.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-attachQueue-Grouping_requests"/>7.1.7.3. Grouping requests</h4></div></div></div>
+
+<p>Use grouping to process multiple requests together. Specify a grouping identifier with the <code class="literal"><span class="varname">requestGroupingId</span></code> attribute. Requests from multiple <code class="literal"><span class="sgmltag">&lt;a4j:attachQueue&gt;</span></code> behaviors can use the same identifier to group requests together.</p>
+<div class="example"><a id="exam-Component_Reference-attachQueue-Grouping_requests"/><p class="title"><b>Example 7.5. Grouping requests</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:queue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestDelay</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;2000&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;input1&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{queueBean.text1}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:attachQueue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestGroupingId</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;registrationForm&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;input2&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{queueBean.text2}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:attachQueue</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">requestGroupingId</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;registrationForm&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>Requests from both the text input boxes are grouped together with the <code class="literal">registrationForm</code> identifier.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Component_Reference-attachQueue-Reference_data"/>7.1.7.4. Reference data</h4></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.AttachQueue</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIAttachQueue</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.AttachQueue</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.AttachQueueRenderer</span></code>
+</li><li>
+<code class="literal"><span class="parameter">handler-class</span></code>: <code class="literal"><span class="classname">org.richfaces.view.facelets.html.AttachQueueHandler</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Processing_management-log"/>7.2. <a id="a4jlog"/><code class="literal"><span class="sgmltag">&lt;a4j:log&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:log&gt;</span></code> component generates JavaScript that opens a debug window, logging application information such as requests, responses, and <acronym class="acronym">DOM</acronym> changes.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-log-Basic_usage"/>7.2.1. Basic usage</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:log&gt;</span></code> component doesn’t require any additional attributes for basic functionality.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-log-Log_monitoring"/>7.2.2. Log monitoring</h3></div></div></div>
+
+<p>The <code class="literal"><span class="varname">mode</span></code> attribute determines how the log appears on the page.</p>
+<div class="itemizedlist"><ul><li>
+Set <code class="literal"><span class="code">mode="inline"</span></code> to place the logging data in-line on the current page. This is the default setting.
+</li><li>
+Set <code class="literal"><span class="code">mode="popup"</span></code> to present the logging data in a new pop-up window. The window is set to be opened by pressing the key combination <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>L</strong></span>; this can be partially reconfigured with the <code class="literal"><span class="varname">hotkey</span></code> attribute, which specifies the letter key to use in combination with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span> instead of <span class="keycap"><strong>L</strong></span>.
+</li><li>
+Set <code class="literal"><span class="code">mode="console"</span></code> to present the logging data in the JavaScript console of the browser.
+</li></ul></div>
+
+<p>The amount of data logged can be determined with the <code class="literal"><span class="varname">level</span></code> attribute:</p>
+<div class="itemizedlist"><ul><li>
+Set <code class="literal"><span class="code">level="ERROR"</span></code> to log all errors.
+</li><li>
+Set <code class="literal"><span class="code">level="FATAL"</span></code> to log only fatal messages.
+</li><li>
+Set <code class="literal"><span class="code">level="INFO"</span></code> to log only informational messages.
+</li><li>
+Set <code class="literal"><span class="code">level="WARN"</span></code> to log only warning messages.
+</li><li>
+Set <code class="literal"><span class="code">level="ALL"</span></code> to log all data. This is the default setting.
+</li></ul></div>
+
+<div class="example"><a id="exam-Component_Reference-log-log_example"/><p class="title"><b>Example 7.6. <code class="literal"><span class="sgmltag">&lt;a4j:log&gt;</span></code> example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:log</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">level</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ALL&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">mode</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;inline&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<div class="figure"><a id="d4e1968"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/figu-Component_Reference-log-log_example.png" alt="figu Component Reference log log example"/></div>
+</div><p class="title"><b>Figure 7.1. </b></p></div><br class="figure-break"/>
+
+<p>The log readout displays all messages.</p>
+</div></div><br class="example-break"/>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Log renewal</h2>
+
+<p>The log is automatically renewed after each Ajax request. It does not need to be explicitly re-rendered. To clear previous requests, implement a <span class="guilabel"><strong>Clear</strong></span> button or similar functionality.</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-log-Reference_data"/>7.2.3. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.AjaxLog</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIAjaxLog</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.AjaxLog</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.AjaxLogRenderer</span></code>
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-log-Style_classes_and_skin_parameters"/>7.2.4. Style classes and skin parameters</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:log&gt;</span></code> component is intended primarily for debugging during development. However it is still possible to style the component if desired.</p>
+<div class="table"><a id="log-Style_classes_and_corresponding_skin_parameters"/><p class="title"><b>Table 7.1. Style classes (selectors) and corresponding skin parameters</b></p><div class="table-contents">
+
+  
+  <table summary="Style classes (selectors) and corresponding skin parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="left" valign="top">Class (selector)</th><th align="left" valign="top">Skin Parameters</th><th align="left" valign="top">Mapped CSS properties</th></tr></thead><tbody><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log</span></code></span></dt><dd>
+This class defines styles for the log.
+</dd></dl></div>
+</td><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal"><span class="property">color</span></code></p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-popup</span></code></span></dt><dd>
+This class defines styles for the log when it appears as a pop-up.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-popup-cnt</span></code></span></dt><dd>
+This class defines styles for the content of the log pop-up.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-inline</span></code></span></dt><dd>
+This class defines styles for the log when it appears in-line.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-contents</span></code></span></dt><dd>
+This class defines styles for the log contents.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-lbl</span></code></span></dt><dd>
+This class defines styles for a label in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-lbl-debug</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>debug</strong></span> label in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-lbl-info</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>information</strong></span> label in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-lbl-warn</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>warning</strong></span> label in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-lbl-error</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>error</strong></span> label in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-msg</span></code></span></dt><dd>
+This class defines styles for a message in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-msg-debug</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>debug</strong></span> message in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-msg-info</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>information</strong></span> message in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-msg-warn</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>warning</strong></span> message in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-msg-error</span></code></span></dt><dd>
+This class defines styles for the <span class="guilabel"><strong>error</strong></span> message in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr><tr><td align="left" valign="top"><div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-log-entry-msg-xml</span></code></span></dt><dd>
+This class defines styles for an XML message in the log.
+</dd></dl></div>
+</td><td colspan="2" align="left" valign="top"><p>No skin parameters.</p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Processing_management-status"/>7.3. <a id="a4jstatus"/><code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> component displays the status of current Ajax requests. The status can be either in progress, complete, or an error is shown after a failed request.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-status-Customizing_the_text"/>7.3.1. Customizing the text</h3></div></div></div>
+
+<p>The text display can be customized depending on the current status.</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">startText</span></code> attribute defines the text shown after the request has been started and is currently in progress. Set the styles for the text with the <code class="literal"><span class="varname">startStyle</span></code> and <code class="literal"><span class="varname">startStyleClass</span></code> attributes. Alternatively, use the <code class="literal">start</code> facet to customize the text appearance.
+</li><li>
+<p>The <code class="literal"><span class="varname">stopText</span></code> attribute defines the text shown once the request is complete. Set the styles for the text with the <code class="literal"><span class="varname">stopStyle</span></code> and <code class="literal"><span class="varname">stopStyleClass</span></code> attributes. Alternatively, use the <code class="literal">stop</code> facet to customize the text appearance.</p>
+<p>If the <code class="literal"><span class="varname">stopText</span></code> attribute is not defined, and no facet exists for the stopped state, the complete status is simply not shown. In this way, only the progress of the request is displayed to the user, along with any errors.</p>
+</li><li>
+The <code class="literal"><span class="varname">errorText</span></code> attribute defines the text shown when an error has occurred. Set the styles for the text with the <code class="literal"><span class="varname">errorStyle</span></code> and <code class="literal"><span class="varname">errorStyleClass</span></code> attributes. Alternatively, use the <code class="literal">error</code> facet to customize the text appearance.
+</li></ul></div>
+
+<div class="example"><a id="exam-Component_Reference-status-Basic_status_usage"/><p class="title"><b>Example 7.7. Basic <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> usage</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:status</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">startText</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;In&nbsp;progress...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">stopText</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Complete&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-status-Specifying_a_region"/>7.3.2. Specifying a region</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> component monitors the status of the region relevant to where it is placed.</p>
+<div class="itemizedlist"><ul><li>
+If unnamed and placed outside any forms, it monitors the status at the view level.
+</li><li>
+If unnamed and placed inside a form, it monitors the status at the form level.
+</li></ul></div>
+
+<p>However, if identified with the <code class="literal"><span class="varname">name</span></code> attribute, the <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> component can monitor any Ajax component or behavior. Use the <code class="literal"><span class="varname">status</span></code> attribute on the Ajax component or behavior to reference the <code class="literal"><span class="varname">name</span></code> identifier of the <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> component.</p>
+<div class="example"><a id="exam-Component_Reference-status-Updating_a_referenced_status_component"/><p class="title"><b>Example 7.8. Updating a referenced <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> component</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;User&nbsp;Details&nbsp;Panel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">columns</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;3&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;User&nbsp;name:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{userBean.name}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:ajax</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">status</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;nameStatus&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;keyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:status</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;nameStatus&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;start&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/ai.gif&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:status</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Address:&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{userBean.address}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:ajax</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">status</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;addressStatus&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;keyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:status</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;addressStatus&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;start&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/ai.gif&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:status</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-status-JavaScript_API"/>7.3.3. JavaScript API</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> component can be controlled through the JavaScript API. The JavaScript API provides the following functions:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="function">start()</span></code></span></dt><dd>
+Switches status to the <code class="literal">start</code> state.
+</dd><dt><span class="term"><code class="literal"><span class="function">stop()</span></code></span></dt><dd>
+Switches status to the <code class="literal">stop</code> state.
+</dd><dt><span class="term"><code class="literal"><span class="function">error()</span></code></span></dt><dd>
+Switches status to the <code class="literal">error</code> state.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-status-Reference_data"/>7.3.4. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.Status</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIStatus</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.Status</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.StatusRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Validation.html"><strong>Prev</strong>Chapter 6. Validation</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="part-Component_Reference-User_interface_components.html"><strong>Next</strong>Part II. User interface components</a></li></ul></body></html>

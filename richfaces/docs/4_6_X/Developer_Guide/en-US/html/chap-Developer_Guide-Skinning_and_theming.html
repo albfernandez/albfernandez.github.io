@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 6. Skinning and theming</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Developer Guide"/><link rel="up" href="index.html" title="Developer Guide"/><link rel="prev" href="chap-Developer_Guide-Advanced_features.html" title="Chapter 5. Advanced features"/><link rel="next" href="appe-Developer_Guide-Style_classes_and_skin_parameters.html" title="Appendix A. Style classes and skin parameters"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-Advanced_features.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="appe-Developer_Guide-Style_classes_and_skin_parameters.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Developer_Guide-Skinning_and_theming"/>Chapter 6. Skinning and theming</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-What_are_skins">6.1. What are skins?</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-Using_skins">6.2. Using skins</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-Skinning_overview">6.3. Skinning overview</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_overview-Skin_parameter_tables">6.3.1. Skin parameter tables</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-Round_corners">6.3.2. Support for round corners</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-ECSS_files">6.3.3. ECSS files</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-Customizing_skins">6.4. Customizing skins</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Customizing_skins-Creating_a_new_skin">6.4.1. Creating a new skin</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-Changing_skins_at_runtime">6.5. Changing skins at runtime</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-Skinning_standard_controls">6.6. Skinning standard controls</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_standard_controls-Automatic_skinning">6.6.1. Automatic skinning</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_standard_controls-Skinning_with_the_rfs-ctn_class">6.6.2. Skinning with the rfs-ctn class</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter for a guide to skinning and theming RichFaces applications, including how to implement themes, and details on customizing and extending skins.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-What_are_skins"/>6.1. What are skins?</h2></div></div></div>
+
+<p>Application skins are used with the RichFaces framework to change the appearance of an application through setting the colors and decoration of controls and components. Typically the appearance of web applications is handled through the <acronym class="acronym">CSS</acronym> (Cascading Style Sheet) files associated with the application, but skinning allows the settings in a CSS file to be abstracted and easily edited. Skins consist of a small, generalized set of font and color parameters that can be applied to multiple different styles. This avoids repetitive coding and duplication in CSS files. CSS files are not completely replaced: skins work as a high-level extension to standard CSS.</p>
+<p>Each skin has a set of <code class="literal"><span class="varname">skin-parameters</span></code>, which are used to define the theme palette and other elements of the user interface. These parameters work together with regular CSS declarations, and can be referred to from within CSS using JavaServer Faces Expression Language (<acronym class="acronym">EL</acronym>).</p>
+<p>The skinning feature of RichFaces also allows skins to be changed at runtime, so users can personalize an application’s appearance on the fly.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-Using_skins"/>6.2. Using skins</h2></div></div></div>
+
+<p>RichFaces includes a number of predefined skins. These skins can be used in RichFaces web applications by specifying the skin name in the <code class="literal"><span class="varname">org.richfaces.skin</span></code> context parameter in the <code class="literal"><span class="filename">web.xml</span></code> settings file. The predefined skins are as follows:</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal">DEFAULT</code>
+</li><li>
+<code class="literal">plain</code>, which contains no skin parameters and is intended for embedding RichFaces components into existing projects with their own styles.
+</li><li>
+<code class="literal">emeraldTown</code>
+</li><li>
+<code class="literal">blueSky</code>
+</li><li>
+<code class="literal">wine</code>
+</li><li>
+<code class="literal">japanCherry</code>
+</li><li>
+<code class="literal">ruby</code>
+</li><li>
+<code class="literal">classic</code>
+</li><li>
+<code class="literal">deepMarine</code>
+</li></ul></div>
+
+<p>To add one of these skins to your application, add the <code class="literal">org.richfaces.SKIN</code> context parameter to the <code class="literal"><span class="filename">web.xml</span></code> configuration file:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.skin</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">skin_name</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-Skinning_overview"/>6.3. Skinning overview</h2></div></div></div>
+
+<p>RichFaces skins are implemented using the following three-level scheme:</p>
+<div class="variablelist"><dl><dt><span class="term">Component stylesheets</span></dt><dd>
+Stylesheets are provided for each component. CSS style parameters map to skin parameters defined in the skin property file. This mapping is accomplished through the use of ECSS files. Refer to <a class="xref" href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-ECSS_files" title="6.3.3. ECSS files">Section 6.3.3, “ECSS files”</a> for details on ECSS files.
+</dd><dt><span class="term">Skin property files</span></dt><dd>
+Skin property files map skin parameters to constant styles. Skin properties are defined in <code class="literal"><span class="filename">skin.properties</span></code> files. Refer to <a class="xref" href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_overview-Skin_parameter_tables" title="6.3.1. Skin parameter tables">Section 6.3.1, “Skin parameter tables”</a> for a listing of the skin parameters used in a typical skin.
+</dd><dt><span class="term">Custom style classes</span></dt><dd>
+Individual components can use the <code class="literal"><span class="varname">styleClass</span></code> attribute to redefine specific elements. These components then use the styles defined in a CSS file instead of the standard look for components as defined by the ECSS stylesheets.
+</dd></dl></div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Skinning_overview-Skin_parameter_tables"/>6.3.1. Skin parameter tables</h3></div></div></div>
+
+<p><a class="xref" href="chap-Developer_Guide-Skinning_and_theming.html#tabl-Developer_Guide-Skin_parameter_tables_in_RichFaces-Parameter_settings_for_the_blueSky_skin" title="Table 6.1. Parameter settings for the blueSky skin">Table 6.1, “Parameter settings for the blueSky skin”</a> lists the default values for the parameter settings in the <code class="literal">blueSky</code> skin. These values are all listed in the <code class="literal"><span class="filename">blueSky.skin.properties</span></code> file, which can be customized and extended as described in <a class="xref" href="chap-Developer_Guide-Skinning_and_theming.html#sect-Developer_Guide-Skinning_and_theming-Customizing_skins" title="6.4. Customizing skins">Section 6.4, “Customizing skins”</a>.</p>
+<div class="table"><a id="tabl-Developer_Guide-Skin_parameter_tables_in_RichFaces-Parameter_settings_for_the_blueSky_skin"/><p class="title"><b>Table 6.1. Parameter settings for the <code class="literal">blueSky</code> skin</b></p><div class="table-contents">
+
+  
+  <table summary="Parameter settings for the blueSky skin" border="1"><colgroup><col/><col/></colgroup><thead><tr><th align="left" valign="top">Parameter name</th><th align="left" valign="top">Default value</th></tr></thead><tbody><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#BED6F8</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerGradientColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#F2F7FF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#000000</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerWeightFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">bold</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FFFFFF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#000000</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">11px</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">Arial, Verdana, sans-serif</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">controlTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#000000</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">controlBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FFFFFF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">additionalBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#ECF4FE</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">shadowBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#000000</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">shadowOpacity</span></code></p></td><td align="left" valign="top"><p><code class="literal">1</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">panelBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#BED6F8</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">subBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FFFFFF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">calendarWeekBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#F5F5F5</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">calendarHolidaysBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FFEBDA</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">calendarHolidaysTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FF7800</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">calendarCurrentBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FF7800</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">calendarCurrentTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FFEBDA</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">calendarSpecBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#E4F5E2</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">calendarSpecTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#000000</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">editorBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#F1F1F1</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">editBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FEFFDA</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">errorColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FF0000</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">gradientType</span></code></p></td><td align="left" valign="top"><p><code class="literal">plain</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#C6DEFF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabDisabledTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#8DB7F3</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableHeaderBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#D6E6FB</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableSubHeaderBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#ECF4FE</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableBorderWidth</span></code></p></td><td align="left" valign="top"><p><code class="literal">1px</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableHeaderTextColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#0B356C</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">trimColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#D6E6FB</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tipBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FAE6B0</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tipBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#E5973E</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">selectControlColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#E79A00</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">generalLinkColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#0078D0</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">hoverLinkColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#0090FF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">visitedLinkColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#0090FF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">11px</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">headerFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">Arial, Verdana, sans-serif</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">11px</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tabFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">Arial, Verdana, sans-serif</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">buttonSizeFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">11px</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">buttonFamilyFont</span></code></p></td><td align="left" valign="top"><p><code class="literal">Arial, Verdana, sans-serif</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FFFFFF</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableFooterBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#CCCCCC</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableSubfooterBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#F1F1F1</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">tableBorderColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#C0C0C0</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">warningColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FFE6E6</code></p></td></tr><tr><td align="left" valign="top"><p><code class="literal"><span class="parameter">warningBackgroundColor</span></code></p></td><td align="left" valign="top"><p><code class="literal">#FF0000</code></p></td></tr></tbody></table>
+</div></div><br class="table-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-Round_corners"/>6.3.2. Support for round corners</h3></div></div></div>
+
+<p>Support for round borders in your skins is available via the <code class="literal">panelBorderRadius</code> skin parameter. The value of this parameter maps to the CSS 3 <code class="literal">border-radius</code> property. This CSS 3 property is ignored in older browsers, and the skin gracefully degrades to square corners.</p>
+<p>Units of the <code class="literal">panelBorderRadius</code> skin parameter must be either <code class="literal">px</code> (pixels). or <code class="literal">%</code> (a percentage).</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-ECSS_files"/>6.3.3. <acronym class="acronym">ECSS</acronym> files</h3></div></div></div>
+
+<p>RichFaces uses <acronym class="acronym">ECSS</acronym> files to add extra functionality to the skinning process. ECSS files are CSS files which use Expression Language (<acronym class="acronym">EL</acronym>) to connect styles with skin properties.</p>
+<div class="example"><a id="exam-Developer_Guide-Skinning_and_theming-ECSS_style_mappings"/><p class="title"><b>Example 6.1. ECSS style mappings</b></p><div class="example-contents">
+
+<p>The ECSS code for the <code class="literal"><span class="sgmltag">&lt;rich:panel&gt;</span></code> component contains styles for the panel and its body:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">rf</span><!-- <br/> --><span class="java_operator">-</span><!-- <br/> --><span class="java_plain">p</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;background</span><span class="java_operator">-</span><span class="java_plain">color</span><span class="java_operator">:</span><span class="java_literal">'#{a4jSkin.generalBackgroundColor}'</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;color</span><span class="java_operator">:</span><span class="java_literal">'#{a4jSkin.panelBorderColor}'</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;border</span><span class="java_operator">-</span><span class="java_plain">width</span><span class="java_operator">:</span><span class="java_literal">1</span><span class="java_plain">px</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;border</span><span class="java_operator">-</span><span class="java_plain">style</span><span class="java_operator">:</span><span class="java_plain">solid</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;padding</span><span class="java_operator">:</span><span class="java_literal">1</span><span class="java_plain">px</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_separator">.</span><span class="java_plain">rf</span><span class="java_operator">-</span><span class="java_plain">p</span><span class="java_operator">-</span><span class="java_plain">b</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;font</span><span class="java_operator">-</span><span class="java_plain">size</span><span class="java_operator">:</span><span class="java_literal">'#{a4jSkin.generalSizeFont}'</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;color</span><span class="java_operator">:</span><span class="java_literal">'#{a4jSkin.generalTextColor}'</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;font</span><span class="java_operator">-</span><span class="java_plain">family</span><span class="java_operator">:</span><span class="java_literal">'#{a4jSkin.generalFamilyFont}'</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;padding</span><span class="java_operator">:</span><span class="java_literal">10</span><span class="java_plain">px</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">}</span>
+</pre>
+
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="classname">.rf-p</span></code>  defines the panel styles</span></dt><dd>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="property">background-color</span></code> CSS property maps to the <code class="literal"><span class="parameter">generalBackgroundColor</span></code> skin parameter.
+</li><li>
+The <code class="literal"><span class="property">color</span></code> CSS property maps to the <code class="literal"><span class="parameter">panelBorderColor</span></code> skin parameter.
+</li></ul></div>
+
+</dd><dt><span class="term"><code class="literal"><span class="classname">.rf-p-b</span></code>  defines the panel body styles</span></dt><dd>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="property">font-family</span></code> CSS property maps to the <code class="literal"><span class="parameter">generalFamilyFont</span></code> skin parameter.
+</li><li>
+The <code class="literal"><span class="property">font-size</span></code> CSS property maps to the <code class="literal"><span class="parameter">generalSizeFont</span></code> skin parameter.
+</li><li>
+The <code class="literal"><span class="property">color</span></code> CSS property maps to the <code class="literal"><span class="parameter">generalTextColor</span></code> skin parameter.
+</li></ul></div>
+
+</dd></dl></div>
+
+</div></div><br class="example-break"/>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-Customizing_skins"/>6.4. Customizing skins</h2></div></div></div>
+
+<p>Skins in RichFaces can be customized on each of the three levels:</p>
+<div class="variablelist"><dl><dt><span class="term">Skin property files</span></dt><dd>
+Application interfaces can be modified by altering the values of skin parameters in the skin itself. Edit the constant values defined in the <code class="literal"><span class="filename">skin.properties</span></code> file to change the style of every component mapped to that skin property.
+</dd><dt><span class="term">Component stylesheets</span></dt><dd>
+Mappings and other style attributes listed in a component’s ECSS file can be edited. Edit the ECSS file to change the styles of all components of that type.
+</dd><dt><span class="term">Custom components style classes</span></dt><dd>
+Individual components can use the <code class="literal"><span class="varname">styleClass</span></code> attribute to use a unique style class. Add the new style class to the application CSS and reference it from an individual component with the <code class="literal"><span class="varname">styleClass</span></code> attribute.
+</dd><dt><span class="term">Overwriting stylesheets in application</span></dt><dd>
+You can load custom stylesheets using <code class="literal"><span class="code">&lt;h:outputStylesheet&gt;</span></code> which rewrites of extends styles defined for style classes of components.
+</dd></dl></div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Customizing skins by rewriting/extending component style classes</h2>
+
+<p>If you want to extend/overwrite style sheet definitions with own stylesheets, make sure you place definitions to be rendered in right order of occurence (see <a class="link" href="chap-Developer_Guide-RichFaces_overview.html#sect-Developer_Guide-RichFaces_overview-Restrictions" title="3.5. Restrictions">Restrictions</a> section for details).</p>
+</div>
+
+<div class="example"><a id="exam-Developer_Guide-Using_skins-Simple_skinning_example"/><p class="title"><b>Example 6.2. Simple skinning example</b></p><div class="example-contents">
+
+<p>Using any component, such as a panel, without specifying a <code class="literal"><span class="varname">styleClass</span></code> will use the default skin parameters for that component.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">This&nbsp;is&nbsp;a&nbsp;panel&nbsp;without&nbsp;a&nbsp;header</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>When rendered for display, the panel consists of two HTML elements: a wrapper <code class="literal"><span class="sgmltag">&lt;div&gt;</span></code> element and a <code class="literal"><span class="sgmltag">&lt;div&gt;</span></code> element for the body of the panel. The wrapper element for a panel without a specified <code class="literal"><span class="varname">styleClass</span></code> is rendered as follows:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">div</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">class</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;rf-p&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">div</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">class</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;rf-p-b&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;panel&nbsp;without&nbsp;a&nbsp;header</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">div</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">div</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>To customize the panel appearance according to the three-level scheme, adjust the styles according to the following approach:</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li>
+Change the definitions for the <code class="literal"><span class="parameter">generalBackgroundColor</span></code> or <code class="literal"><span class="parameter">panelBorderColor</span></code> parameters in the skin. This will cause all panels in the application to change to the new settings.
+</li><li>
+Redefine the <code class="literal"><span class="classname">rf-p</span></code> class in the application CSS. This will also cause all panels in the application to change to the new settings, though the skin itself has not been altered. Any properties not mapped to skin parameters should be redefined in this way.
+</li><li>
+<p>Specify a different <code class="literal"><span class="varname">styleClass</span></code> attribute to style the individual component. If a <code class="literal"><span class="varname">styleClass</span></code> attribute is used, the specified style class is applied to the component, which could extend or override the default styles.</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">styleClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;customClass&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">...</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The <code class="literal">customClass</code> style is added to the CSS, and is applied to the component when it is rendered for display:</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">div</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">class</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;rf-p&nbsp;customClass&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">div</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</li></ol></div>
+
+</div></div><br class="example-break"/>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Customizing_skins-Creating_a_new_skin"/>6.4.1. Creating a new skin</h3></div></div></div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li>
+<p><span class="strong"><strong>Create the skin file</strong></span></p>
+<p>The name of the skin file should follow the format <code class="literal"><span class="filename">new_skin_name.skin.properties</span></code> and is placed in either the <code class="literal"><span class="filename">META-INF/skins/</span></code> directory or the classpath directory of your project.</p>
+</li><li>
+<p><span class="strong"><strong>Define the skin constants</strong></span></p>
+<div class="itemizedlist"><ul><li>
+<p><span class="strong"><strong>Define all the skin constants</strong></span></p>
+<p>Add skin parameter constants and values to the file. All the skin parameters listed in <a class="xref" href="chap-Developer_Guide-Skinning_and_theming.html#tabl-Developer_Guide-Skin_parameter_tables_in_RichFaces-Parameter_settings_for_the_blueSky_skin" title="Table 6.1. Parameter settings for the blueSky skin">Table 6.1, “Parameter settings for the blueSky skin”</a> should be included in the skin file, with settings relevant to your new skin.</p>
+<div class="example"><a id="exam-Developer_Guide-Skinning_and_theming-blueSky.skin.properties_file"/><p class="title"><b>Example 6.3. <code class="literal"><span class="filename">blueSky.skin.properties</span></code> file</b></p><div class="example-contents">
+
+<p>Open the <code class="literal"><span class="filename">blueSky.skin.properties</span></code> file from the <code class="literal"><span class="filename">/META-INF/skins</span></code> directory in the <code class="literal">richfaces-core-<span class="emphasis"><em>{version}</em></span>.jar</code> package. The file lists all the skin parameter constants shown in <a class="xref" href="chap-Developer_Guide-Skinning_and_theming.html#tabl-Developer_Guide-Skin_parameter_tables_in_RichFaces-Parameter_settings_for_the_blueSky_skin" title="Table 6.1. Parameter settings for the blueSky skin">Table 6.1, “Parameter settings for the blueSky skin”</a>.</p>
+<p>You can use the <code class="literal"><span class="filename">blueSky.skin.properties</span></code> file as a template for your new skin.</p>
+</div></div><br class="example-break"/>
+
+</li><li>
+<p><span class="strong"><strong>Extend a base skin</strong></span></p>
+<p>Instead of redefining an entire new skin, your skin can use an existing skin as a base on which to build new parameters. Specify a base skin by using the <code class="literal"><span class="varname">baseSkin</span></code> parameter in the skin file, as shown in <a class="xref" href="chap-Developer_Guide-Skinning_and_theming.html#exam-Developer_Guide-Skinning_and_theming-Using_a_base_skin" title="Example 6.4. Using a base skin">Example 6.4, “Using a base skin”</a>.</p>
+<div class="example"><a id="exam-Developer_Guide-Skinning_and_theming-Using_a_base_skin"/><p class="title"><b>Example 6.4. Using a base skin</b></p><div class="example-contents">
+
+<p>This example takes the <code class="literal">blueSky</code> skin as a base and only changes the <code class="literal"><span class="varname">generalSizeFont</span></code> parameter.</p>
+<pre class="screen">baseSkin=blueSky
+generalSizeFont=12px</pre>
+
+</div></div><br class="example-break"/>
+
+</li></ul></div>
+
+</li><li>
+<p><span class="strong"><strong>Reference the skin definition</strong></span></p>
+<p>Add a skin definition <code class="literal"><span class="sgmltag">&lt;context-param&gt;</span></code> to the <code class="literal"><span class="filename">web.xml</span></code> settings file of your application:</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.skin</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">new_skin_name</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</li></ol></div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-Changing_skins_at_runtime"/>6.5. Changing skins at runtime</h2></div></div></div>
+
+<p>To allow users to change skins at runtime, use a managed bean to access the skin.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li>
+<p><span class="strong"><strong>Create the skin bean</strong></span></p>
+<p>The skin bean is a simple interface to manage the skin:</p>
+<pre xmlns="" class="JAVA"><!-- <br/> --><span class="java_keyword">public</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">SkinBean</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;skin</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;getSkin</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;skin</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;setSkin</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;skin</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">skin&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;skin</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span>
+</pre>
+
+</li><li>
+<p><span class="strong"><strong>Reference the skin bean</strong></span></p>
+<p>Add the <code class="literal"><span class="code">@ManagedBean</span></code> and <code class="literal"><span class="code">@SessionScoped</span></code> references to the class.</p>
+<div class="itemizedlist"><ul><li>
+<p>Alternatively, use <acronym class="acronym">EL</acronym> (Expression Language) to reference the skin bean from the <code class="literal"><span class="filename">web.xml</span></code> settings file.</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.skin</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">#{skinBean.skin}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</li></ul></div>
+
+</li><li>
+<p><span class="strong"><strong>Set initial skin</strong></span></p>
+<p>The application needs an initial skin to display before the user chooses an alternative skin. Specify the skin in your class with <code class="literal"><span class="code">@ManagedProperty</span></code>.</p>
+<pre xmlns="" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">ManagedProperty</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_plain">value</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_literal">&quot;blueSky&quot;</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;skin</span><span class="java_separator">;</span></pre>
+
+<div class="itemizedlist"><ul><li>
+<p>Alternatively, specify the initial skin in the <code class="literal"><span class="filename">web.xml</span></code> configuration file.</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">managed-bean</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">managed-bean-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">skinBean</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">managed-bean-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">managed-bean-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">SkinBean</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">managed-bean-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">managed-bean-scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">session</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">managed-bean-scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">managed-property</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">property-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">skin</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">property-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">blueSky</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">managed-property</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">managed-bean</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</li></ul></div>
+
+</li></ol></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Skinning_and_theming-Skinning_standard_controls"/>6.6. Skinning standard controls</h2></div></div></div>
+
+<p>Standard HTML controls used alongside RichFaces components are also themed to create a cohesive user interface.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Skinning_standard_controls-Automatic_skinning"/>6.6.1. Automatic skinning</h3></div></div></div>
+
+<p>The skinning style properties are automatically applied to controls based on their element names and attribute types. If the HTML elements are referenced in the standard skin stylesheets, the controls will be styled according to the mapped skin properties.</p>
+<p>Standard HTML controls are skinned in this way by default. To override this behavior and prevent the RichFaces skins from being applied to the standard HTML controls, set the <code class="literal">org.richfaces.enableControlSkinning</code> context parameter in the <code class="literal"><span class="filename">web.xml</span></code> configuration file to <code class="literal">false</code>:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.enableControlSkinning</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">false</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Skinning_standard_controls-Skinning_with_the_rfs-ctn_class"/>6.6.2. Skinning with the <code class="literal"><span class="classname">rfs-ctn</span></code> class</h3></div></div></div>
+
+<p>The skinning style properties can be determined through a separate CSS class. This method is not available by default, but is enabled through the <code class="literal">org.richfaces.enableControlSkinningClasses</code> context parameter in the <code class="literal"><span class="filename">web.xml</span></code> configuration file:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.enableControlSkinningClasses</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">true</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>When enabled, a stylesheet with predefined classes offers a special CSS class named <code class="literal"><span class="classname">rfs-ctn</span></code>. Reference the <code class="literal"><span class="classname">rfs-ctn</span></code> class from any container element (such as a <code class="literal"><span class="sgmltag">&lt;div&gt;</span></code> element) to skin all the standard HTML controls in the container.</p>
+<p>Standard HTML controls can also be specifically defined in the CSS. Refer to the <code class="literal"><span class="filename">/META-INF/resources/org.richfaces/skinning_both.ecss</span></code> file in the <code class="literal">richfaces-core-<span class="emphasis"><em>{version}</em></span>.jar</code> package for examples of specially-defined CSS classes with skin parameters for HTML controls.</p>
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-Advanced_features.html"><strong>Prev</strong>Chapter 5. Advanced features</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="appe-Developer_Guide-Style_classes_and_skin_parameters.html"><strong>Next</strong>Appendix A. Style classes and skin parameters</a></li></ul></body></html>

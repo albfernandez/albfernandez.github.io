@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 4. Basic concepts</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Developer Guide"/><link rel="up" href="index.html" title="Developer Guide"/><link rel="prev" href="chap-Developer_Guide-RichFaces_overview.html" title="Chapter 3. RichFaces overview"/><link rel="next" href="chap-Developer_Guide-Advanced_features.html" title="Chapter 5. Advanced features"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-RichFaces_overview.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Developer_Guide-Advanced_features.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Developer_Guide-Basic_concepts"/>Chapter 4. Basic concepts</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Developer_Guide-Basic_concepts.html#sect-Developer_Guide-Basic_concepts-Sending_an_Ajax_request">4.1. Sending an Ajax request</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Basic_concepts.html#sect-Developer_Guide-Basic_concepts-Partial_tree_processing">4.2. Partial tree processing</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Basic_concepts.html#sect-Developer_Guide-Basic_concepts-Partial_view_updates">4.3. Partial view updates</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Basic_concepts.html#sect-Developer_Guide-Basic_concepts-Component_overview">4.4. Component overview</a></span></dt></dl></div>
+
+<p>Read this chapter for the basic concepts of using RichFaces in conjunction with Ajax and JavaServer Faces.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Basic_concepts-Sending_an_Ajax_request"/>4.1. Sending an Ajax request</h2></div></div></div>
+
+<p>Many of the tags in the <code class="literal"><span class="classname">r</span></code> tag library are capable of sending Ajax requests from a JavaServer Faces (JSF) page.</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="sgmltag">&lt;a4j:commandButton&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;a4j:commandLink&gt;</span></code> tags are used to send an Ajax request on the <code class="literal"><span class="varname">click</span></code> JavaScript event.
+</li><li>
+The <code class="literal"><span class="sgmltag">&lt;a4j:poll&gt;</span></code> tag is used to send an Ajax request periodically using a timer.
+</li><li>
+The <code class="literal"><span class="sgmltag">&lt;a4j:ajax&gt;</span></code> tag allows you to add Ajax functionality to standard JSF components and send Ajax request on a chosen JavaScript event, such as <code class="literal"><span class="varname">keyup</span></code> or <code class="literal"><span class="varname">mouseover</span></code>, for example.
+</li><li>
+Most components in the <code class="literal"><span class="classname">r</span></code> tag library have built-in Ajax support. Refer to the <span class="strong"><strong><span class="emphasis"><em>RichFaces Component Reference</em></span></strong></span> for details on the use of each component.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Basic_concepts-Partial_tree_processing"/>4.2. Partial tree processing</h2></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">execute</span></code> attribute to specify which parts of the JSF tree to process during an Ajax request. The <code class="literal"><span class="varname">execute</span></code> attribute can point to an <code class="literal"><span class="varname">id</span></code> identifier of a specific component to process. Components can also be identified through the use of Expression Language (<acronym class="acronym">EL</acronym>).</p>
+<p>Alternatively, the <code class="literal"><span class="varname">execute</span></code> attribute accepts the following keywords:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="code">@all</span></code></span></dt><dd>
+Every component is processed.
+</dd><dt><span class="term"><code class="literal"><span class="code">@none</span></code></span></dt><dd>
+No components are processed.
+</dd><dt><span class="term"><code class="literal"><span class="code">@this</span></code></span></dt><dd>
+The requesting component with the <code class="literal"><span class="varname">execute</span></code> attribute is processed.
+</dd><dt><span class="term"><code class="literal"><span class="code">@form</span></code></span></dt><dd>
+The form that contains the requesting component is processed.
+</dd><dt><span class="term"><code class="literal"><span class="code">@region</span></code></span></dt><dd>
+The region that contains the requesting component is processed. Use the <code class="literal"><span class="sgmltag">&lt;a4j:region&gt;</span></code> component as a wrapper element to specify regions.
+Some components make use of additional keywords. These are detailed under the relevant component entry in the <span class="strong"><strong><span class="emphasis"><em>RichFaces Component Reference</em></span></strong></span> .
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Basic_concepts-Partial_view_updates"/>4.3. Partial view updates</h2></div></div></div>
+
+<p>Use the <code class="literal"><span class="varname">render</span></code> attribute to specify which components to render for an Ajax update. The <code class="literal"><span class="varname">render</span></code> attribute can point to an <code class="literal"><span class="varname">id</span></code> identifier of a specific component to update. Components can also be identified through the use of Expression Language (<acronym class="acronym">EL</acronym>).</p>
+<p>Alternatively, the <code class="literal"><span class="varname">render</span></code> attribute accepts the following keywords:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal"><span class="code">@all</span></code></span></dt><dd>
+Every component is updated.
+</dd><dt><span class="term"><code class="literal"><span class="code">@none</span></code></span></dt><dd>
+No components are updated.
+</dd><dt><span class="term"><code class="literal"><span class="code">@this</span></code></span></dt><dd>
+The requesting component with the <code class="literal"><span class="varname">execute</span></code> attribute is updated.
+</dd><dt><span class="term"><code class="literal"><span class="code">@form</span></code></span></dt><dd>
+The form that contains the requesting component is updated.
+</dd><dt><span class="term"><code class="literal"><span class="code">@region</span></code></span></dt><dd>
+The region that contains the requesting component is updated. Use the <code class="literal"><span class="sgmltag">&lt;a4j:region&gt;</span></code> component as a wrapper element to specify regions.
+</dd></dl></div>
+
+<p>Some components make use of additional keywords. These are detailed under the relevant component entry in the <span class="strong"><strong><span class="emphasis"><em>RichFaces Component Reference</em></span></strong></span> .</p>
+<p>Use the <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component with the <code class="literal"><span class="code">ajaxRendered="true"</span></code> setting to always update a section irrespective of the requesting component’s <code class="literal"><span class="varname">render</span></code> attribute. The <code class="literal"><span class="sgmltag">&lt;rich:message&gt;</span></code> and <code class="literal"><span class="sgmltag">&lt;rich:messages&gt;</span></code> components are based on the <code class="literal"><span class="sgmltag">&lt;a4j:outputPanel&gt;</span></code> component, and as such will also always be updated. To override this behavior, use the <code class="literal"><span class="code">limitRender="true"</span></code> setting on the requesting component.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Basic_concepts-Component_overview"/>4.4. Component overview</h2></div></div></div>
+
+<p>The RichFaces framework is made up of two tag libraries: the <code class="literal"><span class="classname">rich</span></code> and <code class="literal"><span class="classname">a4j</span></code> libraries. The <code class="literal"><span class="classname">a4j</span></code> tag library includes both the low-level ajax functionality, while the <code class="literal"><span class="classname">rich</span></code> tag library includes the high-level components for building web applications.  This allows developers to make use of custom Ajax behavior with existing componentsas well as leverage the many ready-made, self-contained components. These components don’t require additional configuration in order to send requests or update.</p>
+<p>For details on the use of the various components, refer to <span class="strong"><strong><span class="emphasis"><em>RichFaces Component Reference</em></span></strong></span> .</p>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-RichFaces_overview.html"><strong>Prev</strong>Chapter 3. RichFaces overview</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Developer_Guide-Advanced_features.html"><strong>Next</strong>Chapter 5. Advanced features</a></li></ul></body></html>

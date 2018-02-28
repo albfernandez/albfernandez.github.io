@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 5. Advanced features</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Developer Guide"/><link rel="up" href="index.html" title="Developer Guide"/><link rel="prev" href="chap-Developer_Guide-Basic_concepts.html" title="Chapter 4. Basic concepts"/><link rel="next" href="chap-Developer_Guide-Skinning_and_theming.html" title="Chapter 6. Skinning and theming"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-Basic_concepts.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Developer_Guide-Skinning_and_theming.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Developer_Guide-Advanced_features"/>Chapter 5. Advanced features</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-JSF2_integration">5.1. JSF 2 integration</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Error_handling">5.2. Error handling</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Client-side_errors">5.2.1. Client-side errors</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Server-side_errors">5.2.2. Server-side errors</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Other_functions">5.3. Other functions</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Resource_loading">5.4. Resource loading</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Configuring_ResourceServlet">5.4.1. Configuring ResourceServlet</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Resource_optimization">5.4.2. Resource optimization</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Advanced_features.html#sect-Developer_Guide-Advanced_features-Resource_mapping">5.4.3. Resource mapping</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter for details on some of the advanced features and configuration possibilities for the RichFaces framework.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Advanced_features-JSF2_integration"/>5.1. JSF 2 integration</h2></div></div></div>
+
+<p>JavaServer Faces (<acronym class="acronym">JSF</acronym>) is the Java-based web application framework upon which the RichFaces framework has been built. RichFaces is now integrated with JSF 2, which features several improvements to the framework.</p>
+<div class="itemizedlist"><ul><li>
+The standard display technology used by JSF 1 was JavaServer Pages (<acronym class="acronym">JSP</acronym>). With JSF 2, the standard display technology has been changed to Facelets, which is a more powerful and more efficient View Declaration Language (<acronym class="acronym">VLD</acronym>) than JSP.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Advanced_features-Error_handling"/>5.2. Error handling</h2></div></div></div>
+
+<p>RichFaces allows standard handlers to be defined for processing different application exceptions. Custom JavaScript can be executed when these exceptions occur.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Advanced_features-Client-side_errors"/>5.2.1. Client-side errors</h3></div></div></div>
+
+<p>JSF provides a global <code class="literal"><span class="code">onError</span></code> handler on the client. The handler provides the relevant error code and other associated data. The RichFaces Ajax components provide the <code class="literal"><span class="varname">error</span></code> attribute if extra functionality needs to be defined.</p>
+<p>Additional processing is available through a number of components, such as the following:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="sgmltag">&lt;a4j:status&gt;</span></code> component has an additional error state.
+</li><li>
+The <code class="literal"><span class="sgmltag">&lt;a4j:queue&gt;</span></code> component can be used to process errors.
+</li></ul></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Advanced_features-Server-side_errors"/>5.2.2. Server-side errors</h3></div></div></div>
+
+<p>Use the JSF 2 <code class="literal"><span class="classname">ExceptionHandler</span></code> class to handle server-side errors such as session expiration.</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Advanced_features-Other_functions"/>5.3. Other functions</h2></div></div></div>
+
+<p>RichFaces provides a number of advanced functions, such as managing user roles and identifying elements. Refer to the <span class="strong"><strong><span class="emphasis"><em>Functions</em></span></strong></span> chapter in the <span class="strong"><strong><span class="emphasis"><em>RichFaces Component Reference</em></span></strong></span> for further details.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Advanced_features-Resource_loading"/>5.4. Resource loading</h2></div></div></div>
+
+<p>The RichFaces improves a standard JSF resource handling in order to achieve following features:</p>
+<div class="itemizedlist"><ul><li>
+resource optimization - serves optimized component resource dependencies (JavaScript, CSS)
+</li><li>
+resource mapping - re-routes resource requests (maps an one resource to an another resource)
+</li></ul></div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Advanced_features-Configuring_ResourceServlet"/>5.4.1. Configuring ResourceServlet</h3></div></div></div>
+
+<p>For leveraging RichFaces resource loading improvements, the <code class="literal"><span class="sgmltag">ResourceServlet</span></code> needs to be registered.</p>
+<p><code class="literal"><span class="sgmltag">ResourceServlet</span></code> is automatically registered in the Servlet 3.0 and higher environments.</p>
+<p>In the Servlet 2.5 and lower environments, it is necessary to register the <code class="literal"><span class="sgmltag">ResourceServlet</span></code> manually in the <code class="literal"><span class="sgmltag">WEB-INF/web.xml</span></code> configuration file:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Resource&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.webapp.ResourceServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Resource&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">/org.richfaces.resources/*</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Advanced_features-Resource_optimization"/>5.4.2. Resource optimization</h3></div></div></div>
+
+<p>The resource optimization feature provides optimized component dependencies - JavaScript, CSS - which are compressed and aggregated to resource packages.</p>
+<p>The loading of compressed resource packages may lead into significant client performance boost, since many small files are aggregated into one big file - the number of HTTP connections necessary to download application resources is significantly decreased.</p>
+<div class="example"><a id="d4e857"/><p class="title"><b>Example 5.1. Enabling resource optimization</b></p><div class="example-contents">
+
+<p>To enable the resource optimization, add a following configuration to <code class="literal"><span class="code">web.xml</span></code>:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.resourceOptimization.enabled</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">true</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+<div class="example"><a id="d4e863"/><p class="title"><b>Example 5.2. Resource optimization in development JSF project stage</b></p><div class="example-contents">
+
+<p>Resource optimization is influenced by the project stage:</p>
+<div class="itemizedlist"><ul><li>
+resources are not compressed in the development stage and during unit-testing to enable client-side debugging
+</li><li>
+resources are compressed in the production stage and during a system-testing to minimize network bandwidth
+</li></ul></div>
+
+<p>Switch to the development project stage during a development:</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.faces.PROJECT_STAGE</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Development</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Advanced_features-Resource_mapping"/>5.4.3. Resource mapping</h3></div></div></div>
+
+<p>The resource mapping feature maps an existing JSF resource (determined by library and name) to a another resource.</p>
+<p>This feature can help to solve the following cases:</p>
+<div class="itemizedlist"><ul><li>
+providing alternative versions of JSF resources
+</li><li>
+map several JSF resources to one
+</li><li>
+using external resources
+</li><li>
+moving resources to servers serving static content
+</li></ul></div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_resource_mapping_configuration_file"/>5.4.3.1. Resource mapping configuration file</h4></div></div></div>
+
+<p>Configuring the resource mapping means adding new records to the class-path file <code class="literal"><span class="code">META-INF/richfaces/static-resource-mappings.properties</span></code>.</p>
+<p>Each line in the configuration file represents one relocation.</p>
+<p>A following sample shows a JSF resource with the name <code class="literal"><span class="code">resourceLibrary:resourceName</span></code> relocated to a resource <code class="literal"><span class="code">anotherResourceLibrary:anotherResourceName</span></code>:</p>
+<pre class="screen">resourceLibrary\:resourceName=anotherResourceLibrary/anotherResourceName</pre>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Mapping resource name to relative URL</h2>
+
+<p>The definition above contains a JSF resource name on the left side of the expression and a relative path on the right side.</p>
+<p>The expression on the right side represents a path relative to a JSF resource root, thus resource path <code class="literal"><span class="code">anotherResourceLibrary/anotherResourceName</span></code> actually maps to a JSF resource with name <code class="literal"><span class="code">anotherResourceLibrary:anotherResourceName</span></code>.</p>
+</div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Additional mapping files</h2>
+
+<p>It is possible to define additional resource mapping configuration files by using a contextual parameter identifying the class-path locations where the files reside: <code class="literal"><span class="code">org.richfaces.resourceMapping.mappingFile</span></code> (a comma-separated list of the class-path files).</p>
+</div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_examples_of_resource_mapping"/>5.4.3.2. Examples of resource mapping</h4></div></div></div>
+
+<div class="example"><a id="d4e913"/><p class="title"><b>Example 5.3. Providing alternative file</b></p><div class="example-contents">
+
+<p>All requests for <code class="literal"><span class="code">jquery.js</span></code> are served as requests for <code class="literal"><span class="code">jquery-alternative-version.js</span></code>:</p>
+<pre class="screen">jquery.js=jquery-alternative-version.js</pre>
+
+</div></div><br class="example-break"/>
+
+<div class="example"><a id="d4e921"/><p class="title"><b>Example 5.4. Mapping several resources to one</b></p><div class="example-contents">
+
+<p>Both <code class="literal"><span class="code">some:jquery.js</span></code> and <code class="literal"><span class="code">another:jquery.js</span></code> are mapped to <code class="literal"><span class="code">final:jquery.js</span></code>:</p>
+<pre class="screen">some\:jquery.js=final/jquery.js
+another\:jquery.js=final/jquery.js</pre>
+
+</div></div><br class="example-break"/>
+
+<div class="example"><a id="d4e931"/><p class="title"><b>Example 5.5. Using external resources</b></p><div class="example-contents">
+
+<p>Mappings with a resource path starting with <code class="literal"><span class="code">http://</span></code> or <code class="literal"><span class="code">https://</span></code> are served as absolute resource locations:</p>
+<p>A following sample instructs to load <code class="literal"><span class="code">jquery.js</span></code> from CDN:</p>
+<pre class="screen">jquery.js=http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-Basic_concepts.html"><strong>Prev</strong>Chapter 4. Basic concepts</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Developer_Guide-Skinning_and_theming.html"><strong>Next</strong>Chapter 6. Skinning and theming</a></li></ul></body></html>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 2. Getting started with RichFaces</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Developer Guide"/><link rel="up" href="index.html" title="Developer Guide"/><link rel="prev" href="chap-Developer_Guide-Introduction.html" title="Chapter 1. Introduction"/><link rel="next" href="chap-Developer_Guide-RichFaces_overview.html" title="Chapter 3. RichFaces overview"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-Introduction.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Developer_Guide-RichFaces_overview.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Developer_Guide-Getting_started_with_RichFaces"/>Chapter 2. Getting started with RichFaces</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Technical_Requirements">2.1. Technical Requirements</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Technical_Requirements-Project_libraries_and_dependencies">2.1.1. Project libraries and dependencies</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Development_environments">2.2. Development environments</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Setting_up_RichFaces">2.3. Setting up RichFaces</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Creating_a_project_with_JBoss_Tools">2.4. Creating a project with JBoss Developer Studio</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Creating_a_project_with_Maven">2.5. Creating a project with Maven</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Component_Using_RichFaces_with_Maven-Setting_up_Maven">2.5.1. Setting up Maven</a></span></dt><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Component_Reference-Using_RichFaces_with_Maven-Using_the_RichFaces_project_archetype">2.5.2. Using the RichFaces project archetype</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Using_RichFaces_in_existing_JSF2_projects">2.6. Using RichFaces in existing JSF 2 projects</a></span></dt></dl></div>
+
+<p>Follow the instructions in this chapter to configure the RichFaces framework and get started with application development.</p>
+<p>If you have existing projects that use a previous version of RichFaces, refer to the <span class="strong"><strong><span class="emphasis"><em>RichFaces Migration Guide</em></span></strong></span> .</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Getting_started_with_RichFaces-Technical_Requirements"/>2.1. Technical Requirements</h2></div></div></div>
+
+<p>The minimum technical requirements needed to get started with RichFaces are outlined below.</p>
+<div class="itemizedlist"><ul><li>
+Java Development Kit (<acronym class="acronym">JDK</acronym>) 6 or higher
+</li><li>
+An application server compliant with Java Platform, Enterprise Edition 6 (<acronym class="acronym">JEE6</acronym>), such as <span class="productname">JBoss EAP 6</span>™, <span class="productname">WildFly</span>™ or a servlet container coupled with a JSF implementation, such as Apache Tomcat + Mojarra 2.x.
+</li><li>
+A compliant web browser, (see the section on <a class="xref" href="chap-Developer_Guide-RichFaces_overview.html#sect-Component_Reference-RichFaces_overview-Client_requirements" title="3.1.2. Client requirements">Section 3.1.2, “Client requirements”</a> for further details)
+</li></ul></div>
+
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Developer_Guide-Getting_started_with_RichFaces-Technical_Requirements-Project_libraries_and_dependencies"/>2.1.1. Project libraries and dependencies</h3></div></div></div>
+
+<p>The RichFaces library is distributed across three jars providing all the components and services of the RichFaces framework.</p>
+<div class="itemizedlist"><p class="title"><b>RichFaces Library</b></p><ul><li>
+<code class="literal"><span class="filename">richfaces-core.jar</span></code>
+</li><li>
+<code class="literal"><span class="filename">richfaces-a4j.jar</span></code>
+</li><li>
+<code class="literal"><span class="filename">richfaces-rich.jar</span></code>
+</li></ul></div>
+
+<p>The framework depends on both mandatory and optional third-party dependencies.  Some of the framework services are only enabled when the optional libraries are present.</p>
+<p>Note that these dependencies may further depend on their own runtime dependencies.</p>
+<div class="itemizedlist"><p class="title"><b>Mandatory third-party dependencies</b></p><ul><li>
+<p>Java Server Faces 2.x implementation</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">javax.faces.jar</span></code> (version <code class="literal"><span class="code">2.1.28</span></code> or higher)
+</li><li>
+or <code class="literal"><span class="filename">myfaces-impl.jar</span></code> (version <code class="literal"><span class="code">2.1.10</span></code> or higher)
+</li></ul></div>
+
+</li><li>
+<p>Google Guava</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">guava.jar</span></code> (version <code class="literal"><span class="code">18.0</span></code>)
+</li></ul></div>
+
+</li><li>
+<p>CSS Parser</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">cssparser.jar</span></code> (version <code class="literal"><span class="code">0.9.14</span></code>)
+</li></ul></div>
+
+</li><li>
+<p>Simple API for CSS</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">sac.jar</span></code> (version <code class="literal"><span class="code">1.3</span></code>)
+</li></ul></div>
+
+</li></ul></div>
+
+<div class="itemizedlist"><p class="title"><b>Optional third-party dependencies</b></p><ul><li>
+<p>Bean validation (JSR-303) integration for client-side validation (JSR-303 API and Implementation)</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">validation-api.jar</span></code> (version <code class="literal"><span class="code">1.0.0.GA</span></code>)
+</li><li>
+<code class="literal"><span class="filename">hibernate-validator.jar</span></code> (version [code]+4.3.2.Final)
+</li></ul></div>
+
+</li><li>
+<p>Push transport library - Atmosphere (without dependencies)</p>
+<div class="itemizedlist"><ul><li>
+<p><code class="literal"><span class="filename">atmosphere-runtime.jar</span></code> (version <code class="literal"><span class="code">2.2.3</span></code>)</p>
+<p>(selected compatibility modules <code class="literal"><span class="filename">atmosphere-compat-*.jar</span></code> may be necessary)</p>
+</li></ul></div>
+
+</li><li>
+<p>Push JMS integration (JMS API and Implementation)</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">jms.jar</span></code> (version <code class="literal"><span class="code">1.1</span></code>)
+</li><li>
+<code class="literal"><span class="filename">hornetq-jms.jar</span></code> (version <code class="literal"><span class="code">2.2.7.Final</span></code> or higher)
+</li></ul></div>
+
+</li><li>
+<p>Push CDI integration (CDI API and Implementation)</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">cdi-api.jar</span></code> (version <code class="literal"><span class="code">1.0-SP4</span></code>)
+</li><li>
+<code class="literal"><span class="filename">javax.inject.jar</span></code> (version <code class="literal"><span class="code">1</span></code>)
+</li><li>
+<code class="literal"><span class="filename">jsr-250-api.jar</span></code> (version <code class="literal"><span class="code">1.0</span></code>)
+</li><li>
+<code class="literal"><span class="filename">weld-servlet.jar</span></code> (version <code class="literal"><span class="code">2.2.6.Final</span></code>)
+</li></ul></div>
+
+</li><li>
+<p>Extended caching (EhCache)</p>
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="filename">ehcache.jar</span></code> (version <code class="literal"><span class="code">2.8.3</span></code>)
+</li></ul></div>
+
+</li></ul></div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Dependencies for servlet containers</h2>
+
+<p>Some of the dependencies are part of the Java EE 6 specification and thus it is not necessary to include them in projects running on Java EE applications servers.  It is still necessary to include them when using servlet containers.</p>
+<p>This does not apply to dependencies on the Servlet API: the JSP API and the EL API.  These APIs are integral parts of both application servers and servlet containers.</p>
+</div>
+
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Getting_started_with_RichFaces-Development_environments"/>2.2. Development environments</h2></div></div></div>
+
+<p>RichFaces applications can be developed using a range of tools, including integrated development environments (<code class="literal"><acronym class="acronym">IDE</acronym></code>s). This chapter covers only two such environments in detail:</p>
+<div class="itemizedlist"><ul><li>
+<span class="productname">JBoss Developer Studio</span>™, as described in <a class="xref" href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Creating_a_project_with_JBoss_Tools" title="2.4. Creating a project with JBoss Developer Studio">Section 2.4, “Creating a project with JBoss Developer Studio”</a>.
+</li><li>
+<span class="productname">Maven</span>™, as described in <a class="xref" href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Creating_a_project_with_Maven" title="2.5. Creating a project with Maven">Section 2.5, “Creating a project with Maven”</a>.
+</li></ul></div>
+
+<p>Other development environments such as <span class="productname">Idea</span>™ or <span class="productname">NetBeans</span>™ could also be used for RichFaces development, but such usage is not detailed in this book.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Getting_started_with_RichFaces-Setting_up_RichFaces"/>2.3. Setting up RichFaces</h2></div></div></div>
+
+<p>Follow the instructions in this section to set up a project with the RichFaces framework and begin building applications.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li>
+<p><span class="strong"><strong>Download the RichFaces archive</strong></span></p>
+<p>Download RichFaces from the JBoss RichFaces Downloads area at <a class="ulink" href="http://www.jboss.org/richfaces/download.html">http://www.jboss.org/richfaces/download.html</a>. The binary files (available as a <code class="literal"><span class="filename">.zip</span></code> archive) contain the following:</p>
+<div class="itemizedlist"><ul><li>
+compiled, ready-to-use Java Archives (<acronym class="acronym">JAR</acronym> files) of the RichFaces library
+</li><li>
+library source JAR files
+</li><li>
+documentation, including Java documentation and JavaScript documentation
+</li><li>
+archetypes
+</li><li>
+example source code
+</li></ul></div>
+
+</li><li>
+<p><span class="strong"><strong>Unzip the archive</strong></span></p>
+<p>Create a new directory named <code class="literal"><span class="filename">RichFaces</span></code>, then unzip the archive that contains the binaries into this new directory.</p>
+</li></ol></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Getting_started_with_RichFaces-Creating_a_project_with_JBoss_Tools"/>2.4. Creating a project with <span class="productname">JBoss Developer Studio</span>™</h2></div></div></div>
+
+<p>Follow the procedure in this section to create a new RichFaces application with <span class="productname">JBoss Developer Studio</span>™.  Ensure you are using the latest version of <span class="productname">JBoss Developer Studio</span>™ to take advantage of the latest feautures and stability improvements.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li>
+<p><span class="strong"><strong>Create a new project</strong></span></p>
+<p>Create a new project based on the JSF 2 environment using the RichFaces 4 template. In <span class="productname">JBoss Developer Studio</span>™, select <span class="guimenu"><strong>File</strong></span> → <span class="guimenuitem"><strong>New JSF Project</strong></span> from the menu. Name the project, select <span class="guilabel"><strong>JSF 2</strong></span> from the <span class="guilabel"><strong>JSF Environment</strong></span> drop-down box, and click the <span class="guibutton"><strong>Finish</strong></span> button to create the project.</p>
+<p>If necessary, update the JSF 2 JAR files to the latest versions.</p>
+</li><li>
+<p><span class="strong"><strong>Add the RichFaces libraries to the project</strong></span></p>
+<p><a id="step-Developer_Guide-Creating_a_project-Add_the_RichFaces_libraries_to_the_project"/>Add the <a class="link" href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Technical_Requirements-Project_libraries_and_dependencies" title="2.1.1. Project libraries and dependencies">RichFaces libraries and their mandatory dependencies</a> to the project. Copy them from the location where you unzipped the RichFaces archive to the <code class="literal"><span class="filename">WebContent/WEB-INF/lib/</span></code> directory of your project in <span class="application"><strong>JBoss Developer Studio</strong></span>.</p>
+</li><li>
+<p><span class="strong"><strong><a id="step-Developer_Guide-Creating_a_project-Reference_the_tag_libraries"/>Reference the tag library</strong></span></p>
+<p>The RichFaces tag libraries must be referenced on each XHTML page in your project:</p>
+<pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">ui:composition</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">xmlns:rich</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://richfaces.org/rich&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">ui:composition</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">xmlns:a4j</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://richfaces.org/a4j&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">ui:composition</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</li></ol></div>
+
+<p>You are now ready to begin developing your RichFaces application. RichFaces components can be dragged and dropped from the <span class="productname">JBoss Developer Studio</span>™ RichFaces palette into your application’s XHTML pages.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Getting_started_with_RichFaces-Creating_a_project_with_Maven"/>2.5. Creating a project with <span class="productname">Maven</span>™</h2></div></div></div>
+
+<p><span class="productname">Apache Maven</span>™ is a build automation and project management tool for Java projects. Follow the instructions in this section to create a <span class="productname">Maven</span>™ project for <span class="productname">RichFaces</span>™.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Using_RichFaces_with_Maven-Setting_up_Maven"/>2.5.1. Setting up <span class="productname">Maven</span>™</h3></div></div></div>
+
+<p><span class="productname">Maven</span>™ can be downloaded and installed from Apache’s website at <a class="ulink" href="http://maven.apache.org/download.html">http://maven.apache.org/download.html</a>. Due to the use of dependency importing, <span class="productname">Maven</span>™ version 3.0.4 or above is required.</p>
+<p>Once <span class="productname">Maven</span>™ has been installed, no further configuration is required to begin building Maven projects.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-Using_RichFaces_with_Maven-Using_the_RichFaces_project_archetype"/>2.5.2. Using the <span class="productname">RichFaces</span>™ project archetype</h3></div></div></div>
+
+<p>A Maven archetype is a template for creating projects. <span class="productname">Maven</span>™ uses an archetype to generate a directory structure and files for a particular project, as well as creating <code class="literal"><span class="filename">pom.xml</span></code> files that contain build instructions.</p>
+<p>The RichFaces distribution includes a Maven archetype named <code class="literal"><span class="filename">richfaces-archetype-simpleapp</span></code> for generating the basic structure and requirements of a RichFaces application project. Maven can obtain the archetype from maven central at <a class="ulink" href="http://search.maven.org">http://search.maven.org</a>. The archetype is also included with the RichFaces distribution in the <code class="literal"><span class="filename">archetypes</span></code> directory. Follow the procedure in this section to generate a new Maven-based RichFaces project using the archetype.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li>
+<p>Generate the project from the archetype</p>
+<p>The project can be generated with the <code class="literal"><span class="filename">richfaces-archetype-simpleapp</span></code> archetype. Create a new directory for your project, then run the following Maven command in the directory:</p>
+<pre class="screen">mvn archetype:generate -DarchetypeGroupId=org.richfaces.archetypes -DarchetypeArtifactId=richfaces-archetype-simpleapp -DarchetypeVersion=4.5.18-SNAPSHOT -DgroupId=org.docs.richfaces -DartifactId=new_project</pre>
+
+<p>The following parameters can be used to customize your project:</p>
+<div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>-DgroupId</em></span></span></dt><dd>
+Defines the package for the Managed Beans
+</dd><dt><span class="term"><span class="emphasis"><em>-DartifactId</em></span></span></dt><dd>
+<p>Defines the name of the project</p>
+<p>The command generates a new RichFaces project with the following structure:</p>
+<pre class="screen">new_project
+├── pom.xml
+├── readme.txt
+└── src
+    └── main
+        ├── java
+        │   └── org
+        │       └── docs
+        │           └── richfaces
+        │               └── RichBean.java
+        └── webapp
+            ├── index.xhtml
+            ├── templates
+            │   └── template.xhtml
+            └── WEB-INF
+                ├── faces-config.xml
+                └── web.xml</pre>
+
+</dd></dl></div>
+
+</li><li>
+<p><span class="strong"><strong>Add test dependencies (optional)</strong></span></p>
+<p>Your root directory of your project contains a project descriptor file: <code class="literal"><span class="filename">pom.xml</span></code>. If you wish to include modules for test-driven JSF development, add any dependencies for the tests to the <code class="literal"><span class="filename">pom.xml</span></code> file.</p>
+<p>For testing the server-side part of your application, check out <span class="productname"><a class="ulink" href="http://www.jboss.org/arquillian">JBoss Arquillian project</a></span>™.</p>
+<p>If you want to test JSF from client’s perspective with ability to access state of JSF internals, use <span class="productname"><a class="ulink" href="https://github.com/arquillian/arquillian-extension-warp/blob/master/README.md">Arquillian Warp</a></span>™.</p>
+<p>For automation of client-side tests in real-browser, you may want to employ <span class="productname"><a class="ulink" href="http://community.jboss.org/wiki/ArquillianGraphene">Arquillian Graphene</a></span>™ and <span class="productname"><a class="ulink" href="https://docs.jboss.org/author/display/ARQ/Drone">Arquillian Drone</a></span>™ extensions.</p>
+</li><li>
+<p><span class="strong"><strong>Build the project</strong></span></p>
+<p>Build the project from the command line by entering the <span class="emphasis"><em>mvn install</em></span> command.</p>
+<p>The <span class="strong"><strong>BUILD SUCCESSFUL</strong></span> message indicates the project has been assembled and is ready to import into an IDE (integrated development environment), such as <span class="productname">JBoss Developer Studio</span>™.</p>
+</li><li>
+<p><span class="strong"><strong>Import the project into an IDE</strong></span></p>
+<p>To import the project into <span class="productname">Eclipse</span>™ and <span class="productname">JBoss Developer Studio</span>™, open the importing wizard by choosing <span class="guimenu"><strong>File</strong></span> → <span class="guimenuitem"><strong>Import</strong></span> from the menu.</p>
+<div class="orderedlist"><ol><li>
+<p><span class="strong"><strong>Select the project</strong></span></p>
+<p>Select <span class="guimenu"><strong>Maven</strong></span> → <span class="guimenuitem"><strong>Existing Maven Projects</strong></span> as the import source and choose the directory with the <code class="literal"><span class="filename">pom.xml</span></code> file for your project.</p>
+</li></ol></div>
+
+</li></ol></div>
+
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Exporting from Maven</h2>
+
+<p>The ability to prepare the project for Eclipse and export it using Maven is deprecated in RichFaces 4.5.18-SNAPSHOT. The process does not support JBoss integration-specific features, such as JSF Facets.</p>
+</div>
+
+<p>Your project is now ready to use. Once components and functionality have been added, you can run the application on a server and access it through a web browser at the address <code class="literal"><span class="filename"><a class="ulink" href="http://localhost:8080/jsf-app/">http://localhost:8080/jsf-app/</a></span></code> (where jsf-app is the name of your project).</p>
+</div>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Developer_Guide-Getting_started_with_RichFaces-Using_RichFaces_in_existing_JSF2_projects"/>2.6. Using RichFaces in existing JSF 2 projects</h2></div></div></div>
+
+<p>RichFaces can be added to existing JSF 2 projects by adding the new RichFaces libraries. Refer to <a class="link" href="chap-Developer_Guide-Getting_started_with_RichFaces.html#step-Developer_Guide-Creating_a_project-Add_the_RichFaces_libraries_to_the_project">Step 2</a> and <a class="link" href="chap-Developer_Guide-Getting_started_with_RichFaces.html#step-Developer_Guide-Creating_a_project-Reference_the_tag_libraries">Step 3</a> in <a class="xref" href="chap-Developer_Guide-Getting_started_with_RichFaces.html#sect-Developer_Guide-Getting_started_with_RichFaces-Creating_a_project_with_JBoss_Tools" title="2.4. Creating a project with JBoss Developer Studio">Section 2.4, “Creating a project with JBoss Developer Studio”</a> for details.</p>
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Application-level settings</h2>
+
+<p>In RichFaces 4, it is not necessary to add any extra settings to the <code class="literal"><span class="filename">web.xml</span></code> or <code class="literal"><span class="filename">config.xml</span></code> settings files to use the framework.</p>
+</div>
+
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Developer_Guide-Introduction.html"><strong>Prev</strong>Chapter 1. Introduction</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Developer_Guide-RichFaces_overview.html"><strong>Next</strong>Chapter 3. RichFaces overview</a></li></ul></body></html>

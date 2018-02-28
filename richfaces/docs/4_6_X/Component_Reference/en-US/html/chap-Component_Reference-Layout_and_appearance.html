@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 15. Layout and appearance</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="Component Reference"/><link rel="up" href="part-Component_Reference-User_interface_components.html" title="Part II. User interface components"/><link rel="prev" href="chap-Component_Reference-Drag_and_drop.html" title="Chapter 14. Drag and drop"/><link rel="next" href="chap-Component_Reference-Functions.html" title="Chapter 16. Functions"/><link rel="copyright" href="ln-d4e21.html" title="Legal Notice"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Drag_and_drop.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Functions.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Component_Reference-Layout_and_appearance"/>Chapter 15. Layout and appearance</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-Layout_and_appearance-jQuery">15.1. &lt;rich:jQuery&gt;</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-jQuery-Basic_usage">15.1.1. Basic usage</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-jQuery-Defining_a_selector">15.1.2. Defining a selector</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-jQuery-Event_handlers">15.1.3. Event handlers</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-jQuery-Timed_queries">15.1.4. Timed queries</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-jQuery-Named_queries">15.1.5. Named queries</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-jQuery-Dynamic_rendering">15.1.6. Dynamic rendering</a></span></dt><dt><span class="section"><a href="chap-Component_Reference-Layout_and_appearance.html#sect-Component_Reference-jQuery-Reference_data">15.1.7. Reference data</a></span></dt></dl></dd></dl></div>
+
+<p>Read this chapter to alter the layout and appearance of web applications using special components.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Component_Reference-Layout_and_appearance-jQuery"/>15.1. <a id="richjQuery"/><code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code></h2></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code> component applies styles and custom behavior to both <acronym class="acronym">JSF</acronym> (JavaServer Faces) objects and regular <acronym class="acronym">DOM</acronym> (Document Object Model) objects. It uses the jQueryJavaScript framework to add functionality to web applications.</p>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jQuery-Basic_usage"/>15.1.1. Basic usage</h3></div></div></div>
+
+<p>The query triggered by the <code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code> component is specified using the <code class="literal"><span class="varname">query</span></code> attribute.</p>
+<p>With the query defined, the component is used to trigger the query as either a timed queryor a named query. The query can be bound to an event to act as an event handler. These different approaches are covered in the following sections.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jQuery-Defining_a_selector"/>15.1.2. Defining a selector</h3></div></div></div>
+
+<p>Any objects or lists of objects used in the query are specified using the <code class="literal"><span class="varname">selector</span></code> attribute. The <code class="literal"><span class="varname">selector</span></code> attribute references objects using the following method:</p>
+<div class="itemizedlist"><ul><li>
+The <code class="literal"><span class="varname">selector</span></code> attribute can refer to the elements by using syntax of the jQuery Selectors (a superset of CSS selectors defined by W3C consortium) and additionally it expands JSF component IDs to client-side IDs (see the VDL documentation for the <code class="literal"><span class="varname">selector</span></code> attribute).
+</li><li>
+If the <code class="literal"><span class="varname">selector</span></code> attribute does not match the <code class="literal"><span class="varname">id</span></code> identifier attribute of any JSF components or clients on the page, it instead uses syntax defined by the World Wide Web Consortium (W3C)for the <acronym class="acronym">CSS</acronym> rule selector.
+Refer to the syntax specification at <a class="ulink" href="http://api.jquery.com/category/selectors/">http://api.jquery.com/category/selectors/</a> for full details.
+</li></ul></div>
+
+<p>Because the <code class="literal"><span class="varname">selector</span></code> attribute can be either an <code class="literal"><span class="varname">id</span></code> identifier attribute or CSS selector syntax, conflicting values could arise. <a class="xref" href="chap-Component_Reference-Layout_and_appearance.html#exam-Component_Reference-jQuery-Avoiding_syntax_confusion" title="Example 15.1. Avoiding syntax confusion">Example 15.1, “Avoiding syntax confusion”</a> demonstrates how to use double backslashes to escape colon characters in <code class="literal"><span class="varname">id</span></code> identifier values.</p>
+<div class="example"><a id="exam-Component_Reference-jQuery-Avoiding_syntax_confusion"/><p class="title"><b>Example 15.1. Avoiding syntax confusion</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;form&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;menu&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;pic1.jpg&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;pic2.jpg&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The <code class="literal"><span class="varname">id</span></code> identifier for the <code class="literal"><span class="sgmltag">&lt;h:panelGrid&gt;</span></code> element is <code class="literal">form:menu</code>, which can conflict with CSS selector syntax. Double backslashes can be used to escape the colon character such that the identifier is read correctly instead of being interpreted as CSS selector syntax.</p>
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">selector</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#form\\:menu&nbsp;img&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jQuery-Event_handlers"/>15.1.3. Event handlers</h3></div></div></div>
+
+<p>Queries set as event handlers are triggered when the component specified in the <code class="literal"><span class="varname">selector</span></code> attribute raises an event. The query is bound to the event defined using the <code class="literal"><span class="varname">event</span></code> attribute.</p>
+<p>Use the <code class="literal"><span class="varname">attachType</span></code> attribute to specify how the event-handling queries are attached to the events:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">bind</code></span></dt><dd>
+This is the default for attaching queries to events. The event handler is bound to all elements currently defined by the <code class="literal"><span class="varname">selector</span></code> attribute.
+</dd><dt><span class="term"><code class="literal">live</code></span></dt><dd>
+The event handler is bound to all current and future elements defined by the <code class="literal"><span class="varname">selector</span></code> attribute.
+</dd><dt><span class="term"><code class="literal">one</code></span></dt><dd>
+The event handler is bound to all elements currently defined by the <code class="literal"><span class="varname">selector</span></code> attribute. After the first invocation of the event, the event handler is unbound such that it no longer fires when the event is raised.
+</dd></dl></div>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jQuery-Timed_queries"/>15.1.4. Timed queries</h3></div></div></div>
+
+<p>Timed queries are triggered at specified times. This can be useful for calling simple methods when a page is rendered, or for adding specific functionality to an element. Use the <code class="literal"><span class="varname">timing</span></code> attribute to specify the point at which the timed query is triggered:</p>
+<div class="variablelist"><dl><dt><span class="term"><code class="literal">domready</code></span></dt><dd>
+This is the default behavior. The query is triggered when the document is loaded and the DOM is ready. The query is called as a <code class="literal"><span class="methodname">jQuery()</span></code> function.
+</dd><dt><span class="term"><code class="literal">immediate</code></span></dt><dd>
+The query is triggered immediately. The query is called as an in-line script.
+</dd></dl></div>
+
+<div class="example"><a id="exam-Component_Reference-jQuery-jQuery_example"/><p class="title"><b>Example 15.2. <code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code> example</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dataTable</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;customList&quot;</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:dataTable</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">selector</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#customList&nbsp;tr:odd&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">timing</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;domready&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;addClass(odd)&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>In the example, the selector picks out the odd <code class="literal"><span class="sgmltag">&lt;tr&gt;</span></code> elements that are children of the element with an <code class="literal"><span class="code">id="customlist"</span></code> attribute. The query <code class="literal"><span class="code">addClass(odd)</span></code> is then performed on the selection during page loading ( <code class="literal">load</code>) such that the <code class="literal">odd</code> CSS class is added to the selected elements.</p>
+<div class="figure"><a id="d4e20526"/><div class="figure-contents">
+  <div class="mediaobject"><img src="images/Component_Reference-jQuery-jQuery_example.png" alt="A table highlighted in a &#34;zebra&#34; fashion"/></div>
+</div><p class="title"><b>Figure 15.1. </b></p></div><br class="figure-break"/>
+
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jQuery-Named_queries"/>15.1.5. Named queries</h3></div></div></div>
+
+<p>Named queries are given a name such that they can be triggered by other functions or handlers. Use the <code class="literal"><span class="varname">name</span></code> attribute to name the query. The query can then be accessed as though it were a JavaScript function using the specified <code class="literal"><span class="varname">name</span></code> attribute as the function name.</p>
+<p>Calls to the function must pass a direct reference ( <code class="literal">this</code>) to the calling object as a parameter. This is treated the same as an item defined through the <code class="literal"><span class="varname">selector</span></code> attribute.</p>
+<p>If the function requires extra parameters itself, these are provided in JavaScript Object Notation (JSON) syntax as a second parameter in the JavaScript call. The <code class="literal">options</code> namespace is then used in the <code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code> query to access the passed function parameters. <a class="xref" href="chap-Component_Reference-Layout_and_appearance.html#exam-Component_Reference-jQuery-Calling_a_jQuery_component_as_a_function" title="Example 15.3. Calling a &lt;rich:jQuery&gt; component as a function">Example 15.3, “Calling a &lt;rich:jQuery&gt; component as a function”</a> demonstrates the use of the <code class="literal"><span class="varname">name</span></code> attribute and how to pass function parameters through the JavaScript calls.</p>
+<div class="example"><a id="exam-Component_Reference-jQuery-Calling_a_jQuery_component_as_a_function"/><p class="title"><b>Example 15.3. Calling a <code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code> component as a function</b></p><div class="example-contents">
+
+<pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">width</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;50&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/price.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic(this,&nbsp;{pwidth:'60px'})&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseout</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;releasePic(this)&quot;</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">width</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;50&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/discount.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic(this,&nbsp;{pwidth:'100px'})&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseout</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;releasePic(this)&quot;</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;animate({width:options.pwidth})&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;releasePic&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;animate({width:'50px'})&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre>
+
+<p>The example enlarges the images when the mouse moves over them. The <code class="literal">enlargePic</code> and <code class="literal">releasePic</code> components are called like ordinary JavaScript functions from the image elements.</p>
+</div></div><br class="example-break"/>
+
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jQuery-Dynamic_rendering"/>15.1.6. Dynamic rendering</h3></div></div></div>
+
+<p>The <code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code> component applies style and behavioral changes to DOM objects dynamically. As such, changes applied during an Ajax response are overwritten, and will need to be re-applied once the Ajax response is complete.</p>
+<p>Any timed queries with the <code class="literal"><span class="varname">timing</span></code> attribute set to <code class="literal">domready</code> may not update during an Ajax response, as the DOM document is not completely reloaded. To ensure the query is re-applied after an Ajax response, include the <code class="literal"><span class="varname">name</span></code> attribute in the <code class="literal"><span class="sgmltag">&lt;rich:jQuery&gt;</span></code> component and invoke it using JavaScript from the <code class="literal"><span class="varname">complete</span></code> event attribute of the component that triggered the Ajax interaction.</p>
+</div>
+<div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Component_Reference-jQuery-Reference_data"/>15.1.7. Reference data</h3></div></div></div>
+
+<div class="itemizedlist"><ul><li>
+<code class="literal"><span class="parameter">component-type</span></code>: <code class="literal"><span class="classname">org.richfaces.JQuery</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-class</span></code>: <code class="literal"><span class="classname">org.richfaces.component.UIJQuery</span></code>
+</li><li>
+<code class="literal"><span class="parameter">component-family</span></code>: <code class="literal"><span class="classname">org.richfaces.JQuery</span></code>
+</li><li>
+<code class="literal"><span class="parameter">renderer-type</span></code>: <code class="literal"><span class="classname">org.richfaces.JQueryRenderer</span></code>
+</li></ul></div>
+
+</div>
+</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Component_Reference-Drag_and_drop.html"><strong>Prev</strong>Chapter 14. Drag and drop</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Component_Reference-Functions.html"><strong>Next</strong>Chapter 16. Functions</a></li></ul></body></html>
